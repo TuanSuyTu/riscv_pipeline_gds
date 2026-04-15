@@ -1,10 +1,5 @@
 # RISC-V 5-Stage Pipelined SoC (Sky130)
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Status](https://img.shields.io/badge/Status-Tapeout_Ready-success.svg)
-![PDK](https://img.shields.io/badge/PDK-Sky130A_130nm-green.svg)
-![GLS](https://img.shields.io/badge/GLS-30%2F30_PASSED-brightgreen.svg)
-![RTL](https://img.shields.io/badge/RTL_Sim-31%2F31_PASSED-brightgreen.svg)
 
 A fully verified, tapeout-ready **32-bit RISC-V (RV32I)** processor implemented as a complete SoC with physically integrated Sky130 SRAM macros. The design was synthesized, placed, and routed end-to-end using **OpenLane 2** and verified at gate level using extracted netlists.
 
@@ -24,22 +19,6 @@ The top-level SoC (`soc_top.v`) integrates:
 | **Forwarding Unit** | `forward.v` | EX/MEM → EX and MEM/WB → EX bypass paths |
 | **Programming Interface** | `soc_top.v` | 3-wire frontdoor bus (`prog_we/addr/data`) for firmware loading |
 
-### Pipeline Stages
-
-```
-╔══════════╗   ╔══════════╗   ╔══════════╗   ╔══════════╗   ╔══════════╗
-║    IF    ║──▶║    ID    ║──▶║    EX    ║──▶║   MEM    ║──▶║    WB    ║
-║  Fetch   ║   ║  Decode  ║   ║  ALU     ║   ║  DMEM    ║   ║ RegWrite ║
-║  IMEM    ║   ║ RegFile  ║   ╚════▲═════╝   ╚═════╤════╝   ╚═════╤════╝
-╚══════════╝   ╚══════════╝        │                │              │
-                    │   Stall      └────────────────┘  EX/MEM→EX  │
-               ◀────┘                                              │
-                    Hazard          ◀──────────────────────────────┘
-                    Unit                                 MEM/WB→EX
-```
-
-
----
 
 ## ✅ Verification Results
 
