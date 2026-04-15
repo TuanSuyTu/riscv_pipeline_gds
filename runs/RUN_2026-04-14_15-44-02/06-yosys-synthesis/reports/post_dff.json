@@ -1,0 +1,63 @@
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-14_15-44-02/tmp/b7577106615c4e96995c129b85ef8ab0.lib ",
+   "modules": {
+      "\\soc_top": {
+         "num_wires":         7247,
+         "num_wire_bits":     8979,
+         "num_pub_wires":     95,
+         "num_pub_wire_bits": 1827,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         8833,
+         "area":              34783.360000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1261,
+            "$_AND_": 171,
+            "$_MUX_": 3879,
+            "$_NAND_": 121,
+            "$_NOR_": 147,
+            "$_NOT_": 767,
+            "$_ORNOT_": 95,
+            "$_OR_": 580,
+            "$_XNOR_": 87,
+            "$_XOR_": 203,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         7247,
+         "num_wire_bits":     8979,
+         "num_pub_wires":     95,
+         "num_pub_wire_bits": 1827,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         8833,
+         "area":              34783.360000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1261,
+            "$_AND_": 171,
+            "$_MUX_": 3879,
+            "$_NAND_": 121,
+            "$_NOR_": 147,
+            "$_NOT_": 767,
+            "$_ORNOT_": 95,
+            "$_OR_": 580,
+            "$_XNOR_": 87,
+            "$_XOR_": 203,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+}
+

@@ -1,0 +1,68 @@
+{
+    "DESIGN_NAME": "soc_top",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 20.0,
+    "VERILOG_FILES": [
+        "dir::src/core/control.v",
+        "dir::src/core/forward.v",
+        "dir::src/core/alu.v",
+        "dir::src/core/ex_stage.v",
+        "dir::src/core/alu_control.v",
+        "dir::src/core/imm_gen.v",
+        "dir::src/core/hazard.v",
+        "dir::src/core/regfile.v",
+        "dir::src/core/pc_reg.v",
+        "dir::src/top/sram_macro_blackbox.v",
+        "dir::src/top/soc_top.v",
+        "dir::src/top/top.v",
+        "dir::src/pipeline/ex_mem_reg.v",
+        "dir::src/pipeline/if_id_reg.v",
+        "dir::src/pipeline/mem_wb_reg.v",
+        "dir::src/pipeline/id_ex_reg.v"
+    ],
+    "DIE_AREA": [0, 0, 1100, 1100],
+    "FP_SIZING": "absolute",
+    "PL_TARGET_DENSITY": 0.30,
+    "PL_ROUTABILITY_DRIVEN": true,
+    "PL_MACRO_HALO": [30, 30],
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "MACROS": {
+        "sky130_sram_1kbyte_1rw1r_32x256_8": {
+            "gds": [
+                "/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
+            ],
+            "lef": [
+                "/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
+            ],
+            "lib": {
+                "*": [
+                    "/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib"
+                ]
+            },
+            "spice": [
+                "/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/spice/sky130_sram_1kbyte_1rw1r_32x256_8.spice",
+                "/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/spice/sram_1rw1r_32_256_8_sky130.spice"
+            ],
+            "instances": {
+                "dmem_sram": {
+                    "location": [50, 50],
+                    "orientation": "N"
+                },
+                "imem_sram": {
+                    "location": [550, 50],
+                    "orientation": "N"
+                }
+            }
+        }
+    },
+    "PDN_MACRO_CONNECTIONS": [
+        "dmem_sram VPWR VGND vccd1 vssd1",
+        "imem_sram VPWR VGND vccd1 vssd1"
+    ],
+    "EXTRA_SDC_FILE": "dir::src/top/sdc_constraints.sdc",
+    "MAGIC_CAPTURE_ERRORS": false,
+    "RUN_MAGIC_DRC": false,
+    "QUIT_ON_MAGIC_DRC": false,
+    "RUN_KLAYOUT_DRC": false,
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg"
+}
