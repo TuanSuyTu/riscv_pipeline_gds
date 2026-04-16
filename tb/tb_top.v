@@ -23,9 +23,13 @@ module tb_top;
         .dmem_rdata(dmem_rdata)
     );
 
-    // === Instruction Memory (Combinational Read — no latency) ===
+    // === Instruction Memory (Synchronous Read — matches Sky130 SRAM 1-cycle latency) ===
+    // top.v now sends imem_addr = next_pc, so data arrives aligned with pc_if next cycle.
     reg [31:0] imem [0:255];
-    assign imem_data = imem[imem_addr[9:2]];
+    reg [31:0] imem_data_reg;
+    always @(posedge clk)
+        imem_data_reg <= imem[imem_addr[9:2]];
+    assign imem_data = imem_data_reg;
 
     // === Data Memory (Synchronous Read — 1-cycle latency for BRAM stall combined with byte alignment packing/unpacking) ===
     reg [31:0] dmem_array [0:255];
@@ -131,6 +135,7 @@ module tb_top;
         begin
             rst = 1;
             repeat(3) @(posedge clk);
+            @(negedge clk);
             rst = 0;
             @(posedge clk);
         end
@@ -265,6 +270,19 @@ module tb_top;
         $display("");
 
         $finish;
+    end
+
+    // DEBUG TRACE
+    integer trace_count;
+    always @(posedge clk) begin
+        if (rst) trace_count <= 0;
+        else trace_count <= trace_count + 1;
+        
+        if (!rst && trace_count < 20) begin
+            $display("[TRACE %2d] pc_if=%h imem_addr=%h imem_data=%h | pc_id=%h id_instr=%h | ex_jump=%b mem_wb_wd=%h We=%b", 
+                trace_count, dut.pc_if, imem_addr, imem_data, dut.pc_id, dut.instr_id,
+                dut.jump_ex, dut.wd_data_wb, dut.reg_write_wb);
+        end
     end
 
 endmodule
