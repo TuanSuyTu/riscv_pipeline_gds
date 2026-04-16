@@ -136,24 +136,11 @@ module tb_gls;
         end
     endtask
 
-    // VCD Dump and SDF Annotation
+    // VCD Dump
     initial begin
         $dumpfile("tb_gls.vcd");
         // Dump the testbench variables
         $dumpvars(0, tb_gls);
-
-`ifdef USE_SDF
-        $display("=========================================================");
-        $display("🚀 DELAY BACK-ANNOTATION: LOADING SDF FILE");
-        $display("=> Path: %0s", `SDF_PATH);
-        $display("=========================================================");
-        // Syntax: $sdf_annotate("sdf_file", module_instance, , , "MAX", "1.0:1.0:1.0", "FROM_MAX");
-        $sdf_annotate(`SDF_PATH, dut);
-`else
-        $display("=========================================================");
-        $display("⚠️ ZERO-DELAY SIMULATION: NO SDF FILE LOADED");
-        $display("=========================================================");
-`endif
     end
 
     // --- Test Program & Setup ---
