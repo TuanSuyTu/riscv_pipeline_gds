@@ -19,7 +19,7 @@ module regfile (
     output [31:0] rs1_data,
     output [31:0] rs2_data
 );
-    reg [31:0] regs [0:31];
+    (* keep = "true" *) reg [31:0] regs [0:31];
     integer i;
 
     // Zero-init registers (x0 is always 0 by convention)

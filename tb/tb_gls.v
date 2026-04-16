@@ -147,161 +147,123 @@ module tb_gls;
     reg [31:0] imem [0:255];
     integer i;
 
-    initial begin
-        for (i = 0; i < 256; i = i + 1) imem[i] = 32'h00000013;
+    task automatic RUN_PHASE;
+        input integer cycles;
+        integer k;
+        begin
+            // Hold Reset
+            rst = 1;
+            repeat(5) @(posedge clk);
+            
+            // Backdoor reload imem into SRAM macro
+            for (k=0; k<256; k=k+1) begin
+                if (imem[k] === 32'bx) imem[k] = 32'h00000013; // default NOP
+                dut.imem_sram.mem[k] = imem[k];
+            end
+            
+            repeat(2) @(posedge clk);
+            rst = 0;
+            
+            // Run tests
+            repeat(cycles) @(posedge clk);
+        end
+    endtask
 
-        imem[0]  = 32'h00A00093; // ADDI x1,  x0, 10
-        imem[1]  = 32'h01400113; // ADDI x2,  x0, 20
-        imem[2]  = 32'hFFF00193; // ADDI x3,  x0, -1
-        imem[3]  = 32'h00208233; // ADD  x4,  x1, x2
-        imem[4]  = 32'h401102B3; // SUB  x5,  x2, x1
-        imem[5]  = 32'h0020F333; // AND  x6,  x1, x2
-        imem[6]  = 32'h0020E3B3; // OR   x7,  x1, x2
-        imem[7]  = 32'h0020C433; // XOR  x8,  x1, x2
-        imem[8]  = 32'h0020A4B3; // SLT  x9,  x1, x2
-        imem[9]  = 32'h0030B533; // SLTU x10, x1, x3
-        imem[10] = 32'h00209593; // SLLI x11, x1, 2
-        imem[11] = 32'h00115613; // SRLI x12, x2, 1
-        imem[12] = 32'h4041D693; // SRAI x13, x3, 4
-        imem[13] = 32'h00F17713; // ANDI x14, x2, 0xF
-        imem[14] = 32'h1000E793; // ORI  x15, x1, 0x100
-        imem[15] = 32'h0FF0C813; // XORI x16, x1, 0xFF
-        imem[16] = 32'hABCDE8B7; // LUI   x17, 0xABCDE
-        imem[17] = 32'h00000917; // AUIPC x18, 0
-        imem[18] = 32'h00102023; // SW x1, 0(x0)
-        imem[19] = 32'h00202223; // SW x2, 4(x0)
-        imem[20] = 32'h00002983; // LW x19, 0(x0)
-        imem[21] = 32'h00402A03; // LW x20, 4(x0)
-        imem[22] = 32'h06400A93; // ADDI x21, x0, 100
-        imem[23] = 32'h032A8B13; // ADDI x22, x21, 50
-        imem[24] = 32'h016A8BB3; // ADD  x23, x21, x22
-        imem[25] = 32'h00402423; // SW x4, 8(x0)
-        imem[26] = 32'h00802C03; // LW x24, 8(x0)
-        imem[27] = 32'h005C0C93; // ADDI x25, x24, 5
-        imem[28] = 32'h00208663; // BEQ x1, x2, +12
-        imem[29] = 32'h00100D13; // ADDI x26, x0, 1
-        imem[30] = 32'h00000663; // BEQ x0, x0, +12
-        imem[31] = 32'h06300D13; // ADDI x26, x0, 99
-        imem[32] = 32'h06300D13; // ADDI x26, x0, 99
-        imem[33] = 32'h00209663; // BNE x1, x2, +12
-        imem[34] = 32'h06300D93; // ADDI x27, x0, 99
-        imem[35] = 32'h06300D93; // ADDI x27, x0, 99
-        imem[36] = 32'h00200D93; // ADDI x27, x0, 2
-        imem[37] = 32'h00C00E6F; // JAL x28, +12
-        imem[38] = 32'h06300E93; // ADDI x29, x0, 99
-        imem[39] = 32'h06300E93; // ADDI x29, x0, 99
-        imem[40] = 32'h00000E97; // AUIPC x29, 0
-        imem[41] = 32'h014E8F67; // JALR x30, x29, +20 (Adjusted for SoC PC+4)
-        imem[42] = 32'h06300F93; // ADDI x31, x0, 99
-        imem[43] = 32'h06300F93; // ADDI x31, x0, 99
-        imem[44] = 32'h06300F93; // padding
-        imem[45] = 32'h06300F93; // padding
-        imem[46] = 32'h02A00F93; // ADDI x31, x0, 42
-        
-        imem[47] = 32'h00000013; // NOP
-        imem[48] = 32'h00000013; // NOP
-        imem[49] = 32'h00000013; // NOP
-        imem[50] = 32'h00000013; // NOP
-        imem[51] = 32'h00000063; // BEQ x0, x0, 0
-        
+    initial begin
         $display("========================================");
         $display("======= STARTING GLS SoC ===============");
         $display("========================================");
 
-        // State 0: Hold Reset, configure Programming Interface
-        rst = 1;
         prog_we = 0;
         prog_addr = 0;
         prog_data = 0;
         pass_count = 0;
         fail_count = 0;
+        clk = 0;
+        rst = 1;
+
+        // --- PHASE 1 ---
+        $display("\n[PHASE 1] ISA Coverage");
+        $readmemh("tb/test_phase1_isa.hex", imem);
+        dut.dmem_sram.mem[0] = 32'd100;
+        dut.dmem_sram.mem[1] = 32'd200;
+        dut.dmem_sram.mem[2] = 32'hFFFFFFFF;
+        RUN_PHASE(85);
+
+        check_reg(1,  32'd5,         "ADDI");
+        check_reg(2,  32'd3,         "ADDI");
+        check_reg(3,  32'd8,         "ADD");
+        check_reg(4,  32'd2,         "SUB");
+        check_reg(5,  32'd1,         "AND");
+        check_reg(6,  32'd7,         "OR");
+        check_reg(7,  32'd6,         "XOR");
+        check_reg(8,  32'd40,        "SLL");
+        check_reg(9,  32'd0,         "SRL");
+        check_reg(10, 32'd1,         "SLT");
+        check_reg(11, 32'd0,         "SLTU");
+        check_reg(12, 32'h00001000,  "LUI");
+        check_reg(14, 32'd100,       "LW");
+        check_reg(15, 32'd200,       "LW+4");
+
+        // --- PHASE 2 ---
+        $display("\n[PHASE 2] Hazard & Forwarding");
+        $readmemh("tb/test_phase2_hazard.hex", imem);
+        dut.dmem_sram.mem[0] = 32'd42;
+        RUN_PHASE(70);
+
+        check_reg(2,  32'd20, "EX-EX");
+        check_reg(4,  32'd14, "MEM-EX");
+        check_reg(6,  32'd84, "LoadUse");
+        check_reg(9,  32'd0,  "BEQ-S");
+        check_reg(10, 32'd77, "BEQ-T");
+
+        // --- PHASE 3 ---
+        $display("\n[PHASE 3] Integration (Sum 1..10)");
+        $readmemh("tb/test_phase3_sum.hex", imem);
+        RUN_PHASE(160);
+        check_reg(1, 32'd55, "Sum");
+
+        // --- PHASE 4 ---
+        $display("\n[PHASE 4] Full RV32I Checks");
+        $readmemh("tb/test_phase4_full.hex", imem);
+        dut.dmem_sram.mem[0] = 32'd0;
+        dut.dmem_sram.mem[1] = 32'd0;
+        dut.dmem_sram.mem[2] = 32'd0;
+        RUN_PHASE(130);
+
+        check_reg(3,  32'd5,          "ANDI x3=5&7");
+        check_reg(4,  32'd7,          "ORI  x4=5|2");
+        check_reg(5,  32'd6,          "XORI x5=5^3");
+        check_reg(6,  32'd1,          "SLTI x6=-4<0");
+        check_reg(7,  32'd1,          "SLTIU x7=5<10u");
+        check_reg(8,  32'd20,         "SLLI x8=5<<2");
+        check_reg(9,  32'd10,         "SRLI x9=20>>1");
+        check_reg(10, 32'hFFFFFFFE,   "SRAI x10=-4>>>1");
+        check_reg(11, 32'hFFFFFFFF,   "SRA x11=-4>>>5");
         
-        #100;
-        
-        // Load via Backdoor SRAM Array directly because GLS is very slow
-        for (i=0; i<256; i=i+1) begin
-            dut.imem_sram.mem[i] = imem[i];
-        end
-        $display("[%0t] Firmware Bootloaded through backdoor into SRAM Macro.", $time);
-        
-        #20;
-        // Start running
-        rst = 0;
-        $display("[%0t] Reset released. CPU is running from SRAM.", $time);
-        
-        // Wait generously for program to complete (~100 cycles + margin)
-        #6000;
-
-        $display("");
-        $display("============================================================");
-        $display("     RISC-V 5-Stage Pipeline Verification Results");
-        $display("============================================================");
-
-        // --- Phase 1: I-type ALU Setup ---
-        $display("\n  [Phase 1] I-type ALU (Setup)");
-        check_reg( 1, 32'd10,         "ADDI x1, x0, 10");
-        check_reg( 2, 32'd20,         "ADDI x2, x0, 20");
-        check_reg( 3, 32'hFFFFFFFF,   "ADDI x3, x0, -1");
-
-        // --- Phase 2: R-type ALU ---
-        $display("\n  [Phase 2] R-type ALU");
-        check_reg( 4, 32'd30,         "ADD  x4, x1, x2");
-        check_reg( 5, 32'd10,         "SUB  x5, x2, x1");
-        check_reg( 6, 32'd0,          "AND  x6, x1, x2");
-        check_reg( 7, 32'd30,         "OR   x7, x1, x2");
-        check_reg( 8, 32'd30,         "XOR  x8, x1, x2");
-        check_reg( 9, 32'd1,          "SLT  x9, x1<x2");
-        check_reg(10, 32'd1,          "SLTU x10, x1<ux3");
-
-        // --- Phase 3: Shifts ---
-        $display("\n  [Phase 3] Shifts");
-        check_reg(11, 32'd40,         "SLLI x11, x1<<2");
-        check_reg(12, 32'd10,         "SRLI x12, x2>>1");
-        check_reg(13, 32'hFFFFFFFF,   "SRAI x13, x3>>>4");
-
-        // --- Phase 4: I-type ALU (Extended) ---
-        $display("\n  [Phase 4] I-type ALU (Extended)");
-        check_reg(14, 32'd4,          "ANDI x14, x2, 0xF");
-        check_reg(15, 32'd266,        "ORI  x15, x1, 0x100");
-        check_reg(16, 32'd245,        "XORI x16, x1, 0xFF");
-
-        // --- Phase 5: LUI + AUIPC ---
-        $display("\n  [Phase 5] LUI + AUIPC");
-        check_reg(17, 32'hABCDE000,   "LUI   x17, 0xABCDE");
-        // NOTE: AUIPC x18 captures PC+4 in SoC. Furthermore, Yosys optimizes x18 away because it's unused.
-        // Skip x18 check.
-        // check_reg(18, 32'h00000044,   "AUIPC x18, 0");
-
-        // --- Phase 6: Load/Store ---
-        $display("\n  [Phase 6] LW / SW (Data Memory)");
-        check_reg(19, 32'd10,         "LW x19, 0(x0) [=10]");
-        check_reg(20, 32'd20,         "LW x20, 4(x0) [=20]");
-
-        // --- Phase 7: Forwarding ---
-        $display("\n  [Phase 7] EX/MEM & MEM/WB Forwarding");
-        check_reg(21, 32'd100,        "ADDI x21, x0, 100");
-        check_reg(22, 32'd150,        "ADDI x22, x21, 50");
-        check_reg(23, 32'd250,        "ADD  x23, x21, x22");
-
-        // --- Phase 8: Load-Use Hazard ---
-        $display("\n  [Phase 8] Load-Use Hazard Stall");
-        check_reg(24, 32'd30,         "LW x24, 8(x0) [=30]");
-        check_reg(25, 32'd35,         "ADDI x25, x24, 5");
-
-        // --- Phase 9/10/11/12: Control Flow ---
-        $display("\n  [Control Flow] BEQ, BNE, JAL, JALR");
-        check_reg(26, 32'd1,          "BEQ (not taken/taken fallthrough)");
-        check_reg(27, 32'd2,          "BNE (taken)");
-        // NOTE: SoC PC is RTL_PC + 4. Link registers store PC+4, meaning RTL_PC+8.
-        check_reg(28, 32'h0000009C,   "JAL (x28)");
-        check_reg(29, 32'h000000A4,   "AUIPC (x29)");
-        check_reg(30, 32'h000000AC,   "JALR (x30)");
-        check_reg(31, 32'd42,         "JALR (x31)");
+        // Note: Run phase 4 adjusts PC depending on link locations. 
+        // In this SoC, PC is offset by +4 internally before WB? Actually PC logic is identical.
+        check_reg(12, 32'h0000102C,   "AUIPC x12");
+        check_reg(13, 32'd5,          "BNE taken");
+        check_reg(14, 32'd7,          "BLT taken");
+        check_reg(15, 32'd9,          "BGE taken");
+        check_reg(16, 32'd11,         "BLTU taken");
+        check_reg(17, 32'd13,         "BGEU taken");
+        check_reg(18, 32'd136,        "JAL link addr");
+        check_reg(19, 32'd0,          "JAL skip check");
+        check_reg(20, 32'd152,        "JALR link addr");
+        check_reg(21, 32'd7,          "JALR jump check");
+        check_reg(23, 32'hFFFFFF89,   "LB signed");
+        check_reg(24, 32'd137,        "LBU unsigned");
+        check_reg(25, 32'hFFFFB789,   "LH signed");
+        check_reg(26, 32'd46985,      "LHU unsigned");
+        check_reg(28, 32'd90,         "SB/LBU check");
+        check_reg(30, 32'd127,        "SH/LH check");
 
         $display("============================================================");
         if (fail_count == 0) begin
             $display("  ✅ GLS RESULT: ALL PASSED (%0d/%0d)", pass_count, pass_count);
-            $display("  ✅ Physical Netlist 100%% matches RTL Behavior.");
+            $display("  ✅ Physical Netlist 100%% matches Full RV32I RTL Behavior.");
         end else begin
             $display("  ❌ GLS RESULT: FAILED WITH %0d ERRORS!", fail_count);
         end
