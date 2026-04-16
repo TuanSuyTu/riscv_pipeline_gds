@@ -67,7 +67,19 @@ module top (
     );
 
     // IF Stage: Instruction Memory Bus interface
-    assign imem_addr = pc_if;
+    //
+    // SRAM Timing Fix: Sky130 SRAM is SYNCHRONOUS (1-cycle read latency).
+    // We must send the NEXT address so the data arrives aligned with pc_if.
+    //   - Normal : send pc_if + 4  -> SRAM outputs mem[pc_if] next cycle
+    //   - Stall  : send pc_if      -> re-latch same addr so data repeats
+    //   - Branch : send jump_tgt   -> SRAM pre-fetches target
+    //   - Reset  : send 0          -> SRAM pre-loads instr[0] before rst=0
+    wire [31:0] imem_fetch_addr =
+        rst        ? 32'h0      :
+        pc_sel     ? jump_tgt   :
+        stall_front? pc_if      :
+                     pc_if + 32'd4;
+    assign imem_addr = imem_fetch_addr;
     wire [31:0] instr_if = imem_data;
 
     // OPT-2: PC+4 calculated ONCE here in IF, then piped through everything
