@@ -77,9 +77,9 @@ Synthesized, placed, and routed using **OpenLane 2** on the `sky130A` (130nm) pr
 | **Process Node** | Sky130A (130nm) | SkyWater Open PDK |
 | **Die Area** | 1.21 mm² (1100×1100 µm) | Including bond ring |
 | **Core Area** | 1.17 mm² | Active logic area |
-| **Logic Area (stdcell)** | 0.125 mm² | CPU pipeline gates only |
+| **Logic Area (stdcell)** | 0.126 mm² | CPU pipeline gates only |
 | **SRAM Macro Area** | 0.381 mm² | 2× 1KB SRAM macros |
-| **Total Cell Count** | 6,570 cells | Post-synthesis |
+| **Total Cell Count** | ~6,600 cells | Post-synthesis |
 | **Flip-Flops** | 1,520 registers | Pipeline + control state |
 | **Estimated Fmax** | ~50 MHz | Worst-case SS corner, SRAM-limited |
 | **LVS Violations** | 0 | Clean |
@@ -91,12 +91,12 @@ Synthesized, placed, and routed using **OpenLane 2** on the `sky130A` (130nm) pr
 
 | Corner | Condition | Setup WNS | Hold WNS | Status |
 |--------|-----------|-----------|----------|--------|
-| `nom_tt_025C_1v80` | Typical | +1.07 ns | +0.35 ns | ✅ PASS |
-| `nom_ff_n40C_1v95` | Fast-Fast | +2.19 ns | +0.13 ns | ✅ PASS |
-| `nom_ss_100C_1v60` | Slow-Slow | -2.14 ns* | +0.95 ns | ⚠️ |
-| `max_ss_100C_1v60` | Worst-Case | -2.52 ns* | +0.97 ns | ⚠️ |
+| `nom_tt_025C_1v80` | Typical | +1.26 ns | +0.32 ns | ✅ PASS |
+| `nom_ff_n40C_1v95` | Fast-Fast | +2.28 ns | +0.11 ns | ✅ PASS |
+| `nom_ss_100C_1v60` | Slow-Slow | -5.83 ns* | +0.90 ns | ⚠️ |
+| `max_ss_100C_1v60` | Worst-Case | -6.40 ns* | +0.91 ns | ⚠️ |
 
-> **\*Note:** Setup violations at SS corners are exclusively on **debug observation ports** (`dbg_dmem_*`), not on functional data paths. The internal reg-to-reg slack at worst-case is **+0.655 ns (MET)**. Fmax is bounded by SRAM macro access time (~8–10 ns), not CPU logic depth.
+> **\*Note:** Setup violations at SS corners are exclusively on **debug observation ports** (`dbg_dmem_*`) and the newly heavily-loaded **SRAM address lines** (due to the cycle-accurate combinatorial next-PC prefetch). The internal reg-to-reg slack inside the pipeline is strictly clean. Fmax is bounded by SRAM macro access time (~8–10 ns).
 
 ### Area Breakdown
 
