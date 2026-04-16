@@ -7,7 +7,7 @@ A fully verified, tapeout-ready **32-bit RISC-V (RV32I)** processor implemented 
 
 ## 🏗️ Architecture
 
-![SoC Top-Level Architecture](docs/architecture_soc.png)
+![SoC Top-Level Architecture](docs/architecture_soc.png) 
 ![CPU Pipeline Detail](docs/architecture_pipeline.png)
 The top-level SoC (`soc_top.v`) integrates:
 
