@@ -1,1 +1,1 @@
-Verification: Migrate 45-Check RTL/GLS Simulation Flow and Standardize SRAM Packing
+Update README: Restore old structure and add new methodology details

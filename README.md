@@ -7,7 +7,8 @@ A fully verified, tapeout-ready **32-bit RISC-V (RV32I)** processor implemented 
 
 ## 🏗️ Architecture
 
-
+![SoC Top-Level Architecture](docs/architecture_soc.png)
+![CPU Pipeline Detail](docs/architecture_pipeline.png)
 The top-level SoC (`soc_top.v`) integrates:
 
 | Block | Module | Description |
@@ -24,10 +25,10 @@ The top-level SoC (`soc_top.v`) integrates:
 
 ### Verification Methodology
 
-Đã chuẩn hóa SoC Testbench từ bài toán FPGA sang luồng vi mạch ASIC/GLS:
-- **Firmware Automation:** Tách mã nhị phân assembly sang 4 tệp hex độc lập (`phase1` -> `phase4`). Nạp tự động qua cổng hậu (Backdoor Write) bằng lệnh `$readmemh` trực tiếp vào `dut.imem_sram.mem`, giúp tránh lỗi X-Propagation, tối ưu hàng triệu chu kỳ mô phỏng.
-- **RTL-to-GLS Consistency:** Tái cấu trúc bộ đóng gói (Packing/Unpacking) Load/Store Alignment (LB, LH, SB, ...) trên RTL testbench `tb_top.v` đồng bộ 100% với SRAM Macro trên SoC Netlist. Tỉ lệ Coverage các lệnh Load/Store Memory được xác minh chính xác hoàn toàn.
-- **GLS Register Visibility:** Khóa cơ chế tối ưu cực đoan của Yosys bằng `(* keep = "true" *)` trên register file. Giữ nguyên cây biến State để trình Monitor tại Flat Netlist truy xuất mạnh mẽ lên 32 thanh ghi RV32I.
+Standardized the SoC testbench from an FPGA context to a strict ASIC Gate-Level Simulation (GLS) methodology:
+- **Firmware Automation:** Refactored assembly binaries into 4 independent hex suites (`phase1` to `phase4`). Automated backdoor loading via `$readmemh` directly into `dut.imem_sram.mem` to prevent X-Propagation issues and optimize millions of simulation cycles.
+- **RTL-to-GLS Consistency:** Restructured the Load/Store alignment packing/unpacking mechanisms (LB, LH, SB, etc.) in the RTL testbench `tb_top.v` to be 100% functionally equivalent with the Sky130 SRAM macros in the physical netlist. Full Load/Store instruction coverage is accurately verified.
+- **GLS Register Visibility:** Disabled Yosys aggressive logic optimizations using `(* keep = "true" *)` attributes on the register file. Preserved the state variable hierarchy, allowing the Flat Netlist Monitor to natively probe and assert all 32 RV32I architectural registers.
 
 ### RTL Simulation — 45/45 PASSED
 
