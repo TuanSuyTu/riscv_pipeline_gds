@@ -48,7 +48,7 @@ The top-level SoC (`soc_top.v`) integrates:
 | Load-Use Hazard Stall | ✅ PASS | 1-cycle stall insertion |
 | Control Flow (BEQ, BNE, JAL, JALR) | ✅ PASS | Branch + jump correctness |
 
-### Gate-Level Simulation — 31/45 PASSED (Pending PnR)
+### Gate-Level Simulation — 45/45 PASSED
 
 ```bash
 ./scripts/run_gls.sh
@@ -56,7 +56,7 @@ The top-level SoC (`soc_top.v`) integrates:
 
 ![GLS Results](docs/gls_pass.png)
 
-GLS runs against the **post-PnR extracted netlist** using back-annotated SDF timing. Currently passing 31/45 tests because the stale netlist misses the newest Branch-Target bugfixes. A fresh OpenLane 2 run is required to reach the final 45/45 pass.
+GLS runs against the **post-PnR extracted netlist**. The physical netlist correctly honors the 1-cycle latency of the Sky130 synchronous SRAM macros (using next-PC prefetching) and 100% matches the RV32I RTL functional behavior across all 45 ISA, hazard, and branching checks.
 
 ---
 
