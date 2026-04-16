@@ -63,7 +63,7 @@ GLS runs against the **post-PnR extracted netlist**. The physical netlist correc
 To accurately bridge the gap between logical behavior and silicon layout reality, the project establishes a rigorous Standard Delay Format (SDF) verification flow:
 - **Powered Netlist Extraction:** Structural layout simulation natively targets the powered netlist (`soc_top.pnl.v`) instead of the default logic netlist. This guarantees all primitive standard cells correctly resolve their internal `VPWR` and `VGND` power rules.
 - **Dynamic Delay Injection:** The gate-level testbench uses the `$sdf_annotate` system task to back-annotate the extracted R-C parasitic delays from the layout routing (`.sdf` file) directly into the simulation timing nodes.
-- **Toolchain Adaptation:** Open-source Icarus Verilog (`iverilog`) struggles natively with Sky130's complex `$setuphold` rules inside `specify` blocks. To circumvent native crashes, the execution scripts (`run_gls.sh`) are highly customized using strict compilation flags (`-gspecify`, `-D USE_SDF`, `-D USE_POWER_PINS`) to selectively enable the timing paths while managing X-propagation risks.
+- **Toolchain Limitation (Icarus Verilog):** Due to the complex `$setuphold` strings inside Sky130's high-density `specify` blocks, open-source simulators like `iverilog` struggle to accurately resolve these intrinsic cell delays natively, often leading to pessimistic X-propagation crashes. While the SDF mechanism and scripts (`run_gls.sh`) are fully implemented and verified structurally, commercial simulators (e.g., Synopsys VCS, QuestaSim) are recommended to process the timing waveform extraction completely without bypassing the primitives.
 
 ---
 
