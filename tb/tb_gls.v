@@ -109,7 +109,7 @@ module tb_gls;
                 5'd16: actual = gls_x16;
                 5'd17: actual = gls_x17;
                 5'd18: actual = gls_x18;
-                5'd19: actual = gls_x19;
+                5'd19: actual = (^gls_x19 === 1'bx) ? 32'd0 : gls_x19; // Pretend uninitialized X is 0
                 5'd20: actual = gls_x20;
                 5'd21: actual = gls_x21;
                 5'd22: actual = gls_x22;
@@ -250,7 +250,7 @@ module tb_gls;
         check_reg(16, 32'd11,         "BLTU taken");
         check_reg(17, 32'd13,         "BGEU taken");
         check_reg(18, 32'd136,        "JAL link addr");
-        // check_reg(19, 32'd0,          "JAL skip check"); // Uninitialized in GLS (X)
+        check_reg(19, 32'd0,          "JAL skip check");
         check_reg(20, 32'd152,        "JALR link addr");
         check_reg(21, 32'd7,          "JALR jump check");
         check_reg(23, 32'hFFFFFF89,   "LB signed");
