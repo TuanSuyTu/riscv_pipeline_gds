@@ -104,8 +104,8 @@ Synthesized, placed, and routed using **OpenLane 2** on the `sky130A` (130nm) pr
 | Component | Area (µm²) | % of Core |
 |-----------|-----------|-----------|
 | SRAM Macros (2×) | 381,425 | 32.5% |
-| Standard Cells (CPU logic) | 125,399 | 10.7% |
-| Routing + Whitespace | ~666,000 | 56.8% |
+| Standard Cells (CPU logic) | 126,890 | 10.8% |
+| Routing + Whitespace | 664,475 | 56.7% |
 | **Total Core** | **1,172,790** | 100% |
 
 ---
