@@ -1,0 +1,47 @@
+Reading technology LEF file at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef'…
+[INFO ODB-0227] LEF file: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef, created 14 layers, 25 vias
+Reading cell LEF file at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef, created 437 library cells
+Reading cell LEF file at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef'…
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef at line 2.
+
+[INFO ODB-0227] LEF file: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef, created 4 library cells
+Reading macro LEF file at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef'…
+[INFO ODB-0227] LEF file: /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef, created 1 library cells
+[INFO ODB-0127] Reading DEF file: /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/52-odb-cellfrequencytables/soc_top.def
+[INFO ODB-0128] Design: soc_top
+[INFO ODB-0130]     Created 206 pins.
+[INFO ODB-0131]     Created 51765 components and 227869 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 194786 connections.
+[INFO ODB-0133]     Created 8749 nets and 32842 connections.
+[INFO ODB-0134] Finished DEF file: /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/52-odb-cellfrequencytables/soc_top.def
+Using RCX ruleset '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre'…
+[INFO RCX-0431] Defined process_corner CURRENT_CORNER with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner CURRENT_CORNER
+[INFO RCX-0435] Reading extraction model file /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/rules.openrcx.sky130A.nom.calibre ...
+[INFO RCX-0436] RC segment generation soc_top (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 44046 rc segments
+[INFO RCX-0439] Coupling Cap extraction soc_top ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 51% of 83239 wires extracted
+[INFO RCX-0442] 73% of 83239 wires extracted
+[INFO RCX-0442] 100% of 83239 wires extracted
+[INFO RCX-0045] Extract 8749 nets, 52794 rsegs, 52794 caps, 105034 ccs
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+dmem_sram matched with dmem_sram
+imem_sram matched with imem_sram
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     2  381425.10
+  Fill cell                             36471  309969.79
+  Tap cell                               6135    7676.11
+  Antenna cell                            352     880.84
+  Standard cell                          8805  106677.31
+  Total                                 51765  806629.15
+Writing extracted parasitics to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/53-openroad-rcx/nom/soc_top.nom.spef'…
+[INFO RCX-0443] 8749 nets finished

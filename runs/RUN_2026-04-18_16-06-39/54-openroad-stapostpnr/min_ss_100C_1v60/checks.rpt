@@ -1,0 +1,585 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+Startpoint: _11724_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: dmem_sram (falling edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock source latency
+     2    0.130189    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.041227    0.020614    0.020614 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     4    0.144259    0.240237    0.341594    0.362207 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.241534    0.014379    0.376586 ^ clkbuf_2_3_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.102834    0.283496    0.469542    0.846128 ^ clkbuf_2_3_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_3_0_clk (net)
+                      0.283505    0.002191    0.848320 ^ clkbuf_4_12__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    16    0.142875    0.236836    0.455457    1.303777 ^ clkbuf_4_12__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_4_12__leaf_clk (net)
+                      0.236945    0.004738    1.308515 ^ clkbuf_leaf_110_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     7    0.033362    0.114253    0.341909    1.650423 ^ clkbuf_leaf_110_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_leaf_110_clk (net)
+                      0.114253    0.000304    1.650728 ^ _11724_/CLK (sky130_fd_sc_hd__dfrtp_1)
+     1    0.007800    0.138289    0.713709    2.364436 ^ _11724_/Q (sky130_fd_sc_hd__dfrtp_1)
+                                                         cpu_core.dmem_funct3[1] (net)
+                      0.138289    0.000187    2.364624 ^ wire1287/A (sky130_fd_sc_hd__clkbuf_8)
+    12    0.095234    0.264659    0.407277    2.771901 ^ wire1287/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         net1287 (net)
+                      0.264685    0.002204    2.774104 ^ max_length1286/A (sky130_fd_sc_hd__buf_6)
+    11    0.077226    0.249919    0.397343    3.171447 ^ max_length1286/X (sky130_fd_sc_hd__buf_6)
+                                                         net1286 (net)
+                      0.249919    0.000363    3.171810 ^ _05400_/A (sky130_fd_sc_hd__inv_4)
+     2    0.022296    0.087805    0.153172    3.324983 v _05400_/Y (sky130_fd_sc_hd__inv_4)
+                                                         _01854_ (net)
+                      0.087806    0.000431    3.325414 v max_length888/A (sky130_fd_sc_hd__buf_2)
+     4    0.044915    0.208330    0.386678    3.712092 v max_length888/X (sky130_fd_sc_hd__buf_2)
+                                                         net888 (net)
+                      0.208335    0.001332    3.713423 v _05505_/A1 (sky130_fd_sc_hd__o311ai_4)
+    14    0.084826    1.470762    1.398255    5.111678 ^ _05505_/Y (sky130_fd_sc_hd__o311ai_4)
+                                                         _01957_ (net)
+                      1.470785    0.004951    5.116629 ^ _05509_/B1 (sky130_fd_sc_hd__a31o_4)
+    19    0.188289    0.886297    1.123014    6.239643 ^ _05509_/X (sky130_fd_sc_hd__a31o_4)
+                                                         _01961_ (net)
+                      0.886523    0.007725    6.247368 ^ _05511_/B2 (sky130_fd_sc_hd__o32a_4)
+    31    0.216689    0.928920    1.231244    7.478612 ^ _05511_/X (sky130_fd_sc_hd__o32a_4)
+                                                         _01963_ (net)
+                      0.929336    0.009599    7.488212 ^ _05789_/C (sky130_fd_sc_hd__nand3_1)
+     2    0.012325    0.373241    0.592401    8.080613 v _05789_/Y (sky130_fd_sc_hd__nand3_1)
+                                                         _02231_ (net)
+                      0.373241    0.000201    8.080813 v _05795_/C1 (sky130_fd_sc_hd__o211ai_4)
+     3    0.013575    0.289136    0.267245    8.348059 ^ _05795_/Y (sky130_fd_sc_hd__o211ai_4)
+                                                         _02237_ (net)
+                      0.289136    0.000141    8.348200 ^ _05817_/C1 (sky130_fd_sc_hd__o211ai_2)
+     2    0.012633    0.263374    0.317844    8.666043 v _05817_/Y (sky130_fd_sc_hd__o211ai_2)
+                                                         _02258_ (net)
+                      0.263374    0.000115    8.666159 v _05819_/A2 (sky130_fd_sc_hd__a21oi_4)
+     4    0.030571    0.390017    0.498635    9.164794 ^ _05819_/Y (sky130_fd_sc_hd__a21oi_4)
+                                                         _02260_ (net)
+                      0.390017    0.000133    9.164927 ^ _06371_/B1_N (sky130_fd_sc_hd__o21bai_1)
+     2    0.009901    0.385419    0.384287    9.549214 ^ _06371_/Y (sky130_fd_sc_hd__o21bai_1)
+                                                         _02791_ (net)
+                      0.385419    0.000152    9.549366 ^ _06372_/B (sky130_fd_sc_hd__nand4b_1)
+     1    0.008974    0.343812    0.439773    9.989139 v _06372_/Y (sky130_fd_sc_hd__nand4b_1)
+                                                         _02792_ (net)
+                      0.343812    0.000278    9.989417 v _06373_/B1 (sky130_fd_sc_hd__a21oi_1)
+     1    0.003603    0.216963    0.310800   10.300217 ^ _06373_/Y (sky130_fd_sc_hd__a21oi_1)
+                                                         _02793_ (net)
+                      0.216963    0.000036   10.300253 ^ _06374_/C1 (sky130_fd_sc_hd__o221ai_1)
+     1    0.004962    0.244446    0.324794   10.625046 v _06374_/Y (sky130_fd_sc_hd__o221ai_1)
+                                                         _02794_ (net)
+                      0.244446    0.000074   10.625120 v _06375_/B1 (sky130_fd_sc_hd__a21oi_1)
+     1    0.011240    0.424463    0.449376   11.074495 ^ _06375_/Y (sky130_fd_sc_hd__a21oi_1)
+                                                         _02795_ (net)
+                      0.424464    0.000454   11.074949 ^ _06384_/A (sky130_fd_sc_hd__nand4_1)
+     1    0.009200    0.352066    0.438458   11.513408 v _06384_/Y (sky130_fd_sc_hd__nand4_1)
+                                                         _02804_ (net)
+                      0.352066    0.000305   11.513712 v _06422_/A (sky130_fd_sc_hd__nor3_1)
+     2    0.006696    0.437092    0.544493   12.058206 ^ _06422_/Y (sky130_fd_sc_hd__nor3_1)
+                                                         _02842_ (net)
+                      0.437092    0.000037   12.058243 ^ _06447_/A (sky130_fd_sc_hd__and3_1)
+     1    0.009548    0.178614    0.497643   12.555885 ^ _06447_/X (sky130_fd_sc_hd__and3_1)
+                                                         _02867_ (net)
+                      0.178614    0.000083   12.555969 ^ _06453_/D (sky130_fd_sc_hd__nand4_4)
+     4    0.044829    0.461284    0.488972   13.044941 v _06453_/Y (sky130_fd_sc_hd__nand4_4)
+                                                         _02873_ (net)
+                      0.461284    0.001192   13.046132 v _06541_/A1 (sky130_fd_sc_hd__a21o_2)
+     4    0.043066    0.219944    0.672738   13.718871 v _06541_/X (sky130_fd_sc_hd__a21o_2)
+                                                         _02961_ (net)
+                      0.219992    0.003167   13.722038 v _06545_/A1 (sky130_fd_sc_hd__a21oi_4)
+    15    0.066138    0.743185    0.726557   14.448596 ^ _06545_/Y (sky130_fd_sc_hd__a21oi_4)
+                                                         _02965_ (net)
+                      0.743186    0.001009   14.449605 ^ wire279/A (sky130_fd_sc_hd__buf_2)
+    10    0.052675    0.410770    0.697195   15.146800 ^ wire279/X (sky130_fd_sc_hd__buf_2)
+                                                         net279 (net)
+                      0.410847    0.005516   15.152315 ^ wire278/A (sky130_fd_sc_hd__buf_2)
+     8    0.045500    0.356675    0.546457   15.698772 ^ wire278/X (sky130_fd_sc_hd__buf_2)
+                                                         net278 (net)
+                      0.356718    0.003999   15.702771 ^ wire277/A (sky130_fd_sc_hd__buf_4)
+     9    0.074386    0.331224    0.522046   16.224817 ^ wire277/X (sky130_fd_sc_hd__buf_4)
+                                                         net277 (net)
+                      0.331756    0.009566   16.234383 ^ _07687_/D (sky130_fd_sc_hd__nand4b_4)
+     4    0.038946    0.412448    0.503814   16.738197 v _07687_/Y (sky130_fd_sc_hd__nand4b_4)
+                                                         _03944_ (net)
+                      0.412448    0.000512   16.738708 v _07693_/B1 (sky130_fd_sc_hd__o311ai_4)
+     1    0.020122    0.535686    0.334966   17.073675 ^ _07693_/Y (sky130_fd_sc_hd__o311ai_4)
+                                                         dmem_wmask[2] (net)
+                      0.535687    0.001453   17.075127 ^ wire239/A (sky130_fd_sc_hd__clkbuf_2)
+     1    0.019324    0.177229    0.457352   17.532478 ^ wire239/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net239 (net)
+                      0.177236    0.001386   17.533865 ^ wire238/A (sky130_fd_sc_hd__clkbuf_2)
+     1    0.064492    0.538056    0.568935   18.102800 ^ wire238/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net238 (net)
+                      0.538475    0.012454   18.115253 ^ wire237/A (sky130_fd_sc_hd__buf_4)
+     1    0.060020    0.274756    0.549880   18.665134 ^ wire237/X (sky130_fd_sc_hd__buf_4)
+                                                         net237 (net)
+                      0.367522    0.011763   18.676897 ^ dmem_sram/wmask0[2] (sky130_sram_1kbyte_1rw1r_32x256_8)
+                                             18.676897   data arrival time
+
+                                 20.000000   20.000000   clock clk (rise edge)
+                                  0.000000   20.000000   clock source latency
+     2    0.130189    0.000000    0.000000   20.000000 ^ clk (in)
+                                                         clk (net)
+                      0.041227    0.020613   20.020613 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     4    0.144259    0.240237    0.341595   20.362209 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.242145    0.017298   20.379507 ^ clkbuf_2_0_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.092882    0.259783    0.452724   20.832232 ^ clkbuf_2_0_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_0_0_clk (net)
+                      0.259819    0.003185   20.835415 ^ clkbuf_4_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    10    0.169543    0.275897    0.470969   21.306385 ^ clkbuf_4_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_4_0__leaf_clk (net)
+                      0.371630    0.022343   21.328728 ^ dmem_sram/clk0 (sky130_sram_1kbyte_1rw1r_32x256_8)
+                                  0.000000   21.328728   clock reconvergence pessimism
+                                 -0.103000   21.225727   library setup time
+                                             21.225727   data required time
+---------------------------------------------------------------------------------------------
+                                             21.225727   data required time
+                                            -18.676897   data arrival time
+---------------------------------------------------------------------------------------------
+                                              2.548831   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+max slew
+
+Pin                                        Limit        Slew       Slack
+------------------------------------------------------------------------
+ANTENNA_210/DIODE                       1.500000    1.612403   -0.112403 (VIOLATED)
+wire416/A                               1.500000    1.612403   -0.112403 (VIOLATED)
+wire417/X                               1.500000    1.612325   -0.112325 (VIOLATED)
+_06277_/A                               1.500000    1.610112   -0.110112 (VIOLATED)
+_07721_/B1                              1.500000    1.610112   -0.110112 (VIOLATED)
+_06276_/Y                               1.500000    1.610108   -0.110109 (VIOLATED)
+_06278_/B                               1.500000    1.610108   -0.110109 (VIOLATED)
+_06517_/A1_N                            1.500000    1.610108   -0.110109 (VIOLATED)
+_06520_/A2                              1.500000    1.610108   -0.110109 (VIOLATED)
+wire428/A                               1.500000    1.513939   -0.013939 (VIOLATED)
+ANTENNA_218/DIODE                       1.500000    1.513933   -0.013933 (VIOLATED)
+ANTENNA_217/DIODE                       1.500000    1.513923   -0.013923 (VIOLATED)
+wire429/X                               1.500000    1.506570   -0.006570 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+dmem_sram/dout0[13]                       4     14    -10 (VIOLATED)
+dmem_sram/dout0[15]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[16]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[18]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[12]                       4     11     -7 (VIOLATED)
+dmem_sram/dout0[11]                       4     10     -6 (VIOLATED)
+dmem_sram/dout0[10]                       4      8     -4 (VIOLATED)
+dmem_sram/dout0[22]                       4      7     -3 (VIOLATED)
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+dmem_sram/dout0[18]                     0.027560    0.190451   -0.162891 (VIOLATED)
+dmem_sram/dout0[16]                     0.027560    0.183389   -0.155829 (VIOLATED)
+dmem_sram/dout0[19]                     0.027560    0.181366   -0.153806 (VIOLATED)
+dmem_sram/dout0[13]                     0.027560    0.172337   -0.144777 (VIOLATED)
+dmem_sram/dout0[12]                     0.027560    0.171972   -0.144412 (VIOLATED)
+dmem_sram/dout0[15]                     0.027560    0.167183   -0.139623 (VIOLATED)
+dmem_sram/dout0[11]                     0.027560    0.163797   -0.136237 (VIOLATED)
+dmem_sram/dout0[9]                      0.027560    0.162845   -0.135285 (VIOLATED)
+dmem_sram/dout0[8]                      0.027560    0.161997   -0.134437 (VIOLATED)
+dmem_sram/dout0[6]                      0.027560    0.160804   -0.133244 (VIOLATED)
+dmem_sram/dout0[14]                     0.027560    0.159279   -0.131719 (VIOLATED)
+dmem_sram/dout0[22]                     0.027560    0.157954   -0.130394 (VIOLATED)
+dmem_sram/dout0[10]                     0.027560    0.140803   -0.113243 (VIOLATED)
+dmem_sram/dout0[2]                      0.027560    0.075388   -0.047828 (VIOLATED)
+dmem_sram/dout0[5]                      0.027560    0.074519   -0.046959 (VIOLATED)
+dmem_sram/dout0[3]                      0.027560    0.074191   -0.046631 (VIOLATED)
+dmem_sram/dout0[4]                      0.027560    0.067942   -0.040382 (VIOLATED)
+dmem_sram/dout0[1]                      0.027560    0.065321   -0.037761 (VIOLATED)
+dmem_sram/dout0[0]                      0.027560    0.060841   -0.033281 (VIOLATED)
+wire417/X                               0.181284    0.196531   -0.015247 (VIOLATED)
+imem_sram/dout1[4]                      0.027560    0.030908   -0.003348 (VIOLATED)
+imem_sram/dout1[2]                      0.027560    0.029949   -0.002389 (VIOLATED)
+imem_sram/dout1[3]                      0.027560    0.029580   -0.002020 (VIOLATED)
+imem_sram/dout1[13]                     0.027560    0.029150   -0.001590 (VIOLATED)
+_05505_/Y                               0.083323    0.084826   -0.001503 (VIOLATED)
+wire429/X                               0.181284    0.182265   -0.000981 (VIOLATED)
+imem_sram/dout1[7]                      0.027560    0.028282   -0.000722 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 241 unannotated drivers.
+ clkload0/Y
+ clkload1/Y
+ clkload10/Y
+ clkload100/Y
+ clkload101/Y
+ clkload102/Y
+ clkload103/Y
+ clkload104/Y
+ clkload105/Y
+ clkload106/Y
+ clkload107/Y
+ clkload108/Y
+ clkload109/Y
+ clkload11/Y
+ clkload110/X
+ clkload111/Y
+ clkload112/Y
+ clkload113/Y
+ clkload114/Y
+ clkload115/X
+ clkload116/Y
+ clkload117/X
+ clkload118/Y
+ clkload119/Y
+ clkload12/Y
+ clkload120/Y
+ clkload121/X
+ clkload122/X
+ clkload123/Y
+ clkload124/Y
+ clkload125/Y
+ clkload126/Y
+ clkload127/Y
+ clkload128/Y
+ clkload129/Y
+ clkload13/Y
+ clkload130/Y
+ clkload131/Y
+ clkload132/Y
+ clkload133/Y
+ clkload134/Y
+ clkload135/Y
+ clkload136/Y
+ clkload137/Y
+ clkload138/Y
+ clkload139/X
+ clkload14/Y
+ clkload140/Y
+ clkload141/Y
+ clkload142/Y
+ clkload143/Y
+ clkload144/Y
+ clkload145/Y
+ clkload146/X
+ clkload147/X
+ clkload148/Y
+ clkload149/Y
+ clkload15/Y
+ clkload150/Y
+ clkload151/Y
+ clkload152/Y
+ clkload153/Y
+ clkload154/X
+ clkload155/Y
+ clkload156/X
+ clkload157/Y
+ clkload158/Y
+ clkload159/Y
+ clkload16/Y
+ clkload160/Y
+ clkload161/Y
+ clkload162/Y
+ clkload17/Y
+ clkload18/Y
+ clkload19/X
+ clkload2/Y
+ clkload20/Y
+ clkload21/Y
+ clkload22/Y
+ clkload23/Y
+ clkload24/Y
+ clkload25/Y
+ clkload26/Y
+ clkload27/Y
+ clkload28/Y
+ clkload29/Y
+ clkload3/Y
+ clkload30/Y
+ clkload31/X
+ clkload32/X
+ clkload33/Y
+ clkload34/Y
+ clkload35/Y
+ clkload36/Y
+ clkload37/Y
+ clkload38/Y
+ clkload39/X
+ clkload4/Y
+ clkload40/Y
+ clkload41/Y
+ clkload42/Y
+ clkload43/Y
+ clkload44/Y
+ clkload45/Y
+ clkload46/Y
+ clkload47/Y
+ clkload48/Y
+ clkload49/Y
+ clkload5/Y
+ clkload50/Y
+ clkload51/Y
+ clkload52/X
+ clkload53/Y
+ clkload54/Y
+ clkload55/Y
+ clkload56/Y
+ clkload57/Y
+ clkload58/Y
+ clkload59/Y
+ clkload6/Y
+ clkload60/Y
+ clkload61/Y
+ clkload62/Y
+ clkload63/Y
+ clkload64/Y
+ clkload65/Y
+ clkload66/Y
+ clkload67/Y
+ clkload68/Y
+ clkload69/Y
+ clkload7/Y
+ clkload70/Y
+ clkload71/Y
+ clkload72/Y
+ clkload73/Y
+ clkload74/Y
+ clkload75/Y
+ clkload76/X
+ clkload77/Y
+ clkload78/Y
+ clkload79/Y
+ clkload8/Y
+ clkload80/X
+ clkload81/X
+ clkload82/X
+ clkload83/Y
+ clkload84/X
+ clkload85/Y
+ clkload86/X
+ clkload87/Y
+ clkload88/X
+ clkload89/X
+ clkload9/Y
+ clkload90/Y
+ clkload91/Y
+ clkload92/Y
+ clkload93/Y
+ clkload94/Y
+ clkload95/Y
+ clkload96/Y
+ clkload97/Y
+ clkload98/Y
+ clkload99/Y
+ dmem_sram/dout1[0]
+ dmem_sram/dout1[10]
+ dmem_sram/dout1[11]
+ dmem_sram/dout1[12]
+ dmem_sram/dout1[13]
+ dmem_sram/dout1[14]
+ dmem_sram/dout1[15]
+ dmem_sram/dout1[16]
+ dmem_sram/dout1[17]
+ dmem_sram/dout1[18]
+ dmem_sram/dout1[19]
+ dmem_sram/dout1[1]
+ dmem_sram/dout1[20]
+ dmem_sram/dout1[21]
+ dmem_sram/dout1[22]
+ dmem_sram/dout1[23]
+ dmem_sram/dout1[24]
+ dmem_sram/dout1[25]
+ dmem_sram/dout1[26]
+ dmem_sram/dout1[27]
+ dmem_sram/dout1[28]
+ dmem_sram/dout1[29]
+ dmem_sram/dout1[2]
+ dmem_sram/dout1[30]
+ dmem_sram/dout1[31]
+ dmem_sram/dout1[3]
+ dmem_sram/dout1[4]
+ dmem_sram/dout1[5]
+ dmem_sram/dout1[6]
+ dmem_sram/dout1[7]
+ dmem_sram/dout1[8]
+ dmem_sram/dout1[9]
+ dmem_sram_1390/HI
+ dmem_sram_1391/HI
+ dmem_sram_1392/HI
+ dmem_sram_1393/HI
+ dmem_sram_1394/HI
+ dmem_sram_1395/HI
+ dmem_sram_1396/HI
+ dmem_sram_1397/HI
+ dmem_sram_1399/LO
+ imem_sram/dout0[0]
+ imem_sram/dout0[10]
+ imem_sram/dout0[11]
+ imem_sram/dout0[12]
+ imem_sram/dout0[13]
+ imem_sram/dout0[14]
+ imem_sram/dout0[15]
+ imem_sram/dout0[16]
+ imem_sram/dout0[17]
+ imem_sram/dout0[18]
+ imem_sram/dout0[19]
+ imem_sram/dout0[1]
+ imem_sram/dout0[20]
+ imem_sram/dout0[21]
+ imem_sram/dout0[22]
+ imem_sram/dout0[23]
+ imem_sram/dout0[24]
+ imem_sram/dout0[25]
+ imem_sram/dout0[26]
+ imem_sram/dout0[27]
+ imem_sram/dout0[28]
+ imem_sram/dout0[29]
+ imem_sram/dout0[2]
+ imem_sram/dout0[30]
+ imem_sram/dout0[31]
+ imem_sram/dout0[3]
+ imem_sram/dout0[4]
+ imem_sram/dout0[5]
+ imem_sram/dout0[6]
+ imem_sram/dout0[7]
+ imem_sram/dout0[8]
+ imem_sram/dout0[9]
+ imem_sram_1398/HI
+ imem_sram_1400/LO
+ imem_sram_1401/LO
+ imem_sram_1402/LO
+ imem_sram_1403/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 13
+max fanout violation count 8
+max cap violation count 27
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 42 input ports missing set_input_delay.
+  prog_addr[0]
+  prog_addr[1]
+  prog_addr[2]
+  prog_addr[3]
+  prog_addr[4]
+  prog_addr[5]
+  prog_addr[6]
+  prog_addr[7]
+  prog_data[0]
+  prog_data[10]
+  prog_data[11]
+  prog_data[12]
+  prog_data[13]
+  prog_data[14]
+  prog_data[15]
+  prog_data[16]
+  prog_data[17]
+  prog_data[18]
+  prog_data[19]
+  prog_data[1]
+  prog_data[20]
+  prog_data[21]
+  prog_data[22]
+  prog_data[23]
+  prog_data[24]
+  prog_data[25]
+  prog_data[26]
+  prog_data[27]
+  prog_data[28]
+  prog_data[29]
+  prog_data[2]
+  prog_data[30]
+  prog_data[31]
+  prog_data[3]
+  prog_data[4]
+  prog_data[5]
+  prog_data[6]
+  prog_data[7]
+  prog_data[8]
+  prog_data[9]
+  prog_we
+  rst
+Warning: There are 56 unconstrained endpoints.
+  dmem_sram/addr1[0]
+  dmem_sram/addr1[1]
+  dmem_sram/addr1[2]
+  dmem_sram/addr1[3]
+  dmem_sram/addr1[4]
+  dmem_sram/addr1[5]
+  dmem_sram/addr1[6]
+  dmem_sram/addr1[7]
+  dmem_sram/csb1
+  imem_sram/addr0[0]
+  imem_sram/addr0[1]
+  imem_sram/addr0[2]
+  imem_sram/addr0[3]
+  imem_sram/addr0[4]
+  imem_sram/addr0[5]
+  imem_sram/addr0[6]
+  imem_sram/addr0[7]
+  imem_sram/csb0
+  imem_sram/csb1
+  imem_sram/din0[0]
+  imem_sram/din0[10]
+  imem_sram/din0[11]
+  imem_sram/din0[12]
+  imem_sram/din0[13]
+  imem_sram/din0[14]
+  imem_sram/din0[15]
+  imem_sram/din0[16]
+  imem_sram/din0[17]
+  imem_sram/din0[18]
+  imem_sram/din0[19]
+  imem_sram/din0[1]
+  imem_sram/din0[20]
+  imem_sram/din0[21]
+  imem_sram/din0[22]
+  imem_sram/din0[23]
+  imem_sram/din0[24]
+  imem_sram/din0[25]
+  imem_sram/din0[26]
+  imem_sram/din0[27]
+  imem_sram/din0[28]
+  imem_sram/din0[29]
+  imem_sram/din0[2]
+  imem_sram/din0[30]
+  imem_sram/din0[31]
+  imem_sram/din0[3]
+  imem_sram/din0[4]
+  imem_sram/din0[5]
+  imem_sram/din0[6]
+  imem_sram/din0[7]
+  imem_sram/din0[8]
+  imem_sram/din0[9]
+  imem_sram/web0
+  imem_sram/wmask0[0]
+  imem_sram/wmask0[1]
+  imem_sram/wmask0[2]
+  imem_sram/wmask0[3]

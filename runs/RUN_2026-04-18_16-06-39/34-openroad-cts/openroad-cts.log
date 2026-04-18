@@ -1,0 +1,143 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+Reading timing models for corner nom_ff_n40C_1v95…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib'…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+[WARNING STA-1140] /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib line 1, library sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_lib already exists.
+Reading timing models for corner nom_ss_100C_1v60…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib'…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+[WARNING STA-1140] /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib line 1, library sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_lib already exists.
+Reading OpenROAD database at '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/33-openroad-detailedplacement/soc_top.odb'…
+Reading design constraints file at '/home/tuan-23521721/workspace/riscv_ol2/src/top/sdc_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Setting RC values…
+[INFO] Configuring cts characterization…
+[INFO] Performing clock tree synthesis…
+[INFO] Looking for the following net(s): clk
+[INFO] Running Clock Tree Synthesis…
+[INFO CTS-0050] Root buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0051] Sink buffer is sky130_fd_sc_hd__clkbuf_8.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sky130_fd_sc_hd__clkbuf_2
+                    sky130_fd_sc_hd__clkbuf_4
+                    sky130_fd_sc_hd__clkbuf_8
+[INFO CTS-0049] Characterization buffer is sky130_fd_sc_hd__clkbuf_8.
+[INFO CTS-0007] Net "clk" found for clock "clk".
+[INFO CTS-0010]  Clock net "clk" has 1524 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 3 buffer(s) types.
+[INFO CTS-0200] 0 placement blockages have been identified.
+[INFO CTS-0201] 2 placed hard macros will be treated like blockages.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 1524.
+[INFO CTS-0029]  Sinks will be clustered in groups of up to 25 and with maximum cluster diameter of 50.0 um.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0204] A clustering solution was found from clustering size of 25 and clustering diameter of 50.
+[INFO CTS-0205] Better solution may be possible if either -sink_clustering_size, -sink_clustering_max_diameter, or both options are omitted to enable automatic clustering.
+[INFO CTS-0019]  Total number of sinks after clustering: 175.
+[INFO CTS-0024]  Normalized sink region: [(5.84044, 3.71544), (73.5551, 57.6478)].
+[INFO CTS-0025]     Width:  67.7147.
+[INFO CTS-0026]     Height: 53.9324.
+ Level 1
+    Direction: Horizontal
+    Sinks per sub-region: 88
+    Sub-region size: 33.8574 X 53.9324
+[INFO CTS-0034]     Segment length (rounded): 16.
+ Level 2
+    Direction: Vertical
+    Sinks per sub-region: 44
+    Sub-region size: 33.8574 X 26.9662
+[INFO CTS-0034]     Segment length (rounded): 14.
+ Level 3
+    Direction: Horizontal
+    Sinks per sub-region: 22
+    Sub-region size: 16.9287 X 26.9662
+[INFO CTS-0034]     Segment length (rounded): 8.
+ Level 4
+    Direction: Vertical
+    Sinks per sub-region: 11
+    Sub-region size: 16.9287 X 13.4831
+[INFO CTS-0034]     Segment length (rounded): 6.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 175.
+[INFO CTS-0018]     Created 190 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 3.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 4.
+[INFO CTS-0015]     Created 190 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 2:4, 3:6, 4:8, 5:6, 6:9, 7:20, 8:15, 9:28, 10:25, 11:22, 12:21, 13:8, 14:8, 15:1, 16:4..
+[INFO CTS-0017]     Max level of the clock tree: 4.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 1687
+[INFO CTS-0100]  Leaf buffers 169
+[INFO CTS-0101]  Average sink wire length 1336.86 um
+[INFO CTS-0102]  Path depth 3 - 4
+[INFO CTS-0207]  Leaf load cells 163
+[INFO] Repairing long wires on clock nets…
+[INFO RSZ-0058] Using max wire length 6335um.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+dmem_sram matched with dmem_sram
+imem_sram matched with imem_sram
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     2  381425.10
+  Fill cell                               882    3310.68
+  Tap cell                               6135    7676.11
+  Buffer                                   40     150.14
+  Clock buffer                            213    3035.41
+  Timing Repair Buffer                   1389    9801.90
+  Inverter                                578    2386.04
+  Clock inverter                          140    1960.63
+  Sequential cell                        1520   33390.77
+  Multi-Input combinational cell         4925   55952.41
+  Total                                 15824  499089.20
+Writing OpenROAD database to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.odb'…
+Writing netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.nl.v'…
+Writing powered netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.pnl.v'…
+Writing layout to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.def'…
+Writing timing constraints to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.sdc'…
+[INFO] Legalizing…
+Placement Analysis
+---------------------------------
+total displacement       2722.3 u
+average displacement        0.2 u
+max displacement           45.3 u
+original HPWL          470174.2 u
+legalized HPWL         480478.9 u
+delta HPWL                    2 %
+
+[INFO DPL-0020] Mirrored 3701 instances
+[INFO DPL-0021] HPWL before          480478.9 u
+[INFO DPL-0022] HPWL after           471038.9 u
+[INFO DPL-0023] HPWL delta               -2.0 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+dmem_sram matched with dmem_sram
+imem_sram matched with imem_sram
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     2  381425.10
+  Fill cell                               882    3310.68
+  Tap cell                               6135    7676.11
+  Buffer                                   40     150.14
+  Clock buffer                            213    3035.41
+  Timing Repair Buffer                   1389    9801.90
+  Inverter                                578    2386.04
+  Clock inverter                          140    1960.63
+  Sequential cell                        1520   33390.77
+  Multi-Input combinational cell         4925   55952.41
+  Total                                 15824  499089.20
+Writing OpenROAD database to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.odb'…
+Writing netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.nl.v'…
+Writing powered netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.pnl.v'…
+Writing layout to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.def'…
+Writing timing constraints to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/34-openroad-cts/soc_top.sdc'…
+%OL_CREATE_REPORT cts.rpt
+[INFO CTS-0003] Total number of Clock Roots: 1.
+[INFO CTS-0004] Total number of Buffers Inserted: 190.
+[INFO CTS-0005] Total number of Clock Subnets: 190.
+[INFO CTS-0006] Total number of Sinks: 1524.
+%OL_END_REPORT

@@ -1,0 +1,501 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: dmem_sram (falling edge-triggered flip-flop clocked by clk)
+Endpoint: _12409_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                 10.000000   10.000000   clock clk (fall edge)
+                                  0.000000   10.000000   clock source latency
+     2    0.144137    0.000000    0.000000   10.000000 v clk (in)
+                                                         clk (net)
+                      0.056288    0.028144   10.028144 v clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     4    0.156286    0.082433    0.149748   10.177892 v clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.093583    0.023070   10.200962 v clkbuf_2_0_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.097096    0.077986    0.168025   10.368987 v clkbuf_2_0_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_0_0_clk (net)
+                      0.078472    0.004965   10.373952 v clkbuf_4_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    10    0.175711    0.088440    0.170846   10.544797 v clkbuf_4_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_4_0__leaf_clk (net)
+                      0.137218    0.027899   10.572696 v dmem_sram/clk0 (sky130_sram_1kbyte_1rw1r_32x256_8)
+    12    0.181163    0.097743    1.346019   11.918715 ^ dmem_sram/dout0[15] (sky130_sram_1kbyte_1rw1r_32x256_8)
+                                                         dmem_dout[15] (net)
+                      0.073307    0.066057   11.984773 ^ wire1096/A (sky130_fd_sc_hd__clkbuf_2)
+     1    0.008621    0.042785    0.086375   12.071148 ^ wire1096/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net1096 (net)
+                      0.042788    0.000393   12.071542 ^ wire1095/A (sky130_fd_sc_hd__clkbuf_2)
+     3    0.035461    0.150028    0.152180   12.223722 ^ wire1095/X (sky130_fd_sc_hd__clkbuf_2)
+                                                         net1095 (net)
+                      0.150049    0.001453   12.225175 ^ _07755_/A2 (sky130_fd_sc_hd__mux4_1)
+     1    0.003799    0.045885    0.161182   12.386357 ^ _07755_/X (sky130_fd_sc_hd__mux4_1)
+                                                         _03977_ (net)
+                      0.045885    0.000118   12.386476 ^ _07756_/C_N (sky130_fd_sc_hd__nor3b_4)
+     9    0.038042    0.325236    0.288149   12.674624 ^ _07756_/Y (sky130_fd_sc_hd__nor3b_4)
+                                                         _03978_ (net)
+                      0.325238    0.000789   12.675413 ^ _07774_/B1 (sky130_fd_sc_hd__a221o_1)
+     2    0.013078    0.101298    0.151058   12.826471 ^ _07774_/X (sky130_fd_sc_hd__a221o_1)
+                                                         _03988_ (net)
+                      0.101298    0.000238   12.826709 ^ _07776_/C1 (sky130_fd_sc_hd__o211ai_4)
+    16    0.077478    0.170003    0.120640   12.947349 v _07776_/Y (sky130_fd_sc_hd__o211ai_4)
+                                                         _03989_ (net)
+                      0.170103    0.003398   12.950747 v _07784_/B1_N (sky130_fd_sc_hd__o21ba_1)
+     2    0.033581    0.251272    0.325985   13.276731 ^ _07784_/X (sky130_fd_sc_hd__o21ba_1)
+                                                         net90 (net)
+                      0.251277    0.000907   13.277638 ^ _12409_/D (sky130_fd_sc_hd__dfrtp_1)
+                                             13.277638   data arrival time
+
+                                 20.000000   20.000000   clock clk (rise edge)
+                                  0.000000   20.000000   clock source latency
+     2    0.145133    0.000000    0.000000   20.000000 ^ clk (in)
+                                                         clk (net)
+                      0.056769    0.028384   20.028385 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     4    0.158150    0.132289    0.154705   20.183090 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.137821    0.021126   20.204216 ^ clkbuf_2_1_0_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.112591    0.150969    0.196259   20.400475 ^ clkbuf_2_1_0_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_2_1_0_clk (net)
+                      0.151211    0.004929   20.405405 ^ clkbuf_4_5__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+    10    0.135298    0.114778    0.175884   20.581289 ^ clkbuf_4_5__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_4_5__leaf_clk (net)
+                      0.115037    0.004384   20.585672 ^ clkbuf_leaf_59_clk/A (sky130_fd_sc_hd__clkbuf_8)
+     4    0.031388    0.051487    0.121773   20.707445 ^ clkbuf_leaf_59_clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                                         clknet_leaf_59_clk (net)
+                      0.051493    0.000584   20.708029 ^ _12409_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                                  0.000000   20.708029   clock reconvergence pessimism
+                                 -0.053802   20.654228   library setup time
+                                             20.654228   data required time
+---------------------------------------------------------------------------------------------
+                                             20.654228   data required time
+                                            -13.277638   data arrival time
+---------------------------------------------------------------------------------------------
+                                              7.376589   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+dmem_sram/dout0[13]                       4     14    -10 (VIOLATED)
+dmem_sram/dout0[15]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[16]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[18]                       4     12     -8 (VIOLATED)
+dmem_sram/dout0[12]                       4     11     -7 (VIOLATED)
+dmem_sram/dout0[11]                       4     10     -6 (VIOLATED)
+dmem_sram/dout0[10]                       4      8     -4 (VIOLATED)
+dmem_sram/dout0[22]                       4      7     -3 (VIOLATED)
+
+max capacitance
+
+Pin                                        Limit         Cap       Slack
+------------------------------------------------------------------------
+dmem_sram/dout0[18]                     0.027560    0.206182   -0.178622 (VIOLATED)
+dmem_sram/dout0[19]                     0.027560    0.200358   -0.172798 (VIOLATED)
+dmem_sram/dout0[16]                     0.027560    0.199899   -0.172339 (VIOLATED)
+dmem_sram/dout0[12]                     0.027560    0.186983   -0.159423 (VIOLATED)
+dmem_sram/dout0[13]                     0.027560    0.184576   -0.157016 (VIOLATED)
+dmem_sram/dout0[15]                     0.027560    0.181163   -0.153603 (VIOLATED)
+dmem_sram/dout0[8]                      0.027560    0.180506   -0.152946 (VIOLATED)
+dmem_sram/dout0[9]                      0.027560    0.180412   -0.152852 (VIOLATED)
+dmem_sram/dout0[11]                     0.027560    0.178017   -0.150457 (VIOLATED)
+dmem_sram/dout0[6]                      0.027560    0.177171   -0.149611 (VIOLATED)
+dmem_sram/dout0[14]                     0.027560    0.175151   -0.147591 (VIOLATED)
+dmem_sram/dout0[22]                     0.027560    0.171998   -0.144438 (VIOLATED)
+dmem_sram/dout0[10]                     0.027560    0.150833   -0.123273 (VIOLATED)
+dmem_sram/dout0[2]                      0.027560    0.082955   -0.055395 (VIOLATED)
+dmem_sram/dout0[5]                      0.027560    0.082732   -0.055172 (VIOLATED)
+dmem_sram/dout0[3]                      0.027560    0.077386   -0.049826 (VIOLATED)
+dmem_sram/dout0[4]                      0.027560    0.074736   -0.047176 (VIOLATED)
+dmem_sram/dout0[1]                      0.027560    0.071345   -0.043785 (VIOLATED)
+dmem_sram/dout0[0]                      0.027560    0.065736   -0.038176 (VIOLATED)
+imem_sram/dout1[4]                      0.027560    0.032501   -0.004941 (VIOLATED)
+imem_sram/dout1[3]                      0.027560    0.031076   -0.003516 (VIOLATED)
+imem_sram/dout1[2]                      0.027560    0.030881   -0.003321 (VIOLATED)
+imem_sram/dout1[13]                     0.027560    0.030001   -0.002441 (VIOLATED)
+imem_sram/dout1[16]                     0.027560    0.029359   -0.001799 (VIOLATED)
+imem_sram/dout1[7]                      0.027560    0.029112   -0.001552 (VIOLATED)
+imem_sram/dout1[0]                      0.027560    0.028319   -0.000759 (VIOLATED)
+imem_sram/dout1[1]                      0.027560    0.028081   -0.000521 (VIOLATED)
+imem_sram/dout1[14]                     0.027560    0.027980   -0.000420 (VIOLATED)
+imem_sram/dout1[6]                      0.027560    0.027779   -0.000219 (VIOLATED)
+imem_sram/dout1[19]                     0.027560    0.027665   -0.000105 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 241 unannotated drivers.
+ clkload0/Y
+ clkload1/Y
+ clkload10/Y
+ clkload100/Y
+ clkload101/Y
+ clkload102/Y
+ clkload103/Y
+ clkload104/Y
+ clkload105/Y
+ clkload106/Y
+ clkload107/Y
+ clkload108/Y
+ clkload109/Y
+ clkload11/Y
+ clkload110/X
+ clkload111/Y
+ clkload112/Y
+ clkload113/Y
+ clkload114/Y
+ clkload115/X
+ clkload116/Y
+ clkload117/X
+ clkload118/Y
+ clkload119/Y
+ clkload12/Y
+ clkload120/Y
+ clkload121/X
+ clkload122/X
+ clkload123/Y
+ clkload124/Y
+ clkload125/Y
+ clkload126/Y
+ clkload127/Y
+ clkload128/Y
+ clkload129/Y
+ clkload13/Y
+ clkload130/Y
+ clkload131/Y
+ clkload132/Y
+ clkload133/Y
+ clkload134/Y
+ clkload135/Y
+ clkload136/Y
+ clkload137/Y
+ clkload138/Y
+ clkload139/X
+ clkload14/Y
+ clkload140/Y
+ clkload141/Y
+ clkload142/Y
+ clkload143/Y
+ clkload144/Y
+ clkload145/Y
+ clkload146/X
+ clkload147/X
+ clkload148/Y
+ clkload149/Y
+ clkload15/Y
+ clkload150/Y
+ clkload151/Y
+ clkload152/Y
+ clkload153/Y
+ clkload154/X
+ clkload155/Y
+ clkload156/X
+ clkload157/Y
+ clkload158/Y
+ clkload159/Y
+ clkload16/Y
+ clkload160/Y
+ clkload161/Y
+ clkload162/Y
+ clkload17/Y
+ clkload18/Y
+ clkload19/X
+ clkload2/Y
+ clkload20/Y
+ clkload21/Y
+ clkload22/Y
+ clkload23/Y
+ clkload24/Y
+ clkload25/Y
+ clkload26/Y
+ clkload27/Y
+ clkload28/Y
+ clkload29/Y
+ clkload3/Y
+ clkload30/Y
+ clkload31/X
+ clkload32/X
+ clkload33/Y
+ clkload34/Y
+ clkload35/Y
+ clkload36/Y
+ clkload37/Y
+ clkload38/Y
+ clkload39/X
+ clkload4/Y
+ clkload40/Y
+ clkload41/Y
+ clkload42/Y
+ clkload43/Y
+ clkload44/Y
+ clkload45/Y
+ clkload46/Y
+ clkload47/Y
+ clkload48/Y
+ clkload49/Y
+ clkload5/Y
+ clkload50/Y
+ clkload51/Y
+ clkload52/X
+ clkload53/Y
+ clkload54/Y
+ clkload55/Y
+ clkload56/Y
+ clkload57/Y
+ clkload58/Y
+ clkload59/Y
+ clkload6/Y
+ clkload60/Y
+ clkload61/Y
+ clkload62/Y
+ clkload63/Y
+ clkload64/Y
+ clkload65/Y
+ clkload66/Y
+ clkload67/Y
+ clkload68/Y
+ clkload69/Y
+ clkload7/Y
+ clkload70/Y
+ clkload71/Y
+ clkload72/Y
+ clkload73/Y
+ clkload74/Y
+ clkload75/Y
+ clkload76/X
+ clkload77/Y
+ clkload78/Y
+ clkload79/Y
+ clkload8/Y
+ clkload80/X
+ clkload81/X
+ clkload82/X
+ clkload83/Y
+ clkload84/X
+ clkload85/Y
+ clkload86/X
+ clkload87/Y
+ clkload88/X
+ clkload89/X
+ clkload9/Y
+ clkload90/Y
+ clkload91/Y
+ clkload92/Y
+ clkload93/Y
+ clkload94/Y
+ clkload95/Y
+ clkload96/Y
+ clkload97/Y
+ clkload98/Y
+ clkload99/Y
+ dmem_sram/dout1[0]
+ dmem_sram/dout1[10]
+ dmem_sram/dout1[11]
+ dmem_sram/dout1[12]
+ dmem_sram/dout1[13]
+ dmem_sram/dout1[14]
+ dmem_sram/dout1[15]
+ dmem_sram/dout1[16]
+ dmem_sram/dout1[17]
+ dmem_sram/dout1[18]
+ dmem_sram/dout1[19]
+ dmem_sram/dout1[1]
+ dmem_sram/dout1[20]
+ dmem_sram/dout1[21]
+ dmem_sram/dout1[22]
+ dmem_sram/dout1[23]
+ dmem_sram/dout1[24]
+ dmem_sram/dout1[25]
+ dmem_sram/dout1[26]
+ dmem_sram/dout1[27]
+ dmem_sram/dout1[28]
+ dmem_sram/dout1[29]
+ dmem_sram/dout1[2]
+ dmem_sram/dout1[30]
+ dmem_sram/dout1[31]
+ dmem_sram/dout1[3]
+ dmem_sram/dout1[4]
+ dmem_sram/dout1[5]
+ dmem_sram/dout1[6]
+ dmem_sram/dout1[7]
+ dmem_sram/dout1[8]
+ dmem_sram/dout1[9]
+ dmem_sram_1390/HI
+ dmem_sram_1391/HI
+ dmem_sram_1392/HI
+ dmem_sram_1393/HI
+ dmem_sram_1394/HI
+ dmem_sram_1395/HI
+ dmem_sram_1396/HI
+ dmem_sram_1397/HI
+ dmem_sram_1399/LO
+ imem_sram/dout0[0]
+ imem_sram/dout0[10]
+ imem_sram/dout0[11]
+ imem_sram/dout0[12]
+ imem_sram/dout0[13]
+ imem_sram/dout0[14]
+ imem_sram/dout0[15]
+ imem_sram/dout0[16]
+ imem_sram/dout0[17]
+ imem_sram/dout0[18]
+ imem_sram/dout0[19]
+ imem_sram/dout0[1]
+ imem_sram/dout0[20]
+ imem_sram/dout0[21]
+ imem_sram/dout0[22]
+ imem_sram/dout0[23]
+ imem_sram/dout0[24]
+ imem_sram/dout0[25]
+ imem_sram/dout0[26]
+ imem_sram/dout0[27]
+ imem_sram/dout0[28]
+ imem_sram/dout0[29]
+ imem_sram/dout0[2]
+ imem_sram/dout0[30]
+ imem_sram/dout0[31]
+ imem_sram/dout0[3]
+ imem_sram/dout0[4]
+ imem_sram/dout0[5]
+ imem_sram/dout0[6]
+ imem_sram/dout0[7]
+ imem_sram/dout0[8]
+ imem_sram/dout0[9]
+ imem_sram_1398/HI
+ imem_sram_1400/LO
+ imem_sram_1401/LO
+ imem_sram_1402/LO
+ imem_sram_1403/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 8
+max cap violation count 30
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 42 input ports missing set_input_delay.
+  prog_addr[0]
+  prog_addr[1]
+  prog_addr[2]
+  prog_addr[3]
+  prog_addr[4]
+  prog_addr[5]
+  prog_addr[6]
+  prog_addr[7]
+  prog_data[0]
+  prog_data[10]
+  prog_data[11]
+  prog_data[12]
+  prog_data[13]
+  prog_data[14]
+  prog_data[15]
+  prog_data[16]
+  prog_data[17]
+  prog_data[18]
+  prog_data[19]
+  prog_data[1]
+  prog_data[20]
+  prog_data[21]
+  prog_data[22]
+  prog_data[23]
+  prog_data[24]
+  prog_data[25]
+  prog_data[26]
+  prog_data[27]
+  prog_data[28]
+  prog_data[29]
+  prog_data[2]
+  prog_data[30]
+  prog_data[31]
+  prog_data[3]
+  prog_data[4]
+  prog_data[5]
+  prog_data[6]
+  prog_data[7]
+  prog_data[8]
+  prog_data[9]
+  prog_we
+  rst
+Warning: There are 56 unconstrained endpoints.
+  dmem_sram/addr1[0]
+  dmem_sram/addr1[1]
+  dmem_sram/addr1[2]
+  dmem_sram/addr1[3]
+  dmem_sram/addr1[4]
+  dmem_sram/addr1[5]
+  dmem_sram/addr1[6]
+  dmem_sram/addr1[7]
+  dmem_sram/csb1
+  imem_sram/addr0[0]
+  imem_sram/addr0[1]
+  imem_sram/addr0[2]
+  imem_sram/addr0[3]
+  imem_sram/addr0[4]
+  imem_sram/addr0[5]
+  imem_sram/addr0[6]
+  imem_sram/addr0[7]
+  imem_sram/csb0
+  imem_sram/csb1
+  imem_sram/din0[0]
+  imem_sram/din0[10]
+  imem_sram/din0[11]
+  imem_sram/din0[12]
+  imem_sram/din0[13]
+  imem_sram/din0[14]
+  imem_sram/din0[15]
+  imem_sram/din0[16]
+  imem_sram/din0[17]
+  imem_sram/din0[18]
+  imem_sram/din0[19]
+  imem_sram/din0[1]
+  imem_sram/din0[20]
+  imem_sram/din0[21]
+  imem_sram/din0[22]
+  imem_sram/din0[23]
+  imem_sram/din0[24]
+  imem_sram/din0[25]
+  imem_sram/din0[26]
+  imem_sram/din0[27]
+  imem_sram/din0[28]
+  imem_sram/din0[29]
+  imem_sram/din0[2]
+  imem_sram/din0[30]
+  imem_sram/din0[31]
+  imem_sram/din0[3]
+  imem_sram/din0[4]
+  imem_sram/din0[5]
+  imem_sram/din0[6]
+  imem_sram/din0[7]
+  imem_sram/din0[8]
+  imem_sram/din0[9]
+  imem_sram/web0
+  imem_sram/wmask0[0]
+  imem_sram/wmask0[1]
+  imem_sram/wmask0[2]
+  imem_sram/wmask0[3]

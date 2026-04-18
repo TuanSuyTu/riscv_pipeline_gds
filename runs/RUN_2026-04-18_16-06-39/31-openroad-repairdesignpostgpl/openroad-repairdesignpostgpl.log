@@ -1,0 +1,138 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+Reading timing models for corner nom_ff_n40C_1v95…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib'…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+[WARNING STA-1140] /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib line 1, library sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_lib already exists.
+Reading timing models for corner nom_ss_100C_1v60…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib'…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+[WARNING STA-1140] /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib line 1, library sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_lib already exists.
+Reading OpenROAD database at '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/27-openroad-globalplacement/soc_top.odb'…
+Reading design constraints file at '/home/tuan-23521721/workspace/riscv_ol2/src/top/sdc_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Setting RC values…
+[INFO RSZ-0027] Inserted 42 input buffers.
+[INFO RSZ-0028] Inserted 161 output buffers.
+[WARNING RSZ-0065] max wire length less than 6335u increases wire delays.
+Iteration | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------
+        0 |       0 |       0 |             0 |      7451
+      100 |      54 |      42 |            34 |      7351
+      200 |     154 |      42 |            34 |      7251
+      300 |     251 |      46 |            36 |      7151
+      400 |     350 |      46 |            36 |      7051
+      500 |     439 |      51 |            37 |      6951
+      600 |     506 |      94 |            51 |      6851
+      700 |     592 |     146 |            68 |      6751
+      800 |     678 |     169 |            73 |      6651
+      900 |     767 |     169 |            73 |      6551
+     1000 |     857 |     169 |            73 |      6451
+     1100 |     946 |     169 |            73 |      6351
+     1200 |    1033 |     169 |            73 |      6251
+     1300 |    1110 |     173 |            75 |      6151
+     1400 |    1180 |     173 |            75 |      6051
+     1500 |    1270 |     215 |            93 |      5951
+     1600 |    1354 |     227 |            97 |      5851
+     1700 |    1436 |     234 |           100 |      5751
+     1800 |    1508 |     237 |           103 |      5651
+     1900 |    1588 |     277 |           120 |      5551
+     2000 |    1677 |     293 |           123 |      5451
+     2100 |    1765 |     308 |           135 |      5351
+     2200 |    1843 |     321 |           138 |      5251
+     2300 |    1922 |     330 |           146 |      5151
+     2400 |    1923 |     330 |           146 |      5051
+     2500 |    1923 |     330 |           146 |      4951
+     2600 |    1923 |     330 |           146 |      4851
+     2700 |    1923 |     330 |           146 |      4751
+     2800 |    1923 |     330 |           146 |      4651
+     2900 |    1923 |     330 |           146 |      4551
+     3000 |    1923 |     330 |           146 |      4451
+     3100 |    1972 |     341 |           148 |      4351
+     3200 |    2069 |     343 |           149 |      4251
+     3300 |    2134 |     436 |           169 |      4151
+     3400 |    2144 |     475 |           175 |      4051
+     3500 |    2150 |     495 |           178 |      3951
+     3600 |    2219 |     502 |           179 |      3851
+     3700 |    2319 |     502 |           179 |      3751
+     3800 |    2424 |     564 |           194 |      3651
+     3900 |    2475 |     564 |           194 |      3551
+     4000 |    2544 |     577 |           199 |      3451
+     4100 |    2615 |     577 |           199 |      3351
+     4200 |    2713 |     610 |           213 |      3251
+     4300 |    2803 |     651 |           234 |      3151
+     4400 |    2892 |     651 |           234 |      3051
+     4500 |    2981 |     651 |           234 |      2951
+     4600 |    3067 |     651 |           234 |      2851
+     4700 |    3159 |     659 |           237 |      2751
+     4800 |    3244 |     659 |           237 |      2651
+     4900 |    3329 |     663 |           238 |      2551
+     5000 |    3417 |     667 |           239 |      2451
+     5100 |    3503 |     673 |           241 |      2351
+     5200 |    3553 |     763 |           256 |      2251
+     5300 |    3553 |     836 |           292 |      2151
+     5400 |    3626 |     909 |           324 |      2051
+     5500 |    3717 |    1059 |           335 |      1951
+     5600 |    3817 |    1059 |           335 |      1851
+     5700 |    3917 |    1059 |           335 |      1751
+     5800 |    4017 |    1059 |           335 |      1651
+     5900 |    4117 |    1059 |           335 |      1551
+     6000 |    4200 |    1072 |           340 |      1451
+     6100 |    4299 |    1095 |           360 |      1351
+     6200 |    4398 |    1098 |           363 |      1251
+     6300 |    4511 |    1133 |           386 |      1151
+     6400 |    4611 |    1133 |           386 |      1051
+     6500 |    4711 |    1133 |           386 |       951
+     6600 |    4811 |    1133 |           386 |       851
+     6700 |    4911 |    1133 |           386 |       751
+     6800 |    5011 |    1133 |           386 |       651
+     6900 |    5059 |    1133 |           438 |       551
+     7000 |    5059 |    1133 |           538 |       451
+     7100 |    5059 |    1133 |           638 |       351
+     7200 |    5059 |    1133 |           738 |       251
+     7300 |    5059 |    1133 |           838 |       151
+     7400 |    5117 |    1186 |           897 |        51
+    final |    5117 |    1186 |           897 |         0
+---------------------------------------------------------
+[INFO RSZ-0034] Found 574 slew violations.
+[INFO RSZ-0036] Found 108 capacitance violations.
+[INFO RSZ-0037] Found 374 long wires.
+[INFO RSZ-0038] Inserted 1186 buffers in 897 nets.
+[INFO RSZ-0039] Resized 5117 instances.
+[INFO RSZ-0042] Inserted 9 tie sky130_fd_sc_hd__conb_1 instances.
+[INFO RSZ-0042] Inserted 5 tie sky130_fd_sc_hd__conb_1 instances.
+Placement Analysis
+---------------------------------
+total displacement      38872.8 u
+average displacement        2.5 u
+max displacement          215.0 u
+original HPWL          437935.4 u
+legalized HPWL         462963.9 u
+delta HPWL                    6 %
+
+[INFO DPL-0020] Mirrored 3584 instances
+[INFO DPL-0021] HPWL before          462963.9 u
+[INFO DPL-0022] HPWL after           454214.5 u
+[INFO DPL-0023] HPWL delta               -1.9 %
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+dmem_sram matched with dmem_sram
+imem_sram matched with imem_sram
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     2  381425.10
+  Fill cell                               882    3310.68
+  Tap cell                               6135    7676.11
+  Buffer                                   40     150.14
+  Timing Repair Buffer                   1389    9801.90
+  Inverter                                578    2386.04
+  Sequential cell                        1520   33390.77
+  Multi-Input combinational cell         4925   55952.41
+  Total                                 15471  494093.16
+Writing OpenROAD database to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/31-openroad-repairdesignpostgpl/soc_top.odb'…
+Writing netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/31-openroad-repairdesignpostgpl/soc_top.nl.v'…
+Writing powered netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/31-openroad-repairdesignpostgpl/soc_top.pnl.v'…
+Writing layout to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/31-openroad-repairdesignpostgpl/soc_top.def'…
+Writing timing constraints to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/31-openroad-repairdesignpostgpl/soc_top.sdc'…

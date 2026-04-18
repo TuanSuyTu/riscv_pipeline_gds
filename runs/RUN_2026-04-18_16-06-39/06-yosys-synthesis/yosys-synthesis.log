@@ -1,0 +1,2372 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib
+Imported 1 cell types from liberty file.
+[INFO] Using SDC file '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+3. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/control.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v' to AST representation.
+Storing AST representation for module `$abstract\control'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v' to AST representation.
+Storing AST representation for module `$abstract\forward'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v' to AST representation.
+Storing AST representation for module `$abstract\alu'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v' to AST representation.
+Storing AST representation for module `$abstract\ex_stage'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v' to AST representation.
+Storing AST representation for module `$abstract\alu_control'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v' to AST representation.
+Storing AST representation for module `$abstract\imm_gen'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/hazard.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/hazard.v' to AST representation.
+Storing AST representation for module `$abstract\hazard'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v' to AST representation.
+Storing AST representation for module `$abstract\regfile'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v' to AST representation.
+Storing AST representation for module `$abstract\pc_reg'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/top/sram_macro_blackbox.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/top/sram_macro_blackbox.v' to AST representation.
+Storing AST representation for module `$abstract\sky130_sram_1kbyte_1rw1r_32x256_8'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v' to AST representation.
+Storing AST representation for module `$abstract\soc_top'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/top/top.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v' to AST representation.
+Storing AST representation for module `$abstract\top'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v' to AST representation.
+Storing AST representation for module `$abstract\ex_mem_reg'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v' to AST representation.
+Storing AST representation for module `$abstract\if_id_reg'.
+Successfully finished Verilog frontend.
+
+17. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v' to AST representation.
+Storing AST representation for module `$abstract\mem_wb_reg'.
+Successfully finished Verilog frontend.
+
+18. Executing Verilog-2005 frontend: /home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v
+Parsing SystemVerilog input from `/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v' to AST representation.
+Storing AST representation for module `$abstract\id_ex_reg'.
+Successfully finished Verilog frontend.
+
+19. Executing HIERARCHY pass (managing design hierarchy).
+
+20. Executing AST frontend in derive mode using pre-parsed AST for module `\soc_top'.
+Generating RTLIL representation for module `\soc_top'.
+
+20.1. Analyzing design hierarchy..
+Top module:  \soc_top
+
+20.2. Executing AST frontend in derive mode using pre-parsed AST for module `\top'.
+Generating RTLIL representation for module `\top'.
+
+20.3. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+
+20.4. Executing AST frontend in derive mode using pre-parsed AST for module `\forward'.
+Generating RTLIL representation for module `\forward'.
+
+20.5. Executing AST frontend in derive mode using pre-parsed AST for module `\hazard'.
+Generating RTLIL representation for module `\hazard'.
+
+20.6. Executing AST frontend in derive mode using pre-parsed AST for module `\mem_wb_reg'.
+Generating RTLIL representation for module `\mem_wb_reg'.
+
+20.7. Executing AST frontend in derive mode using pre-parsed AST for module `\ex_mem_reg'.
+Generating RTLIL representation for module `\ex_mem_reg'.
+
+20.8. Executing AST frontend in derive mode using pre-parsed AST for module `\ex_stage'.
+Generating RTLIL representation for module `\ex_stage'.
+
+20.9. Executing AST frontend in derive mode using pre-parsed AST for module `\id_ex_reg'.
+Generating RTLIL representation for module `\id_ex_reg'.
+
+20.10. Executing AST frontend in derive mode using pre-parsed AST for module `\regfile'.
+Generating RTLIL representation for module `\regfile'.
+
+20.11. Executing AST frontend in derive mode using pre-parsed AST for module `\imm_gen'.
+Generating RTLIL representation for module `\imm_gen'.
+
+20.12. Executing AST frontend in derive mode using pre-parsed AST for module `\control'.
+Generating RTLIL representation for module `\control'.
+
+20.13. Executing AST frontend in derive mode using pre-parsed AST for module `\if_id_reg'.
+Generating RTLIL representation for module `\if_id_reg'.
+
+20.14. Executing AST frontend in derive mode using pre-parsed AST for module `\pc_reg'.
+Generating RTLIL representation for module `\pc_reg'.
+
+20.15. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+Used module:         \forward
+Used module:         \hazard
+Used module:         \mem_wb_reg
+Used module:         \ex_mem_reg
+Used module:         \ex_stage
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \control
+Used module:         \if_id_reg
+Used module:         \pc_reg
+
+20.16. Executing AST frontend in derive mode using pre-parsed AST for module `\alu'.
+Generating RTLIL representation for module `\alu'.
+
+20.17. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_control'.
+Generating RTLIL representation for module `\alu_control'.
+
+20.18. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+Used module:         \forward
+Used module:         \hazard
+Used module:         \mem_wb_reg
+Used module:         \ex_mem_reg
+Used module:         \ex_stage
+Used module:             \alu
+Used module:             \alu_control
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \control
+Used module:         \if_id_reg
+Used module:         \pc_reg
+
+20.19. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+Used module:         \forward
+Used module:         \hazard
+Used module:         \mem_wb_reg
+Used module:         \ex_mem_reg
+Used module:         \ex_stage
+Used module:             \alu
+Used module:             \alu_control
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \control
+Used module:         \if_id_reg
+Used module:         \pc_reg
+Removing unused module `$abstract\id_ex_reg'.
+Removing unused module `$abstract\mem_wb_reg'.
+Removing unused module `$abstract\if_id_reg'.
+Removing unused module `$abstract\ex_mem_reg'.
+Removing unused module `$abstract\top'.
+Removing unused module `$abstract\soc_top'.
+Removing unused module `$abstract\pc_reg'.
+Removing unused module `$abstract\regfile'.
+Removing unused module `$abstract\hazard'.
+Removing unused module `$abstract\imm_gen'.
+Removing unused module `$abstract\alu_control'.
+Removing unused module `$abstract\ex_stage'.
+Removing unused module `$abstract\alu'.
+Removing unused module `$abstract\forward'.
+Removing unused module `$abstract\control'.
+Removed 15 unused modules.
+Renaming module soc_top to soc_top.
+
+21. Generating Graphviz representation of design.
+Writing dot description to `/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/hierarchy.dot'.
+Dumping module soc_top to page 1.
+
+22. Executing TRIBUF pass.
+
+23. Executing HIERARCHY pass (managing design hierarchy).
+
+23.1. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+Used module:         \forward
+Used module:         \hazard
+Used module:         \mem_wb_reg
+Used module:         \ex_mem_reg
+Used module:         \ex_stage
+Used module:             \alu
+Used module:             \alu_control
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \control
+Used module:         \if_id_reg
+Used module:         \pc_reg
+
+23.2. Analyzing design hierarchy..
+Top module:  \soc_top
+Used module:     \top
+Used module:         \forward
+Used module:         \hazard
+Used module:         \mem_wb_reg
+Used module:         \ex_mem_reg
+Used module:         \ex_stage
+Used module:             \alu
+Used module:             \alu_control
+Used module:         \id_ex_reg
+Used module:         \regfile
+Used module:         \imm_gen
+Used module:         \control
+Used module:         \if_id_reg
+Used module:         \pc_reg
+Removed 0 unused modules.
+
+24. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+25. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 4 dead cases from process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45 in module soc_top.
+Marked 6 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45 in module soc_top.
+Marked 1 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:63$260 in module alu.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244 in module pc_reg.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242 in module if_id_reg.
+Marked 1 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241 in module control.
+Marked 1 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v:17$240 in module imm_gen.
+Marked 1 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154 in module regfile.
+Marked 3 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120 in module id_ex_reg.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91 in module ex_mem_reg.
+Marked 1 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90 in module mem_wb_reg.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:43$75 in module forward.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:34$66 in module forward.
+Removed 2 dead cases from process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268 in module alu_control.
+Marked 2 switch rules as full_case in process $proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268 in module alu_control.
+Removed a total of 6 dead cases.
+
+26. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 13 redundant assignments.
+Promoted 56 assignments to connections.
+
+27. Executing PROC_INIT pass (extract init attributes).
+
+28. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\pc_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244'.
+Found async reset \rst in `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+Found async reset \rst in `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+Found async reset \rst in `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+Found async reset \rst in `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+
+29. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~23 debug messages>
+
+30. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45'.
+     1/6: $6\dmem_rdata_comb[31:0]
+     2/6: $5\dmem_rdata_comb[31:0]
+     3/6: $4\dmem_rdata_comb[31:0]
+     4/6: $3\dmem_rdata_comb[31:0]
+     5/6: $2\dmem_rdata_comb[31:0]
+     6/6: $1\dmem_rdata_comb[31:0]
+Creating decoders for process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:153$44'.
+Creating decoders for process `\alu.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:63$260'.
+     1/1: $1\result[31:0]
+Creating decoders for process `\pc_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244'.
+     1/1: $0\pc[31:0]
+Creating decoders for process `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+     1/3: $0\pc_plus4_out[31:0]
+     2/3: $0\instr_out[31:0]
+     3/3: $0\pc_out[31:0]
+Creating decoders for process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+     1/11: $1\alu_op[1:0]
+     2/11: $1\reg_write[0:0]
+     3/11: $1\is_jalr[0:0]
+     4/11: $1\auipc[0:0]
+     5/11: $1\lui[0:0]
+     6/11: $1\jump[0:0]
+     7/11: $1\branch[0:0]
+     8/11: $1\alu_src[0:0]
+     9/11: $1\mem_to_reg[0:0]
+    10/11: $1\mem_write[0:0]
+    11/11: $1\mem_read[0:0]
+Creating decoders for process `\imm_gen.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v:17$240'.
+     1/1: $1\imm_out[31:0]
+Creating decoders for process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+Creating decoders for process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+     1/3: $1$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$162
+     2/3: $1$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_DATA[31:0]$161
+     3/3: $1$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_ADDR[4:0]$160
+Creating decoders for process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+     1/21: $0\reg_write_out[0:0]
+     2/21: $0\funct7_5_out[0:0]
+     3/21: $0\funct3_out[2:0]
+     4/21: $0\rd_addr_out[4:0]
+     5/21: $0\rs2_addr_out[4:0]
+     6/21: $0\imm_out[31:0]
+     7/21: $0\rs2_data_out[31:0]
+     8/21: $0\pc_out[31:0]
+     9/21: $0\alu_op_out[1:0]
+    10/21: $0\is_jalr_out[0:0]
+    11/21: $0\auipc_out[0:0]
+    12/21: $0\lui_out[0:0]
+    13/21: $0\jump_out[0:0]
+    14/21: $0\branch_out[0:0]
+    15/21: $0\alu_src_out[0:0]
+    16/21: $0\mem_to_reg_out[0:0]
+    17/21: $0\mem_write_out[0:0]
+    18/21: $0\mem_read_out[0:0]
+    19/21: $0\pc_plus4_out[31:0]
+    20/21: $0\rs1_addr_out[4:0]
+    21/21: $0\rs1_data_out[31:0]
+Creating decoders for process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+     1/6: $0\pc_plus4_out[31:0]
+     2/6: $0\rd_addr_out[4:0]
+     3/6: $0\alu_result_out[31:0]
+     4/6: $0\jump_out[0:0]
+     5/6: $0\mem_to_reg_out[0:0]
+     6/6: $0\reg_write_out[0:0]
+Creating decoders for process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+     1/7: $0\rd_addr_out[4:0]
+     2/7: $0\pc_plus4_out[31:0]
+     3/7: $0\alu_result_out[31:0]
+     4/7: $0\read_data_out[31:0]
+     5/7: $0\jump_out[0:0]
+     6/7: $0\mem_to_reg_out[0:0]
+     7/7: $0\reg_write_out[0:0]
+Creating decoders for process `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:43$75'.
+     1/2: $2\forward_b[1:0]
+     2/2: $1\forward_b[1:0]
+Creating decoders for process `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:34$66'.
+     1/2: $2\forward_a[1:0]
+     2/2: $1\forward_a[1:0]
+Creating decoders for process `\alu_control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268'.
+     1/2: $2\alu_ctrl[3:0]
+     2/2: $1\alu_ctrl[3:0]
+
+31. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\soc_top.\dmem_rdata_comb' from process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45'.
+No latch inferred for signal `\alu.\result' from process `\alu.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:63$260'.
+No latch inferred for signal `\control.\reg_write' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\mem_read' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\mem_write' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\mem_to_reg' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\alu_src' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\branch' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\jump' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\lui' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\auipc' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\is_jalr' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\control.\alu_op' from process `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+No latch inferred for signal `\imm_gen.\imm_out' from process `\imm_gen.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v:17$240'.
+No latch inferred for signal `\regfile.\i' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$121_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$122_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$123_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$124_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$125_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$126_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$127_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$128_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$129_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$130_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$131_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$132_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$133_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$134_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$135_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$136_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$137_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$138_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$139_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$140_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$141_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$142_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$143_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$144_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$145_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$146_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$147_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$148_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$149_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$150_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$151_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$152_EN' from process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+No latch inferred for signal `\forward.\forward_b' from process `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:43$75'.
+No latch inferred for signal `\forward.\forward_a' from process `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:34$66'.
+No latch inferred for signal `\alu_control.\alu_ctrl' from process `\alu_control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268'.
+
+32. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\soc_top.\funct3_r' using process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:153$44'.
+  created $dff cell `$procdff$638' with positive edge clock.
+Creating register for signal `\soc_top.\byte_offset_r' using process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:153$44'.
+  created $dff cell `$procdff$639' with positive edge clock.
+Creating register for signal `\soc_top.\mem_read_r' using process `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:153$44'.
+  created $dff cell `$procdff$640' with positive edge clock.
+Creating register for signal `\pc_reg.\pc' using process `\pc_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244'.
+  created $adff cell `$procdff$643' with positive edge clock and positive level reset.
+Creating register for signal `\if_id_reg.\pc_out' using process `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+  created $adff cell `$procdff$646' with positive edge clock and positive level reset.
+Creating register for signal `\if_id_reg.\instr_out' using process `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+  created $adff cell `$procdff$649' with positive edge clock and positive level reset.
+Creating register for signal `\if_id_reg.\pc_plus4_out' using process `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+  created $adff cell `$procdff$652' with positive edge clock and positive level reset.
+Creating register for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_ADDR' using process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+  created $dff cell `$procdff$653' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_DATA' using process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+  created $dff cell `$procdff$654' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN' using process `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+  created $dff cell `$procdff$655' with positive edge clock.
+Creating register for signal `\id_ex_reg.\pc_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$658' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\pc_plus4_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$661' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\imm_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$664' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\reg_write_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$667' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\mem_read_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$670' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\mem_write_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$673' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\mem_to_reg_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$676' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\alu_src_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$679' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\branch_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$682' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\jump_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$685' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\lui_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$688' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\auipc_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$691' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\is_jalr_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$694' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\alu_op_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$697' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\rs1_data_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$700' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\rs2_data_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$703' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\rs1_addr_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$706' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\rs2_addr_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$709' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\rd_addr_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$712' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\funct3_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$715' with positive edge clock and positive level reset.
+Creating register for signal `\id_ex_reg.\funct7_5_out' using process `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+  created $adff cell `$procdff$718' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\pc_plus4_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$721' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\reg_write_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$724' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\mem_to_reg_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$727' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\jump_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$730' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\rd_addr_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$733' with positive edge clock and positive level reset.
+Creating register for signal `\ex_mem_reg.\alu_result_out' using process `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+  created $adff cell `$procdff$736' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\pc_plus4_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$739' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\reg_write_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$742' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\mem_to_reg_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$745' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\jump_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$748' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\rd_addr_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$751' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\alu_result_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$754' with positive edge clock and positive level reset.
+Creating register for signal `\mem_wb_reg.\read_data_out' using process `\mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+  created $adff cell `$procdff$757' with positive edge clock and positive level reset.
+
+33. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+34. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 6 empty switches in `\soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45'.
+Removing empty process `soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:160$45'.
+Removing empty process `soc_top.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:153$44'.
+Found and cleaned up 1 empty switch in `\alu.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:63$260'.
+Removing empty process `alu.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:63$260'.
+Found and cleaned up 2 empty switches in `\pc_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244'.
+Removing empty process `pc_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/pc_reg.v:19$244'.
+Found and cleaned up 2 empty switches in `\if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+Removing empty process `if_id_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/if_id_reg.v:25$242'.
+Found and cleaned up 1 empty switch in `\control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+Removing empty process `control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/control.v:35$241'.
+Found and cleaned up 1 empty switch in `\imm_gen.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v:17$240'.
+Removing empty process `imm_gen.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/imm_gen.v:17$240'.
+Removing empty process `regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:0$207'.
+Found and cleaned up 1 empty switch in `\regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+Removing empty process `regfile.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:27$154'.
+Found and cleaned up 2 empty switches in `\id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+Removing empty process `id_ex_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/id_ex_reg.v:38$120'.
+Found and cleaned up 1 empty switch in `\ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+Removing empty process `ex_mem_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/ex_mem_reg.v:28$91'.
+Removing empty process `mem_wb_reg.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/pipeline/mem_wb_reg.v:20$90'.
+Found and cleaned up 2 empty switches in `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:43$75'.
+Removing empty process `forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:43$75'.
+Found and cleaned up 2 empty switches in `\forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:34$66'.
+Removing empty process `forward.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/forward.v:34$66'.
+Found and cleaned up 2 empty switches in `\alu_control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268'.
+Removing empty process `alu_control.$proc$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:21$268'.
+Cleaned up 23 empty switches.
+
+35. Executing CHECK pass (checking for obvious problems).
+Checking module soc_top...
+Checking module alu...
+Checking module pc_reg...
+Checking module if_id_reg...
+Checking module control...
+Checking module imm_gen...
+Checking module regfile...
+Checking module id_ex_reg...
+Checking module ex_stage...
+Checking module ex_mem_reg...
+Checking module mem_wb_reg...
+Checking module hazard...
+Checking module forward...
+Checking module top...
+Checking module alu_control...
+Found and reported 0 problems.
+
+36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~14 debug messages>
+Optimizing module alu.
+<suppressed ~2 debug messages>
+Optimizing module pc_reg.
+<suppressed ~2 debug messages>
+Optimizing module if_id_reg.
+<suppressed ~6 debug messages>
+Optimizing module control.
+Optimizing module imm_gen.
+Optimizing module regfile.
+<suppressed ~3 debug messages>
+Optimizing module id_ex_reg.
+<suppressed ~21 debug messages>
+Optimizing module ex_stage.
+<suppressed ~1 debug messages>
+Optimizing module ex_mem_reg.
+<suppressed ~6 debug messages>
+Optimizing module mem_wb_reg.
+<suppressed ~7 debug messages>
+Optimizing module hazard.
+<suppressed ~1 debug messages>
+Optimizing module forward.
+<suppressed ~4 debug messages>
+Optimizing module top.
+Optimizing module alu_control.
+<suppressed ~2 debug messages>
+
+37. Executing FLATTEN pass (flatten design).
+Deleting now unused module alu.
+Deleting now unused module pc_reg.
+Deleting now unused module if_id_reg.
+Deleting now unused module control.
+Deleting now unused module imm_gen.
+Deleting now unused module regfile.
+Deleting now unused module id_ex_reg.
+Deleting now unused module ex_stage.
+Deleting now unused module ex_mem_reg.
+Deleting now unused module mem_wb_reg.
+Deleting now unused module hazard.
+Deleting now unused module forward.
+Deleting now unused module top.
+Deleting now unused module alu_control.
+<suppressed ~14 debug messages>
+
+38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~27 debug messages>
+
+39. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 5 unused cells and 345 unused wires.
+<suppressed ~6 debug messages>
+
+40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+41. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~201 debug messages>
+Removed a total of 67 cells.
+
+42. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$632.
+    dead port 1/2 on $mux $flatten\cpu_core.\forward_inst.$procmux$609.
+    dead port 1/2 on $mux $flatten\cpu_core.\forward_inst.$procmux$618.
+    dead port 2/2 on $mux $procmux$278.
+    dead port 2/2 on $mux $procmux$280.
+    dead port 2/2 on $mux $procmux$290.
+    dead port 2/2 on $mux $procmux$292.
+    dead port 2/2 on $mux $procmux$302.
+    dead port 2/2 on $mux $procmux$304.
+    dead port 2/2 on $mux $procmux$317.
+    dead port 2/2 on $mux $procmux$319.
+    dead port 2/2 on $mux $procmux$328.
+Removed 12 multiplexer ports.
+<suppressed ~43 debug messages>
+
+43. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+    New ctrl vector for $pmux cell $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$334: { $auto$opt_reduce.cc:134:opt_pmux$774 $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$343_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$342_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$341_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$340_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$339_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$338_CMP $flatten\cpu_core.\ex_stage_inst.\alu_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:46$248_Y $flatten\cpu_core.\ex_stage_inst.\alu_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:46$250_Y $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$335_CMP }
+    New ctrl vector for $pmux cell $flatten\cpu_core.\control_inst.$procmux$376: $auto$opt_reduce.cc:134:opt_pmux$776
+    Consolidated identical input bits for $mux cell $flatten\cpu_core.\regfile_inst.$procmux$453:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157
+      New ports: A=1'0, B=1'1, Y=$flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0]
+      New connections: $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [31:1] = { $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] $flatten\cpu_core.\regfile_inst.$0$memwr$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:29$153_EN[31:0]$157 [0] }
+    New ctrl vector for $pmux cell $flatten\cpu_core.\control_inst.$procmux$399: $auto$opt_reduce.cc:134:opt_pmux$778
+    New ctrl vector for $pmux cell $flatten\cpu_core.\control_inst.$procmux$410: $auto$opt_reduce.cc:134:opt_pmux$780
+  Optimizing cells in module \soc_top.
+Performed a total of 5 changes.
+
+44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+45. Executing OPT_DFF pass (perform DFF optimizations).
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 75 unused wires.
+<suppressed ~1 debug messages>
+
+47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+48. Rerunning OPT passes. (Maybe there is more to do…)
+
+49. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+50. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+52. Executing OPT_DFF pass (perform DFF optimizations).
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+55. Executing FSM pass (extract and optimize FSM).
+
+55.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register soc_top.cpu_core.id_ex_reg_inst.alu_op_out.
+
+55.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\cpu_core.id_ex_reg_inst.alu_op_out' from module `\soc_top'.
+  found $adff cell for state register: $flatten\cpu_core.\id_ex_reg_inst.$procdff$697
+  root of input selection tree: $flatten\cpu_core.\id_ex_reg_inst.$0\alu_op_out[1:0]
+  found reset state: 2'00 (from async reset)
+  found ctrl input: \cpu_core.flush_id_ex
+  found ctrl input: $flatten\cpu_core.\control_inst.$procmux$372_CMP
+  found ctrl input: $flatten\cpu_core.\control_inst.$procmux$373_CMP
+  found ctrl input: $flatten\cpu_core.\control_inst.$procmux$374_CMP
+  found state code: 2'01
+  found state code: 2'11
+  found state code: 2'10
+  found ctrl output: \cpu_core.ex_stage_inst.alu_control_inst.is_rtype
+  found ctrl output: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$637_CMP
+  found ctrl output: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$636_CMP
+  found ctrl output: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$633_CMP [1]
+  ctrl inputs: { \cpu_core.flush_id_ex $flatten\cpu_core.\control_inst.$procmux$374_CMP $flatten\cpu_core.\control_inst.$procmux$373_CMP $flatten\cpu_core.\control_inst.$procmux$372_CMP }
+  ctrl outputs: { $flatten\cpu_core.\id_ex_reg_inst.$0\alu_op_out[1:0] \cpu_core.ex_stage_inst.alu_control_inst.is_rtype $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$633_CMP [1] $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$636_CMP $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$637_CMP }
+  transition:       2'00 4'0000 ->       2'00 6'000001
+  transition:       2'00 4'01-- ->       2'10 6'100001
+  transition:       2'00 4'0-1- ->       2'11 6'110001
+  transition:       2'00 4'0--1 ->       2'01 6'010001
+  transition:       2'00 4'1--- ->       2'00 6'000001
+  transition:       2'10 4'0000 ->       2'00 6'001000
+  transition:       2'10 4'01-- ->       2'10 6'101000
+  transition:       2'10 4'0-1- ->       2'11 6'111000
+  transition:       2'10 4'0--1 ->       2'01 6'011000
+  transition:       2'10 4'1--- ->       2'00 6'001000
+  transition:       2'01 4'0000 ->       2'00 6'000010
+  transition:       2'01 4'01-- ->       2'10 6'100010
+  transition:       2'01 4'0-1- ->       2'11 6'110010
+  transition:       2'01 4'0--1 ->       2'01 6'010010
+  transition:       2'01 4'1--- ->       2'00 6'000010
+  transition:       2'11 4'0000 ->       2'00 6'000100
+  transition:       2'11 4'01-- ->       2'10 6'100100
+  transition:       2'11 4'0-1- ->       2'11 6'110100
+  transition:       2'11 4'0--1 ->       2'01 6'010100
+  transition:       2'11 4'1--- ->       2'00 6'000100
+
+55.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781' from module `\soc_top'.
+
+55.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 7 unused cells and 12 unused wires.
+<suppressed ~14 debug messages>
+
+55.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781' from module `\soc_top'.
+  Removing unused output signal $flatten\cpu_core.\id_ex_reg_inst.$0\alu_op_out[1:0] [0].
+  Removing unused output signal $flatten\cpu_core.\id_ex_reg_inst.$0\alu_op_out[1:0] [1].
+
+55.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781' from module `\soc_top' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> ---1
+  10 -> --1-
+  01 -> -1--
+  11 -> 1---
+
+55.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781' from module `soc_top':
+-------------------------------------
+
+  Information on FSM $fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781 (\cpu_core.id_ex_reg_inst.alu_op_out):
+
+  Number of input signals:    4
+  Number of output signals:   4
+  Number of state bits:       4
+
+  Input signals:
+    0: $flatten\cpu_core.\control_inst.$procmux$372_CMP
+    1: $flatten\cpu_core.\control_inst.$procmux$373_CMP
+    2: $flatten\cpu_core.\control_inst.$procmux$374_CMP
+    3: \cpu_core.flush_id_ex
+
+  Output signals:
+    0: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$637_CMP
+    1: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$636_CMP
+    2: $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$633_CMP [1]
+    3: \cpu_core.ex_stage_inst.alu_control_inst.is_rtype
+
+  State encoding:
+    0:     4'---1  <RESET STATE>
+    1:     4'--1-
+    2:     4'-1--
+    3:     4'1---
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 4'0000   ->     0 4'0001
+      1:     0 4'1---   ->     0 4'0001
+      2:     0 4'01--   ->     1 4'0001
+      3:     0 4'0--1   ->     2 4'0001
+      4:     0 4'0-1-   ->     3 4'0001
+      5:     1 4'0000   ->     0 4'1000
+      6:     1 4'1---   ->     0 4'1000
+      7:     1 4'01--   ->     1 4'1000
+      8:     1 4'0--1   ->     2 4'1000
+      9:     1 4'0-1-   ->     3 4'1000
+     10:     2 4'0000   ->     0 4'0010
+     11:     2 4'1---   ->     0 4'0010
+     12:     2 4'01--   ->     1 4'0010
+     13:     2 4'0--1   ->     2 4'0010
+     14:     2 4'0-1-   ->     3 4'0010
+     15:     3 4'0000   ->     0 4'0100
+     16:     3 4'1---   ->     0 4'0100
+     17:     3 4'01--   ->     1 4'0100
+     18:     3 4'0--1   ->     2 4'0100
+     19:     3 4'0-1-   ->     3 4'0100
+
+-------------------------------------
+
+55.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\cpu_core.id_ex_reg_inst.alu_op_out$781' from module `\soc_top'.
+
+56. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~2 debug messages>
+
+57. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+58. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+59. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+60. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+61. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\cpu_core.\pc_reg_inst.$procdff$643 ($adff) from module soc_top (D = $flatten\cpu_core.\pc_reg_inst.$procmux$347_Y, Q = \cpu_core.pc_reg_inst.pc).
+Adding EN signal on $flatten\cpu_core.\if_id_reg_inst.$procdff$652 ($adff) from module soc_top (D = $flatten\cpu_core.\if_id_reg_inst.$0\pc_plus4_out[31:0], Q = \cpu_core.if_id_reg_inst.pc_plus4_out).
+Adding EN signal on $flatten\cpu_core.\if_id_reg_inst.$procdff$649 ($adff) from module soc_top (D = $flatten\cpu_core.\if_id_reg_inst.$0\instr_out[31:0], Q = \cpu_core.if_id_reg_inst.instr_out).
+Adding EN signal on $flatten\cpu_core.\if_id_reg_inst.$procdff$646 ($adff) from module soc_top (D = $flatten\cpu_core.\if_id_reg_inst.$0\pc_out[31:0], Q = \cpu_core.if_id_reg_inst.pc_out).
+
+62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 1 unused cells and 11 unused wires.
+<suppressed ~2 debug messages>
+
+63. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+64. Rerunning OPT passes. (Maybe there is more to do…)
+
+65. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+66. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+67. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+68. Executing OPT_DFF pass (perform DFF optimizations).
+
+69. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+70. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+71. Rerunning OPT passes. (Maybe there is more to do…)
+
+72. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+73. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+74. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+75. Executing OPT_DFF pass (perform DFF optimizations).
+
+76. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+77. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+78. Executing WREDUCE pass (reducing word size of cells).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$175 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$176 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$177 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$178 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$179 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$180 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$181 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$182 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$183 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$184 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$185 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$186 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$187 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$188 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$189 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$190 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$191 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$192 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$193 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$194 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$195 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$196 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$197 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$198 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$199 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$200 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$201 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$202 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$203 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$204 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$205 (cpu_core.regfile_inst.regs).
+Removed top 27 address bits (of 32) from memory init port soc_top.$flatten\cpu_core.\regfile_inst.$meminit$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:25$206 (cpu_core.regfile_inst.regs).
+Removed top 1 bits (of 2) from port B of cell soc_top.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:107$6 ($eq).
+Removed top 1 bits (of 2) from port B of cell soc_top.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:110$20 ($eq).
+Removed top 1 bits (of 2) from port B of cell soc_top.$procmux$288_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell soc_top.$procmux$303_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell soc_top.$auto$fsm_map.cc:77:implement_pattern_cache$797 ($eq).
+Removed top 1 bits (of 2) from mux cell soc_top.$flatten\cpu_core.\forward_inst.$procmux$606 ($mux).
+Removed top 1 bits (of 2) from mux cell soc_top.$flatten\cpu_core.\forward_inst.$procmux$615 ($mux).
+Removed top 3 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:46$247 ($eq).
+Removed top 2 bits (of 3) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:85$102 ($eq).
+Removed top 1 bits (of 2) from port B of cell soc_top.$auto$opt_dff.cc:195:make_patterns_logic$805 ($ne).
+Removed top 1 bits (of 2) from port B of cell soc_top.$auto$fsm_map.cc:77:implement_pattern_cache$801 ($eq).
+Removed top 1 bits (of 3) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$629_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$procmux$628_CMP0 ($eq).
+Removed top 3 bits (of 4) from mux cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:41$272 ($mux).
+Removed top 3 bits (of 4) from mux cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:36$271 ($mux).
+Removed top 2 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$343_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$342_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$341_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$340_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$339_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$338_CMP0 ($eq).
+Removed top 32 bits (of 33) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$255 ($add).
+Removed top 1 bits (of 33) from port A of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$254 ($add).
+Removed top 1 bits (of 33) from port B of cell soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$254 ($add).
+Removed top 1 bits (of 2) from port B of cell soc_top.$auto$fsm_map.cc:77:implement_pattern_cache$799 ($eq).
+Removed top 2 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$373_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$374_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$379_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$380_CMP0 ($eq).
+Removed top 5 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$382_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell soc_top.$flatten\cpu_core.\control_inst.$procmux$414_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell soc_top.$flatten\cpu_core.$add$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:76$47 ($add).
+Removed top 3 bits (of 4) from wire soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:36$271_Y.
+Removed top 3 bits (of 4) from wire soc_top.$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:41$272_Y.
+Removed top 1 bits (of 2) from wire soc_top.$flatten\cpu_core.\forward_inst.$2\forward_a[1:0].
+Removed top 1 bits (of 2) from wire soc_top.$flatten\cpu_core.\forward_inst.$2\forward_b[1:0].
+
+79. Executing PEEPOPT pass (run peephole optimizers).
+
+80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+81. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module soc_top:
+  creating $macc model for $flatten\cpu_core.$add$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:76$47 ($add).
+  creating $macc model for $flatten\cpu_core.\ex_stage_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:93$116 ($add).
+  creating $macc model for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$254 ($add).
+  creating $macc model for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$255 ($add).
+  merging $macc model for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$254 into $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$255.
+  creating $alu model for $macc $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$255.
+  creating $alu model for $macc $flatten\cpu_core.\ex_stage_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:93$116.
+  creating $alu model for $macc $flatten\cpu_core.$add$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:76$47.
+  creating $alu model for $flatten\cpu_core.\ex_stage_inst.$lt$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:80$99 ($lt): new $alu
+  creating $alu model for $flatten\cpu_core.\ex_stage_inst.$lt$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:81$100 ($lt): new $alu
+  creating $alu cell for $flatten\cpu_core.\ex_stage_inst.$lt$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:81$100: $auto$alumacc.cc:485:replace_alu$818
+  creating $alu cell for $flatten\cpu_core.\ex_stage_inst.$lt$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:80$99: $auto$alumacc.cc:485:replace_alu$823
+  creating $alu cell for $flatten\cpu_core.$add$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:76$47: $auto$alumacc.cc:485:replace_alu$830
+  creating $alu cell for $flatten\cpu_core.\ex_stage_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/ex_stage.v:93$116: $auto$alumacc.cc:485:replace_alu$833
+  creating $alu cell for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$add$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:48$255: $auto$alumacc.cc:485:replace_alu$836
+  created 5 $alu and 0 $macc cells.
+
+82. Executing SHARE pass (SAT-based resource sharing).
+Found 5 cells in module soc_top that may be considered for resource sharing.
+  Analyzing resource sharing options for $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:44$172 ($memrd):
+    Found 1 activation_patterns using ctrl signal { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:44$171_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:43$169_Y }.
+    Found 1 candidates: $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$166
+    Analyzing resource sharing with $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$166 ($memrd):
+      Found 1 activation_patterns using ctrl signal { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$165_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:40$163_Y }.
+      Activation pattern for cell $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:44$172: { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:44$171_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:43$169_Y } = 3'000
+      Activation pattern for cell $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$166: { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$165_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:40$163_Y } = 3'000
+      Size of SAT problem: 0 cells, 5649 variables, 14575 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:44$171_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:43$169_Y $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$165_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:40$163_Y } = 5'00000
+  Analyzing resource sharing options for $flatten\cpu_core.\regfile_inst.$memrd$\regs$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$166 ($memrd):
+    Found 1 activation_patterns using ctrl signal { \cpu_core.flush_id_ex $flatten\cpu_core.\regfile_inst.$logic_and$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:41$165_Y $flatten\cpu_core.\regfile_inst.$eq$/home/tuan-23521721/workspace/riscv_ol2/src/core/regfile.v:40$163_Y }.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$sshr$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:72$266 ($sshr):
+    Found 1 activation_patterns using ctrl signal $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$338_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$shr$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:71$265 ($shr):
+    Found 1 activation_patterns using ctrl signal $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$339_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $flatten\cpu_core.\ex_stage_inst.\alu_inst.$shl$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu.v:70$264 ($shl):
+    Found 1 activation_patterns using ctrl signal $flatten\cpu_core.\ex_stage_inst.\alu_inst.$procmux$340_CMP.
+    No candidates found.
+
+83. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~1 debug messages>
+
+84. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+85. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+86. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+87. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+88. Executing OPT_DFF pass (perform DFF optimizations).
+
+89. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 1 unused cells and 4 unused wires.
+<suppressed ~2 debug messages>
+
+90. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+91. Rerunning OPT passes. (Maybe there is more to do…)
+
+92. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+93. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+94. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+95. Executing OPT_DFF pass (perform DFF optimizations).
+
+96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+97. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+98. Executing MEMORY pass.
+
+98.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+98.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+98.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing soc_top.cpu_core.regfile_inst.regs write port 0.
+
+98.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+98.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\cpu_core.regfile_inst.regs'[0] in module `\soc_top': FF found, but with a mux select that doesn't seem to correspond to transparency logic.
+Checking read port `\cpu_core.regfile_inst.regs'[1] in module `\soc_top': FF found, but with a mux select that doesn't seem to correspond to transparency logic.
+Checking read port address `\cpu_core.regfile_inst.regs'[0] in module `\soc_top': address FF has async set and/or reset, not supported.
+Checking read port address `\cpu_core.regfile_inst.regs'[1] in module `\soc_top': address FF has async set and/or reset, not supported.
+
+98.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+98.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating read ports of memory soc_top.cpu_core.regfile_inst.regs by address:
+
+98.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+98.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+98.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+99. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+100. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~27 debug messages>
+
+101. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+102. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:266:slice$802 ($adffe) from module soc_top (D = $flatten\cpu_core.\pc_reg_inst.$procmux$347_Y [1:0], Q = \cpu_core.pc_reg_inst.pc [1:0]).
+
+103. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 2 unused cells and 21 unused wires.
+<suppressed ~3 debug messages>
+
+104. Rerunning OPT passes (Removed registers in this run.)
+
+105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~1 debug messages>
+
+106. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+107. Executing OPT_DFF pass (perform DFF optimizations).
+
+108. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+109. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \cpu_core.regfile_inst.regs in module \soc_top:
+  created 32 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 62 $mux cells.
+  write interface: 32 write mux blocks.
+
+110. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~10 debug messages>
+
+111. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+112. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~70 debug messages>
+
+113. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+    Consolidated identical input bits for $mux cell $flatten\cpu_core.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:75$48:
+      Old ports: A={ \cpu_core.if_id_reg_inst.pc_plus4_in [31:2] \cpu_core.pc_reg_inst.pc [1:0] }, B=\cpu_core.pc_reg_inst.pc, Y=$flatten\cpu_core.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:75$48_Y
+      New ports: A=\cpu_core.if_id_reg_inst.pc_plus4_in [31:2], B=\cpu_core.pc_reg_inst.pc [31:2], Y=$flatten\cpu_core.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:75$48_Y [31:2]
+      New connections: $flatten\cpu_core.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/top.v:75$48_Y [1:0] = \cpu_core.pc_reg_inst.pc [1:0]
+    Consolidated identical input bits for $mux cell $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269:
+      Old ports: A=4'0000, B=4'1010, Y=$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269_Y
+      New ports: A=1'0, B=1'1, Y=$flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269_Y [1]
+      New connections: { $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269_Y [3:2] $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269_Y [0] } = { $flatten\cpu_core.\ex_stage_inst.\alu_control_inst.$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/core/alu_control.v:31$269_Y [1] 2'00 }
+    Consolidated identical input bits for $mux cell $procmux$275:
+      Old ports: A={ 16'0000000000000000 \dmem_dout [15:0] }, B={ 16'0000000000000000 \dmem_dout [31:16] }, Y=$6\dmem_rdata_comb[31:0]
+      New ports: A=\dmem_dout [15:0], B=\dmem_dout [31:16], Y=$6\dmem_rdata_comb[31:0] [15:0]
+      New connections: $6\dmem_rdata_comb[31:0] [31:16] = 16'0000000000000000
+    Consolidated identical input bits for $pmux cell $procmux$285:
+      Old ports: A={ 24'000000000000000000000000 \dmem_dout [7:0] }, B={ 24'000000000000000000000000 \dmem_dout [15:8] 24'000000000000000000000000 \dmem_dout [23:16] 24'000000000000000000000000 \dmem_dout [31:24] }, Y=$5\dmem_rdata_comb[31:0]
+      New ports: A=\dmem_dout [7:0], B={ \dmem_dout [15:8] \dmem_dout [23:16] \dmem_dout [31:24] }, Y=$5\dmem_rdata_comb[31:0] [7:0]
+      New connections: $5\dmem_rdata_comb[31:0] [31:8] = 24'000000000000000000000000
+    Consolidated identical input bits for $mux cell $procmux$299:
+      Old ports: A={ \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15:0] }, B={ \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31:16] }, Y=$4\dmem_rdata_comb[31:0]
+      New ports: A=\dmem_dout [15:0], B=\dmem_dout [31:16], Y=$4\dmem_rdata_comb[31:0] [15:0]
+      New connections: $4\dmem_rdata_comb[31:0] [31:16] = { $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] $4\dmem_rdata_comb[31:0] [15] }
+    Consolidated identical input bits for $pmux cell $procmux$312:
+      Old ports: A={ \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7] \dmem_dout [7:0] }, B={ \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15] \dmem_dout [15:8] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23] \dmem_dout [23:16] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31] \dmem_dout [31:24] }, Y=$3\dmem_rdata_comb[31:0]
+      New ports: A=\dmem_dout [7:0], B={ \dmem_dout [15:8] \dmem_dout [23:16] \dmem_dout [31:24] }, Y=$3\dmem_rdata_comb[31:0] [7:0]
+      New connections: $3\dmem_rdata_comb[31:0] [31:8] = { $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] $3\dmem_rdata_comb[31:0] [7] }
+    Consolidated identical input bits for $mux cell $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30:
+      Old ports: A=4'0000, B=4'1000, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30_Y
+      New ports: A=1'0, B=1'1, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30_Y [3]
+      New connections: $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30_Y [2:0] = 3'000
+    Consolidated identical input bits for $mux cell $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39:
+      Old ports: A=\cpu_core.ex_stage_inst.forwarded_b, B={ \cpu_core.ex_stage_inst.forwarded_b [7:0] \cpu_core.ex_stage_inst.forwarded_b [7:0] \cpu_core.ex_stage_inst.forwarded_b [7:0] \cpu_core.ex_stage_inst.forwarded_b [7:0] }, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39_Y
+      New ports: A=\cpu_core.ex_stage_inst.forwarded_b [31:8], B={ \cpu_core.ex_stage_inst.forwarded_b [7:0] \cpu_core.ex_stage_inst.forwarded_b [7:0] \cpu_core.ex_stage_inst.forwarded_b [7:0] }, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39_Y [31:8]
+      New connections: $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39_Y [7:0] = \cpu_core.ex_stage_inst.forwarded_b [7:0]
+  Optimizing cells in module \soc_top.
+    Consolidated identical input bits for $mux cell $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31:
+      Old ports: A=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30_Y, B=4'0100, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31_Y
+      New ports: A={ $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:112$30_Y [3] 1'0 }, B=2'01, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31_Y [3:2]
+      New connections: $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31_Y [1:0] = 2'00
+    Consolidated identical input bits for $mux cell $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:117$40:
+      Old ports: A=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39_Y, B={ \cpu_core.ex_stage_inst.forwarded_b [15:0] \cpu_core.ex_stage_inst.forwarded_b [15:0] }, Y=\dmem_din
+      New ports: A=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:118$39_Y [31:8], B={ \cpu_core.ex_stage_inst.forwarded_b [15:0] \cpu_core.ex_stage_inst.forwarded_b [15:8] }, Y=\dmem_din [31:8]
+      New connections: \dmem_din [7:0] = \cpu_core.ex_stage_inst.forwarded_b [7:0]
+  Optimizing cells in module \soc_top.
+    Consolidated identical input bits for $mux cell $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:110$32:
+      Old ports: A=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31_Y, B=4'0010, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:110$32_Y
+      New ports: A={ $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:111$31_Y [3:2] 1'0 }, B=3'001, Y=$ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:110$32_Y [3:1]
+      New connections: $ternary$/home/tuan-23521721/workspace/riscv_ol2/src/top/soc_top.v:110$32_Y [0] = 1'0
+  Optimizing cells in module \soc_top.
+Performed a total of 11 changes.
+
+114. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+115. Executing OPT_SHARE pass.
+
+116. Executing OPT_DFF pass (perform DFF optimizations).
+
+117. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 103 unused wires.
+<suppressed ~1 debug messages>
+
+118. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~2 debug messages>
+
+119. Rerunning OPT passes. (Maybe there is more to do…)
+
+120. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~70 debug messages>
+
+121. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+122. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+123. Executing OPT_SHARE pass.
+
+124. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[9]$869 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[9]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[8]$867 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[8]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[7]$865 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[7]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[6]$863 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[6]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[5]$861 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[5]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[4]$859 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[4]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[3]$857 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[3]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[31]$913 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[31]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[30]$911 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[30]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[2]$855 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[2]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[29]$909 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[29]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[28]$907 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[28]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[27]$905 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[27]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[26]$903 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[26]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[25]$901 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[25]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[24]$899 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[24]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[23]$897 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[23]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[22]$895 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[22]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[21]$893 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[21]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[20]$891 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[20]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[1]$853 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[1]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[19]$889 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[19]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[18]$887 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[18]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[17]$885 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[17]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[16]$883 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[16]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[15]$881 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[15]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[14]$879 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[14]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[13]$877 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[13]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[12]$875 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[12]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[11]$873 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[11]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[10]$871 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[10]).
+Adding EN signal on $memory\cpu_core.regfile_inst.regs[0]$851 ($dff) from module soc_top (D = \cpu_core.ex_stage_inst.wd_data_wb, Q = \cpu_core.regfile_inst.regs[0]).
+
+125. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 32 unused cells and 34 unused wires.
+<suppressed ~33 debug messages>
+
+126. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+127. Rerunning OPT passes. (Maybe there is more to do…)
+
+128. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~38 debug messages>
+
+129. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+130. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+131. Executing OPT_SHARE pass.
+
+132. Executing OPT_DFF pass (perform DFF optimizations).
+
+133. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+134. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+135. Executing TECHMAP pass (map to technology primitives).
+
+135.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+135.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$645fe0cc96ae5edb83bff90cc2c78f4a20ca3e3c\_90_pmux for cells of type $pmux.
+Using template $paramod$b098bc6f249c0ac91c4d6e19d54b23c285914115\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$44a13d10af618e7fbe7b9aad2f6151ffcee1e2fa\_90_alu for cells of type $alu.
+Using template $paramod$2653f68ddb8eab7b1907b4a20767b72a824a7a36\_90_alu for cells of type $alu.
+Using template $paramod$857150d3a9b7fb38b73bbaa31ff652415e553f98\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$33afdd83bf3811dac2de7a968d39eea5718691bc\_90_pmux for cells of type $pmux.
+Using template $paramod$bf2533632d512eac76dd186c0da49367e29b8e98\_90_pmux for cells of type $pmux.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$e765c459d3029c22a22a27989e94858fd9ebfa9c\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$feecc7a0dbd012970970f2858f15e786e251f677\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Using template $paramod$constmap:4621fcf06a436d1e2a4080e2ed9866a7d07a6e07$paramod$335cfd09f1afa8139c4aafcbbe5f361887b79c5e\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using template $paramod$104d3d1e82b09b030a785dad8a5e608a6d4401f7\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$59b03ae2620a41577de8da5f5c97b2919e82362b\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011110 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~3160 debug messages>
+
+136. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~878 debug messages>
+
+137. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~1935 debug messages>
+Removed a total of 645 cells.
+
+138. Executing OPT_DFF pass (perform DFF optimizations).
+
+139. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 194 unused cells and 1023 unused wires.
+<suppressed ~195 debug messages>
+
+140. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+141. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+142. Executing OPT_DFF pass (perform DFF optimizations).
+
+143. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+144. Executing ABC pass (technology mapping using ABC).
+
+144.1. Extracting gate netlist of module `\soc_top' to `<abc-temp-dir>/input.blif'..
+Replacing 2 occurrences of constant undef bits with constant zero bits
+Extracted 5664 gates and 7189 wires to a netlist network with 1522 inputs and 543 outputs.
+
+144.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+144.1.2. Re-integrating ABC results.
+ABC RESULTS:              XNOR cells:       86
+ABC RESULTS:               AND cells:      174
+ABC RESULTS:               NOR cells:      214
+ABC RESULTS:               XOR cells:      207
+ABC RESULTS:               MUX cells:     2728
+ABC RESULTS:               NOT cells:      321
+ABC RESULTS:              NAND cells:      127
+ABC RESULTS:             ORNOT cells:       80
+ABC RESULTS:                OR cells:      647
+ABC RESULTS:            ANDNOT cells:     1286
+ABC RESULTS:        internal signals:     5124
+ABC RESULTS:           input signals:     1522
+ABC RESULTS:          output signals:      543
+Removing temp directory.
+
+145. Executing OPT pass (performing simple optimizations).
+
+145.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+<suppressed ~1007 debug messages>
+
+145.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+145.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+145.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 1 unused cells and 2737 unused wires.
+<suppressed ~79 debug messages>
+
+145.5. Finished fast OPT passes.
+
+146. Executing HIERARCHY pass (managing design hierarchy).
+
+146.1. Analyzing design hierarchy..
+Top module:  \soc_top
+
+146.2. Analyzing design hierarchy..
+Top module:  \soc_top
+Removed 0 unused modules.
+
+147. Executing CHECK pass (checking for obvious problems).
+Checking module soc_top...
+Found and reported 0 problems.
+
+148. Printing statistics.
+
+=== soc_top ===
+
+   Number of wires:               5918
+   Number of wire bits:           9522
+   Number of public wires:         241
+   Number of public wire bits:    3845
+   Number of ports:                 11
+   Number of port bits:            204
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7404
+     $_ANDNOT_                    1285
+     $_AND_                        174
+     $_DFFE_PP0N_                   30
+     $_DFFE_PP0P_                   96
+     $_DFFE_PP_                   1024
+     $_DFF_PP0_                    364
+     $_DFF_P_                        6
+     $_MUX_                       2728
+     $_NAND_                       127
+     $_NOR_                        214
+     $_NOT_                        320
+     $_ORNOT_                       80
+     $_OR_                         647
+     $_XNOR_                        86
+     $_XOR_                        207
+     $scopeinfo                     14
+     sky130_sram_1kbyte_1rw1r_32x256_8      2
+
+149. Generating Graphviz representation of design.
+Writing dot description to `/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module soc_top to page 1.
+
+150. Executing OPT pass (performing simple optimizations).
+
+150.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+150.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+150.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+150.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_top.
+Performed a total of 0 changes.
+
+150.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_top'.
+Removed a total of 0 cells.
+
+150.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+150.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+
+150.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_top.
+
+150.9. Finished OPT passes. (There is nothing left to do.)
+
+151. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 14 unused cells and 145 unused wires.
+<suppressed ~159 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/tmp/43195bc3b7de4c2d9d4a8fe9fe4ab800.lib ",
+   "modules": {
+      "\\soc_top": {
+         "num_wires":         5773,
+         "num_wire_bits":     7536,
+         "num_pub_wires":     96,
+         "num_pub_wire_bits": 1859,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         7390,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1285,
+            "$_AND_": 174,
+            "$_DFFE_PP0N_": 30,
+            "$_DFFE_PP0P_": 96,
+            "$_DFFE_PP_": 1024,
+            "$_DFF_PP0_": 364,
+            "$_DFF_P_": 6,
+            "$_MUX_": 2728,
+            "$_NAND_": 127,
+            "$_NOR_": 214,
+            "$_NOT_": 320,
+            "$_ORNOT_": 80,
+            "$_OR_": 647,
+            "$_XNOR_": 86,
+            "$_XOR_": 207,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         5773,
+         "num_wire_bits":     7536,
+         "num_pub_wires":     96,
+         "num_pub_wire_bits": 1859,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         7390,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1285,
+            "$_AND_": 174,
+            "$_DFFE_PP0N_": 30,
+            "$_DFFE_PP0P_": 96,
+            "$_DFFE_PP_": 1024,
+            "$_DFF_PP0_": 364,
+            "$_DFF_P_": 6,
+            "$_MUX_": 2728,
+            "$_NAND_": 127,
+            "$_NOR_": 214,
+            "$_NOT_": 320,
+            "$_ORNOT_": 80,
+            "$_OR_": 647,
+            "$_XNOR_": 86,
+            "$_XOR_": 207,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+}
+
+152. Printing statistics.
+
+=== soc_top ===
+
+   Number of wires:               5773
+   Number of wire bits:           7536
+   Number of public wires:          96
+   Number of public wire bits:    1859
+   Number of ports:                 11
+   Number of port bits:            204
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7390
+     $_ANDNOT_                    1285
+     $_AND_                        174
+     $_DFFE_PP0N_                   30
+     $_DFFE_PP0P_                   96
+     $_DFFE_PP_                   1024
+     $_DFF_PP0_                    364
+     $_DFF_P_                        6
+     $_MUX_                       2728
+     $_NAND_                       127
+     $_NOR_                        214
+     $_NOT_                        320
+     $_ORNOT_                       80
+     $_OR_                         647
+     $_XNOR_                        86
+     $_XOR_                        207
+     sky130_sram_1kbyte_1rw1r_32x256_8      2
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFF_P_ is unknown!
+   Area for cell type $_DFFE_PP_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_DFFE_PP0N_ is unknown!
+   Area for cell type $_DFFE_PP0P_ is unknown!
+   Area for cell type \sky130_sram_1kbyte_1rw1r_32x256_8 is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+153. Executing TECHMAP pass (map to technology primitives).
+
+153.1. Executing Verilog-2005 frontend: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+153.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+154. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+155. Executing TECHMAP pass (map to technology primitives).
+
+155.1. Executing Verilog-2005 frontend: /home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+155.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+156. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+157. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+157.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\soc_top':
+  mapped 490 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 1030 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/tmp/43195bc3b7de4c2d9d4a8fe9fe4ab800.lib ",
+   "modules": {
+      "\\soc_top": {
+         "num_wires":         7413,
+         "num_wire_bits":     9176,
+         "num_pub_wires":     96,
+         "num_pub_wire_bits": 1859,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         9030,
+         "area":              34783.360000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1285,
+            "$_AND_": 174,
+            "$_MUX_": 3878,
+            "$_NAND_": 127,
+            "$_NOR_": 214,
+            "$_NOT_": 810,
+            "$_ORNOT_": 80,
+            "$_OR_": 647,
+            "$_XNOR_": 86,
+            "$_XOR_": 207,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         7413,
+         "num_wire_bits":     9176,
+         "num_pub_wires":     96,
+         "num_pub_wire_bits": 1859,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         9030,
+         "area":              34783.360000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1285,
+            "$_AND_": 174,
+            "$_MUX_": 3878,
+            "$_NAND_": 127,
+            "$_NOR_": 214,
+            "$_NOT_": 810,
+            "$_ORNOT_": 80,
+            "$_OR_": 647,
+            "$_XNOR_": 86,
+            "$_XOR_": 207,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+}
+
+158. Printing statistics.
+
+=== soc_top ===
+
+   Number of wires:               7413
+   Number of wire bits:           9176
+   Number of public wires:          96
+   Number of public wire bits:    1859
+   Number of ports:                 11
+   Number of port bits:            204
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               9030
+     $_ANDNOT_                    1285
+     $_AND_                        174
+     $_MUX_                       3878
+     $_NAND_                       127
+     $_NOR_                        214
+     $_NOT_                        810
+     $_ORNOT_                       80
+     $_OR_                         647
+     $_XNOR_                        86
+     $_XOR_                        207
+     sky130_fd_sc_hd__dfrtp_2      490
+     sky130_fd_sc_hd__dfxtp_2     1030
+     sky130_sram_1kbyte_1rw1r_32x256_8      2
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type \sky130_sram_1kbyte_1rw1r_32x256_8 is unknown!
+
+   Chip area for module '\soc_top': 34783.360000
+     of which used for sequential elements: 34783.360000 (100.00%)
+
+[INFO] Using generated ABC script '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/DELAY_0.abc'…
+
+159. Executing ABC pass (technology mapping using ABC).
+
+159.1. Extracting gate netlist of module `\soc_top' to `/tmp/yosys-abc-MpUuWG/input.blif'..
+Extracted 7508 gates and 9029 wires to a netlist network with 1521 inputs and 1989 outputs.
+
+159.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-MpUuWG/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-MpUuWG/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-MpUuWG/input.blif 
+ABC: + read_lib -w /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/tmp/43195bc3b7de4c2d9d4a8fe9fe4ab800.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/tmp/43195bc3b7de4c2d9d4a8fe9fe4ab800.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.07 sec
+ABC: Memory =    9.54 MB. Time =     0.07 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/06-yosys-synthesis/DELAY_0.abc 
+ABC: Error: The network is combinational.
+ABC: The cell areas are multiplied by the factor: <num_fanins> ^ (0.90).
+ABC: The cell delays are multiplied by the factor: <num_fanins> ^ (0.20).
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =   5521 ( 11.0 %)   Cap = 16.8 ff ( 11.6 %)   Area =    58364.73 ( 57.2 %)   Delay =  8807.98 ps  (  5.7 %)               
+ABC: Path  0 --     127 : 0    9 pi                         A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  33.3 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --    3564 : 2    2 sky130_fd_sc_hd__nor2_2    A =   6.26  Df = 154.9 -119.7 ps  S = 172.9 ps  Cin =  4.4 ff  Cout =  13.6 ff  Cmax = 141.9 ff  G =  296  
+ABC: Path  2 --    3568 : 3   44 sky130_fd_sc_hd__a21boi_4  A =  18.77  Df = 789.6 -299.2 ps  S = 956.3 ps  Cin =  6.8 ff  Cout = 136.5 ff  Cmax = 215.2 ff  G = 1966  
+ABC: Path  3 --    3666 : 4   64 sky130_fd_sc_hd__nand4_4   A =  21.27  Df =1882.2 -659.3 ps  S =1151.7 ps  Cin =  8.6 ff  Cout = 297.0 ff  Cmax = 358.0 ff  G = 3316  
+ABC: Path  4 --    3688 : 3   23 sky130_fd_sc_hd__o21ai_4   A =  16.27  Df =2593.2 -972.8 ps  S = 681.6 ps  Cin =  8.8 ff  Cout =  97.4 ff  Cmax = 224.3 ff  G = 1052  
+ABC: Path  5 --    4151 : 5    9 sky130_fd_sc_hd__o221ai_4  A =  26.28  Df =2931.0 -644.5 ps  S = 565.7 ps  Cin =  8.6 ff  Cout =  66.8 ff  Cmax = 216.1 ff  G =  758  
+ABC: Path  6 --    4152 : 2    2 sky130_fd_sc_hd__nand2_2   A =   6.26  Df =3111.2 -698.2 ps  S = 213.8 ps  Cin =  4.4 ff  Cout =   8.8 ff  Cmax = 295.7 ff  G =  194  
+ABC: Path  7 --    4154 : 5    2 sky130_fd_sc_hd__o221ai_2  A =  15.01  Df =3240.4 -682.4 ps  S = 247.3 ps  Cin =  4.5 ff  Cout =   9.1 ff  Cmax = 128.2 ff  G =  195  
+ABC: Path  8 --    4161 : 4    3 sky130_fd_sc_hd__o211ai_2  A =  12.51  Df =3405.4  -49.2 ps  S = 195.2 ps  Cin =  4.4 ff  Cout =  10.7 ff  Cmax = 133.7 ff  G =  235  
+ABC: Path  9 --    4162 : 2    5 sky130_fd_sc_hd__nand2_2   A =   6.26  Df =3525.5  -27.9 ps  S = 111.6 ps  Cin =  4.4 ff  Cout =  17.9 ff  Cmax = 295.7 ff  G =  386  
+ABC: Path 10 --    4172 : 4    1 sky130_fd_sc_hd__o31a_2    A =  10.01  Df =3863.4 -108.3 ps  S =  55.6 ps  Cin =  2.3 ff  Cout =   4.7 ff  Cmax = 285.7 ff  G =  188  
+ABC: Path 11 --    4179 : 3    5 sky130_fd_sc_hd__o21ai_2   A =   8.76  Df =4106.2 -260.1 ps  S = 274.8 ps  Cin =  4.5 ff  Cout =  21.3 ff  Cmax = 139.2 ff  G =  448  
+ABC: Path 12 --    4351 : 3    6 sky130_fd_sc_hd__o21ai_2   A =   8.76  Df =4272.5  -11.5 ps  S = 294.5 ps  Cin =  4.5 ff  Cout =  23.2 ff  Cmax = 139.2 ff  G =  494  
+ABC: Path 13 --    4439 : 3    2 sky130_fd_sc_hd__a21oi_2   A =   8.76  Df =4443.3  -80.2 ps  S = 127.8 ps  Cin =  4.6 ff  Cout =   7.2 ff  Cmax = 128.2 ff  G =  147  
+ABC: Path 14 --    4446 : 3    4 sky130_fd_sc_hd__o21bai_2  A =  11.26  Df =4567.8  -20.3 ps  S = 213.7 ps  Cin =  3.4 ff  Cout =  15.1 ff  Cmax = 140.1 ff  G =  429  
+ABC: Path 15 --    4449 : 4    2 sky130_fd_sc_hd__o211ai_2  A =  12.51  Df =4693.4  -59.4 ps  S = 154.4 ps  Cin =  4.4 ff  Cout =   6.8 ff  Cmax = 133.7 ff  G =  152  
+ABC: Path 16 --    4450 : 3    4 sky130_fd_sc_hd__nand3_2   A =  10.01  Df =4819.7  -46.4 ps  S = 127.4 ps  Cin =  4.4 ff  Cout =  18.3 ff  Cmax = 260.0 ff  G =  398  
+ABC: Path 17 --    4468 : 4    2 sky130_fd_sc_hd__o2bb2ai_2 A =  15.01  Df =4952.5  -13.6 ps  S = 152.3 ps  Cin =  4.6 ff  Cout =   8.9 ff  Cmax = 134.6 ff  G =  188  
+ABC: Path 18 --    4470 : 2    4 sky130_fd_sc_hd__nand2_2   A =   6.26  Df =5062.0  -17.4 ps  S = 112.0 ps  Cin =  4.4 ff  Cout =  18.2 ff  Cmax = 295.7 ff  G =  396  
+ABC: Path 19 --    4587 : 4    4 sky130_fd_sc_hd__nand4_2   A =  12.51  Df =5180.8   -4.9 ps  S = 134.8 ps  Cin =  4.4 ff  Cout =  14.1 ff  Cmax = 200.5 ff  G =  312  
+ABC: Path 20 --    4675 : 3    4 sky130_fd_sc_hd__a21o_2    A =   8.76  Df =5435.0  -64.4 ps  S = 102.4 ps  Cin =  2.4 ff  Cout =  18.4 ff  Cmax = 309.5 ff  G =  749  
+ABC: Path 21 --    4726 : 4  143 sky130_fd_sc_hd__a211oi_4  A =  20.02  Df =8007.0-1882.6 ps  S =3328.5 ps  Cin =  8.8 ff  Cout = 330.7 ff  Cmax = 141.9 ff  G = 3598  
+ABC: Path 22 --    6713 : 4    1 sky130_fd_sc_hd__and4b_2   A =  11.26  Df =8808.0-1895.7 ps  S = 231.7 ps  Cin =  1.6 ff  Cout =  33.4 ff  Cmax = 297.6 ff  G = 2150  
+ABC: Start-point = pi126 (\cpu_core.ex_mem_reg_inst.rd_addr_out [1]).  End-point = po364 ($abc$12669$flatten\cpu_core.\id_ex_reg_inst.$0\auipc_out[0:0]).
+ABC: netlist                       : i/o = 1521/ 1989  lat =    0  nd =  5521  edge =  18390  area =19996.05  delay =2296.44  lev = 25
+ABC: + write_blif /tmp/yosys-abc-MpUuWG/output.blif 
+
+159.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__nand3_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_2 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__o32ai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a32oi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:       50
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_2 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_2 cells:       24
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:       63
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__o41ai_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and4bb_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_4 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:       43
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__nor4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:      119
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:       25
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:      108
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       56
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       72
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:       28
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:       29
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:      104
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       69
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:       81
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:      147
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:      202
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:       27
+ABC RESULTS:   sky130_fd_sc_hd__o2111a_2 cells:       59
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       59
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:      464
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:       47
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:       62
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:       33
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:      137
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:       80
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:       60
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:       41
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:      123
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_2 cells:       46
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:      188
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:      132
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:      162
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:      200
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:       62
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:     1267
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:      578
+ABC RESULTS:        internal signals:     5519
+ABC RESULTS:           input signals:     1521
+ABC RESULTS:          output signals:     1989
+Removing temp directory.
+
+160. Executing SETUNDEF pass (replace undef values with defined constants).
+
+161. Executing HILOMAP pass (mapping to constant drivers).
+
+162. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+163. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_top..
+Removed 0 unused cells and 9062 unused wires.
+<suppressed ~67 debug messages>
+
+164. Executing INSBUF pass (insert buffer cells for connected wires).
+Add soc_top/$auto$insbuf.cc:97:execute$27371: \dmem_din[0] -> \dbg_dmem_wdata [0]
+Add soc_top/$auto$insbuf.cc:97:execute$27372: \dmem_din[1] -> \dbg_dmem_wdata [1]
+Add soc_top/$auto$insbuf.cc:97:execute$27373: \dmem_din[2] -> \dbg_dmem_wdata [2]
+Add soc_top/$auto$insbuf.cc:97:execute$27374: \dmem_din[3] -> \dbg_dmem_wdata [3]
+Add soc_top/$auto$insbuf.cc:97:execute$27375: \dmem_din[4] -> \dbg_dmem_wdata [4]
+Add soc_top/$auto$insbuf.cc:97:execute$27376: \dmem_din[5] -> \dbg_dmem_wdata [5]
+Add soc_top/$auto$insbuf.cc:97:execute$27377: \dmem_din[6] -> \dbg_dmem_wdata [6]
+Add soc_top/$auto$insbuf.cc:97:execute$27378: \dmem_din[7] -> \dbg_dmem_wdata [7]
+
+165. Executing CHECK pass (checking for obvious problems).
+Checking module soc_top...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/tmp/43195bc3b7de4c2d9d4a8fe9fe4ab800.lib ",
+   "modules": {
+      "\\soc_top": {
+         "num_wires":         6977,
+         "num_wire_bits":     7170,
+         "num_pub_wires":     1600,
+         "num_pub_wire_bits": 1793,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         7065,
+         "area":              93240.675200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a2111oi_2": 2,
+            "sky130_fd_sc_hd__a211o_2": 147,
+            "sky130_fd_sc_hd__a211oi_2": 12,
+            "sky130_fd_sc_hd__a211oi_4": 1,
+            "sky130_fd_sc_hd__a21bo_2": 9,
+            "sky130_fd_sc_hd__a21boi_2": 5,
+            "sky130_fd_sc_hd__a21boi_4": 1,
+            "sky130_fd_sc_hd__a21o_2": 202,
+            "sky130_fd_sc_hd__a21oi_2": 132,
+            "sky130_fd_sc_hd__a221o_2": 80,
+            "sky130_fd_sc_hd__a221oi_2": 21,
+            "sky130_fd_sc_hd__a22o_2": 104,
+            "sky130_fd_sc_hd__a22oi_2": 24,
+            "sky130_fd_sc_hd__a2bb2o_2": 23,
+            "sky130_fd_sc_hd__a2bb2oi_2": 10,
+            "sky130_fd_sc_hd__a311o_2": 25,
+            "sky130_fd_sc_hd__a311oi_2": 3,
+            "sky130_fd_sc_hd__a31o_2": 108,
+            "sky130_fd_sc_hd__a31oi_2": 41,
+            "sky130_fd_sc_hd__a32o_2": 33,
+            "sky130_fd_sc_hd__a32oi_2": 5,
+            "sky130_fd_sc_hd__a41o_2": 27,
+            "sky130_fd_sc_hd__a41oi_2": 7,
+            "sky130_fd_sc_hd__and2_2": 69,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 200,
+            "sky130_fd_sc_hd__and3b_2": 37,
+            "sky130_fd_sc_hd__and4_2": 62,
+            "sky130_fd_sc_hd__and4b_2": 16,
+            "sky130_fd_sc_hd__and4bb_2": 4,
+            "sky130_fd_sc_hd__buf_1": 32,
+            "sky130_fd_sc_hd__buf_2": 8,
+            "sky130_fd_sc_hd__conb_1": 14,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_fd_sc_hd__inv_2": 578,
+            "sky130_fd_sc_hd__mux2_1": 1267,
+            "sky130_fd_sc_hd__mux4_2": 464,
+            "sky130_fd_sc_hd__nand2_2": 188,
+            "sky130_fd_sc_hd__nand2b_2": 15,
+            "sky130_fd_sc_hd__nand3_2": 50,
+            "sky130_fd_sc_hd__nand3_4": 1,
+            "sky130_fd_sc_hd__nand3b_2": 26,
+            "sky130_fd_sc_hd__nand4_2": 60,
+            "sky130_fd_sc_hd__nand4_4": 1,
+            "sky130_fd_sc_hd__nand4b_2": 11,
+            "sky130_fd_sc_hd__nor2_2": 119,
+            "sky130_fd_sc_hd__nor3_2": 13,
+            "sky130_fd_sc_hd__nor3b_2": 2,
+            "sky130_fd_sc_hd__nor3b_4": 1,
+            "sky130_fd_sc_hd__nor4_2": 5,
+            "sky130_fd_sc_hd__nor4b_2": 1,
+            "sky130_fd_sc_hd__o2111a_2": 59,
+            "sky130_fd_sc_hd__o2111ai_2": 46,
+            "sky130_fd_sc_hd__o211a_2": 137,
+            "sky130_fd_sc_hd__o211ai_2": 123,
+            "sky130_fd_sc_hd__o21a_2": 56,
+            "sky130_fd_sc_hd__o21ai_2": 162,
+            "sky130_fd_sc_hd__o21ai_4": 3,
+            "sky130_fd_sc_hd__o21ba_2": 36,
+            "sky130_fd_sc_hd__o21bai_2": 16,
+            "sky130_fd_sc_hd__o221a_2": 81,
+            "sky130_fd_sc_hd__o221ai_2": 63,
+            "sky130_fd_sc_hd__o221ai_4": 1,
+            "sky130_fd_sc_hd__o22a_2": 62,
+            "sky130_fd_sc_hd__o22ai_2": 17,
+            "sky130_fd_sc_hd__o2bb2a_2": 34,
+            "sky130_fd_sc_hd__o2bb2ai_2": 18,
+            "sky130_fd_sc_hd__o311a_2": 29,
+            "sky130_fd_sc_hd__o311ai_2": 5,
+            "sky130_fd_sc_hd__o31a_2": 47,
+            "sky130_fd_sc_hd__o31ai_2": 9,
+            "sky130_fd_sc_hd__o32a_2": 14,
+            "sky130_fd_sc_hd__o32ai_2": 3,
+            "sky130_fd_sc_hd__o41a_2": 2,
+            "sky130_fd_sc_hd__o41ai_2": 6,
+            "sky130_fd_sc_hd__or2_2": 72,
+            "sky130_fd_sc_hd__or3_2": 59,
+            "sky130_fd_sc_hd__or3b_2": 43,
+            "sky130_fd_sc_hd__or4_2": 28,
+            "sky130_fd_sc_hd__or4b_2": 13,
+            "sky130_fd_sc_hd__or4bb_2": 3,
+            "sky130_fd_sc_hd__xnor2_2": 10,
+            "sky130_fd_sc_hd__xor2_2": 17,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+   },
+      "design": {
+         "num_wires":         6977,
+         "num_wire_bits":     7170,
+         "num_pub_wires":     1600,
+         "num_pub_wire_bits": 1793,
+         "num_ports":         11,
+         "num_port_bits":     204,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         7065,
+         "area":              93240.675200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a2111oi_2": 2,
+            "sky130_fd_sc_hd__a211o_2": 147,
+            "sky130_fd_sc_hd__a211oi_2": 12,
+            "sky130_fd_sc_hd__a211oi_4": 1,
+            "sky130_fd_sc_hd__a21bo_2": 9,
+            "sky130_fd_sc_hd__a21boi_2": 5,
+            "sky130_fd_sc_hd__a21boi_4": 1,
+            "sky130_fd_sc_hd__a21o_2": 202,
+            "sky130_fd_sc_hd__a21oi_2": 132,
+            "sky130_fd_sc_hd__a221o_2": 80,
+            "sky130_fd_sc_hd__a221oi_2": 21,
+            "sky130_fd_sc_hd__a22o_2": 104,
+            "sky130_fd_sc_hd__a22oi_2": 24,
+            "sky130_fd_sc_hd__a2bb2o_2": 23,
+            "sky130_fd_sc_hd__a2bb2oi_2": 10,
+            "sky130_fd_sc_hd__a311o_2": 25,
+            "sky130_fd_sc_hd__a311oi_2": 3,
+            "sky130_fd_sc_hd__a31o_2": 108,
+            "sky130_fd_sc_hd__a31oi_2": 41,
+            "sky130_fd_sc_hd__a32o_2": 33,
+            "sky130_fd_sc_hd__a32oi_2": 5,
+            "sky130_fd_sc_hd__a41o_2": 27,
+            "sky130_fd_sc_hd__a41oi_2": 7,
+            "sky130_fd_sc_hd__and2_2": 69,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 200,
+            "sky130_fd_sc_hd__and3b_2": 37,
+            "sky130_fd_sc_hd__and4_2": 62,
+            "sky130_fd_sc_hd__and4b_2": 16,
+            "sky130_fd_sc_hd__and4bb_2": 4,
+            "sky130_fd_sc_hd__buf_1": 32,
+            "sky130_fd_sc_hd__buf_2": 8,
+            "sky130_fd_sc_hd__conb_1": 14,
+            "sky130_fd_sc_hd__dfrtp_2": 490,
+            "sky130_fd_sc_hd__dfxtp_2": 1030,
+            "sky130_fd_sc_hd__inv_2": 578,
+            "sky130_fd_sc_hd__mux2_1": 1267,
+            "sky130_fd_sc_hd__mux4_2": 464,
+            "sky130_fd_sc_hd__nand2_2": 188,
+            "sky130_fd_sc_hd__nand2b_2": 15,
+            "sky130_fd_sc_hd__nand3_2": 50,
+            "sky130_fd_sc_hd__nand3_4": 1,
+            "sky130_fd_sc_hd__nand3b_2": 26,
+            "sky130_fd_sc_hd__nand4_2": 60,
+            "sky130_fd_sc_hd__nand4_4": 1,
+            "sky130_fd_sc_hd__nand4b_2": 11,
+            "sky130_fd_sc_hd__nor2_2": 119,
+            "sky130_fd_sc_hd__nor3_2": 13,
+            "sky130_fd_sc_hd__nor3b_2": 2,
+            "sky130_fd_sc_hd__nor3b_4": 1,
+            "sky130_fd_sc_hd__nor4_2": 5,
+            "sky130_fd_sc_hd__nor4b_2": 1,
+            "sky130_fd_sc_hd__o2111a_2": 59,
+            "sky130_fd_sc_hd__o2111ai_2": 46,
+            "sky130_fd_sc_hd__o211a_2": 137,
+            "sky130_fd_sc_hd__o211ai_2": 123,
+            "sky130_fd_sc_hd__o21a_2": 56,
+            "sky130_fd_sc_hd__o21ai_2": 162,
+            "sky130_fd_sc_hd__o21ai_4": 3,
+            "sky130_fd_sc_hd__o21ba_2": 36,
+            "sky130_fd_sc_hd__o21bai_2": 16,
+            "sky130_fd_sc_hd__o221a_2": 81,
+            "sky130_fd_sc_hd__o221ai_2": 63,
+            "sky130_fd_sc_hd__o221ai_4": 1,
+            "sky130_fd_sc_hd__o22a_2": 62,
+            "sky130_fd_sc_hd__o22ai_2": 17,
+            "sky130_fd_sc_hd__o2bb2a_2": 34,
+            "sky130_fd_sc_hd__o2bb2ai_2": 18,
+            "sky130_fd_sc_hd__o311a_2": 29,
+            "sky130_fd_sc_hd__o311ai_2": 5,
+            "sky130_fd_sc_hd__o31a_2": 47,
+            "sky130_fd_sc_hd__o31ai_2": 9,
+            "sky130_fd_sc_hd__o32a_2": 14,
+            "sky130_fd_sc_hd__o32ai_2": 3,
+            "sky130_fd_sc_hd__o41a_2": 2,
+            "sky130_fd_sc_hd__o41ai_2": 6,
+            "sky130_fd_sc_hd__or2_2": 72,
+            "sky130_fd_sc_hd__or3_2": 59,
+            "sky130_fd_sc_hd__or3b_2": 43,
+            "sky130_fd_sc_hd__or4_2": 28,
+            "sky130_fd_sc_hd__or4b_2": 13,
+            "sky130_fd_sc_hd__or4bb_2": 3,
+            "sky130_fd_sc_hd__xnor2_2": 10,
+            "sky130_fd_sc_hd__xor2_2": 17,
+            "sky130_sram_1kbyte_1rw1r_32x256_8": 2
+         }
+      }
+}
+
+166. Printing statistics.
+
+=== soc_top ===
+
+   Number of wires:               6977
+   Number of wire bits:           7170
+   Number of public wires:        1600
+   Number of public wire bits:    1793
+   Number of ports:                 11
+   Number of port bits:            204
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7065
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a2111oi_2      2
+     sky130_fd_sc_hd__a211o_2      147
+     sky130_fd_sc_hd__a211oi_2      12
+     sky130_fd_sc_hd__a211oi_4       1
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2       5
+     sky130_fd_sc_hd__a21boi_4       1
+     sky130_fd_sc_hd__a21o_2       202
+     sky130_fd_sc_hd__a21oi_2      132
+     sky130_fd_sc_hd__a221o_2       80
+     sky130_fd_sc_hd__a221oi_2      21
+     sky130_fd_sc_hd__a22o_2       104
+     sky130_fd_sc_hd__a22oi_2       24
+     sky130_fd_sc_hd__a2bb2o_2      23
+     sky130_fd_sc_hd__a2bb2oi_2     10
+     sky130_fd_sc_hd__a311o_2       25
+     sky130_fd_sc_hd__a311oi_2       3
+     sky130_fd_sc_hd__a31o_2       108
+     sky130_fd_sc_hd__a31oi_2       41
+     sky130_fd_sc_hd__a32o_2        33
+     sky130_fd_sc_hd__a32oi_2        5
+     sky130_fd_sc_hd__a41o_2        27
+     sky130_fd_sc_hd__a41oi_2        7
+     sky130_fd_sc_hd__and2_2        69
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2       200
+     sky130_fd_sc_hd__and3b_2       37
+     sky130_fd_sc_hd__and4_2        62
+     sky130_fd_sc_hd__and4b_2       16
+     sky130_fd_sc_hd__and4bb_2       4
+     sky130_fd_sc_hd__buf_1         32
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        14
+     sky130_fd_sc_hd__dfrtp_2      490
+     sky130_fd_sc_hd__dfxtp_2     1030
+     sky130_fd_sc_hd__inv_2        578
+     sky130_fd_sc_hd__mux2_1      1267
+     sky130_fd_sc_hd__mux4_2       464
+     sky130_fd_sc_hd__nand2_2      188
+     sky130_fd_sc_hd__nand2b_2      15
+     sky130_fd_sc_hd__nand3_2       50
+     sky130_fd_sc_hd__nand3_4        1
+     sky130_fd_sc_hd__nand3b_2      26
+     sky130_fd_sc_hd__nand4_2       60
+     sky130_fd_sc_hd__nand4_4        1
+     sky130_fd_sc_hd__nand4b_2      11
+     sky130_fd_sc_hd__nor2_2       119
+     sky130_fd_sc_hd__nor3_2        13
+     sky130_fd_sc_hd__nor3b_2        2
+     sky130_fd_sc_hd__nor3b_4        1
+     sky130_fd_sc_hd__nor4_2         5
+     sky130_fd_sc_hd__nor4b_2        1
+     sky130_fd_sc_hd__o2111a_2      59
+     sky130_fd_sc_hd__o2111ai_2     46
+     sky130_fd_sc_hd__o211a_2      137
+     sky130_fd_sc_hd__o211ai_2     123
+     sky130_fd_sc_hd__o21a_2        56
+     sky130_fd_sc_hd__o21ai_2      162
+     sky130_fd_sc_hd__o21ai_4        3
+     sky130_fd_sc_hd__o21ba_2       36
+     sky130_fd_sc_hd__o21bai_2      16
+     sky130_fd_sc_hd__o221a_2       81
+     sky130_fd_sc_hd__o221ai_2      63
+     sky130_fd_sc_hd__o221ai_4       1
+     sky130_fd_sc_hd__o22a_2        62
+     sky130_fd_sc_hd__o22ai_2       17
+     sky130_fd_sc_hd__o2bb2a_2      34
+     sky130_fd_sc_hd__o2bb2ai_2     18
+     sky130_fd_sc_hd__o311a_2       29
+     sky130_fd_sc_hd__o311ai_2       5
+     sky130_fd_sc_hd__o31a_2        47
+     sky130_fd_sc_hd__o31ai_2        9
+     sky130_fd_sc_hd__o32a_2        14
+     sky130_fd_sc_hd__o32ai_2        3
+     sky130_fd_sc_hd__o41a_2         2
+     sky130_fd_sc_hd__o41ai_2        6
+     sky130_fd_sc_hd__or2_2         72
+     sky130_fd_sc_hd__or3_2         59
+     sky130_fd_sc_hd__or3b_2        43
+     sky130_fd_sc_hd__or4_2         28
+     sky130_fd_sc_hd__or4b_2        13
+     sky130_fd_sc_hd__or4bb_2        3
+     sky130_fd_sc_hd__xnor2_2       10
+     sky130_fd_sc_hd__xor2_2        17
+     sky130_sram_1kbyte_1rw1r_32x256_8      2
+
+   Area for cell type \sky130_sram_1kbyte_1rw1r_32x256_8 is unknown!
+
+   Chip area for module '\soc_top': 93240.675200
+     of which used for sequential elements: 34783.360000 (37.30%)
+
+167. Executing Verilog backend.
+Dumping module `\soc_top'.
+
+168. Executing JSON backend.

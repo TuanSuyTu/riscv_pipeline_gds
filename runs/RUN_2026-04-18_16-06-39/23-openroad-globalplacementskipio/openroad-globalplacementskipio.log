@@ -1,0 +1,100 @@
+Reading OpenROAD database at '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/20-openroad-generatepdn/soc_top.odb'…
+Reading library file at '/home/tuan-23521721/.ciel/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading library file at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+Reading macro library file at '/home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib'…
+[WARNING STA-1140] /home/tuan-23521721/.ciel/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib line 1, library sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C_lib already exists.
+Reading design constraints file at '/home/tuan-23521721/workspace/riscv_ol2/src/top/sdc_constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
++ global_placement -density 0.5 -skip_io -pad_right 1 -pad_left 1 -init_wirelength_coef 0.25
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 1094.340 788.800 ) um
+[INFO GPL-0006] NumInstances:             14531
+[INFO GPL-0007] NumPlaceInstances:         7063
+[INFO GPL-0008] NumFixedInstances:         7019
+[INFO GPL-0009] NumDummyInstances:          449
+[INFO GPL-0010] NumNets:                   7170
+[INFO GPL-0011] NumPins:                  29169
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 1100.000 800.000 ) um
+[INFO GPL-0013] CoreBBox: (  5.520 10.880 ) ( 1094.340 788.800 ) um
+[INFO GPL-0016] CoreArea:            847014.854 um^2
+[INFO GPL-0017] NonPlaceInstsArea:   432797.587 um^2
+[INFO GPL-0018] PlaceInstsArea:      110915.126 um^2
+[INFO GPL-0019] Util:                    26.777 %
+[INFO GPL-0020] StdInstsArea:        110915.126 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:     13269
+[INFO GPL-0032] FillerInit:NumGNets:       7170
+[INFO GPL-0033] FillerInit:NumGPins:      29169
+[INFO GPL-0023] TargetDensity:            0.500
+[INFO GPL-0024] AvrgPlaceInstArea:       15.704 um^2
+[INFO GPL-0025] IdealBinArea:            31.407 um^2
+[INFO GPL-0026] IdealBinCnt:              26968
+[INFO GPL-0027] TotalBinArea:        847014.854 um^2
+[INFO GPL-0028] BinCnt:       128    128
+[INFO GPL-0029] BinSize: (  8.507  6.078 )
+[INFO GPL-0030] NumBins: 16384
+[NesterovSolve] Iter:    1 overflow: 0.999 HPWL: 100605687
+[NesterovSolve] Iter:   10 overflow: 1.000 HPWL: 137409637
+[NesterovSolve] Iter:   20 overflow: 1.000 HPWL: 147413883
+[NesterovSolve] Iter:   30 overflow: 1.000 HPWL: 148086955
+[NesterovSolve] Iter:   40 overflow: 1.000 HPWL: 145180974
+[NesterovSolve] Iter:   50 overflow: 1.000 HPWL: 142403405
+[NesterovSolve] Iter:   60 overflow: 1.000 HPWL: 139372803
+[NesterovSolve] Iter:   70 overflow: 1.000 HPWL: 135636574
+[NesterovSolve] Iter:   80 overflow: 1.000 HPWL: 131116360
+[NesterovSolve] Iter:   90 overflow: 1.000 HPWL: 126437876
+[NesterovSolve] Iter:  100 overflow: 1.000 HPWL: 122431380
+[NesterovSolve] Iter:  110 overflow: 1.000 HPWL: 119488448
+[NesterovSolve] Iter:  120 overflow: 1.000 HPWL: 118281596
+[NesterovSolve] Iter:  130 overflow: 1.000 HPWL: 119231931
+[NesterovSolve] Iter:  140 overflow: 1.000 HPWL: 122277176
+[NesterovSolve] Iter:  150 overflow: 1.000 HPWL: 127305748
+[NesterovSolve] Iter:  160 overflow: 1.000 HPWL: 134645277
+[NesterovSolve] Iter:  170 overflow: 1.000 HPWL: 144846713
+[NesterovSolve] Iter:  180 overflow: 1.000 HPWL: 157866295
+[NesterovSolve] Iter:  190 overflow: 1.000 HPWL: 176509602
+[NesterovSolve] Iter:  200 overflow: 0.970 HPWL: 207163522
+[NesterovSolve] Iter:  210 overflow: 0.883 HPWL: 233376925
+[NesterovSolve] Iter:  220 overflow: 0.847 HPWL: 248895857
+[NesterovSolve] Iter:  230 overflow: 0.773 HPWL: 252224489
+[NesterovSolve] Iter:  240 overflow: 0.740 HPWL: 245579317
+[NesterovSolve] Iter:  250 overflow: 0.674 HPWL: 256285951
+[NesterovSolve] Iter:  260 overflow: 0.642 HPWL: 266827055
+[NesterovSolve] Iter:  270 overflow: 0.590 HPWL: 274558002
+[NesterovSolve] Iter:  280 overflow: 0.542 HPWL: 279803344
+[NesterovSolve] Iter:  290 overflow: 0.483 HPWL: 285169061
+[NesterovSolve] Iter:  300 overflow: 0.435 HPWL: 295047481
+[NesterovSolve] Iter:  310 overflow: 0.393 HPWL: 294673070
+[NesterovSolve] Iter:  320 overflow: 0.351 HPWL: 295324492
+[NesterovSolve] Iter:  330 overflow: 0.327 HPWL: 292576791
+[NesterovSolve] Iter:  340 overflow: 0.294 HPWL: 293269623
+[NesterovSolve] Iter:  350 overflow: 0.265 HPWL: 292746471
+[NesterovSolve] Iter:  360 overflow: 0.242 HPWL: 289804578
+[NesterovSolve] Iter:  370 overflow: 0.214 HPWL: 289177218
+[NesterovSolve] Iter:  380 overflow: 0.188 HPWL: 290084881
+[NesterovSolve] Iter:  390 overflow: 0.163 HPWL: 291401144
+[NesterovSolve] Iter:  400 overflow: 0.140 HPWL: 292369858
+[NesterovSolve] Iter:  410 overflow: 0.120 HPWL: 293488214
+[NesterovSolve] Iter:  420 overflow: 0.101 HPWL: 294646337
+[NesterovSolve] Finished with Overflow: 0.099525
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+dmem_sram matched with dmem_sram
+imem_sram matched with imem_sram
+Updating metrics…
+Cell type report:                       Count       Area
+  Macro                                     2  381425.10
+  Fill cell                               882    3310.68
+  Tap cell                               6135    7676.11
+  Buffer                                   40     160.15
+  Inverter                                578    2169.58
+  Sequential cell                        1520   34783.36
+  Multi-Input combinational cell         4925   56127.58
+  Total                                 14082  485652.56
+Writing OpenROAD database to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/23-openroad-globalplacementskipio/soc_top.odb'…
+Writing netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/23-openroad-globalplacementskipio/soc_top.nl.v'…
+Writing powered netlist to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/23-openroad-globalplacementskipio/soc_top.pnl.v'…
+Writing layout to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/23-openroad-globalplacementskipio/soc_top.def'…
+Writing timing constraints to '/home/tuan-23521721/workspace/riscv_ol2/runs/RUN_2026-04-18_16-06-39/23-openroad-globalplacementskipio/soc_top.sdc'…

@@ -1,0 +1,106 @@
+166. Printing statistics.
+
+=== soc_top ===
+
+   Number of wires:               6977
+   Number of wire bits:           7170
+   Number of public wires:        1600
+   Number of public wire bits:    1793
+   Number of ports:                 11
+   Number of port bits:            204
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               7065
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a2111oi_2      2
+     sky130_fd_sc_hd__a211o_2      147
+     sky130_fd_sc_hd__a211oi_2      12
+     sky130_fd_sc_hd__a211oi_4       1
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2       5
+     sky130_fd_sc_hd__a21boi_4       1
+     sky130_fd_sc_hd__a21o_2       202
+     sky130_fd_sc_hd__a21oi_2      132
+     sky130_fd_sc_hd__a221o_2       80
+     sky130_fd_sc_hd__a221oi_2      21
+     sky130_fd_sc_hd__a22o_2       104
+     sky130_fd_sc_hd__a22oi_2       24
+     sky130_fd_sc_hd__a2bb2o_2      23
+     sky130_fd_sc_hd__a2bb2oi_2     10
+     sky130_fd_sc_hd__a311o_2       25
+     sky130_fd_sc_hd__a311oi_2       3
+     sky130_fd_sc_hd__a31o_2       108
+     sky130_fd_sc_hd__a31oi_2       41
+     sky130_fd_sc_hd__a32o_2        33
+     sky130_fd_sc_hd__a32oi_2        5
+     sky130_fd_sc_hd__a41o_2        27
+     sky130_fd_sc_hd__a41oi_2        7
+     sky130_fd_sc_hd__and2_2        69
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2       200
+     sky130_fd_sc_hd__and3b_2       37
+     sky130_fd_sc_hd__and4_2        62
+     sky130_fd_sc_hd__and4b_2       16
+     sky130_fd_sc_hd__and4bb_2       4
+     sky130_fd_sc_hd__buf_1         32
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        14
+     sky130_fd_sc_hd__dfrtp_2      490
+     sky130_fd_sc_hd__dfxtp_2     1030
+     sky130_fd_sc_hd__inv_2        578
+     sky130_fd_sc_hd__mux2_1      1267
+     sky130_fd_sc_hd__mux4_2       464
+     sky130_fd_sc_hd__nand2_2      188
+     sky130_fd_sc_hd__nand2b_2      15
+     sky130_fd_sc_hd__nand3_2       50
+     sky130_fd_sc_hd__nand3_4        1
+     sky130_fd_sc_hd__nand3b_2      26
+     sky130_fd_sc_hd__nand4_2       60
+     sky130_fd_sc_hd__nand4_4        1
+     sky130_fd_sc_hd__nand4b_2      11
+     sky130_fd_sc_hd__nor2_2       119
+     sky130_fd_sc_hd__nor3_2        13
+     sky130_fd_sc_hd__nor3b_2        2
+     sky130_fd_sc_hd__nor3b_4        1
+     sky130_fd_sc_hd__nor4_2         5
+     sky130_fd_sc_hd__nor4b_2        1
+     sky130_fd_sc_hd__o2111a_2      59
+     sky130_fd_sc_hd__o2111ai_2     46
+     sky130_fd_sc_hd__o211a_2      137
+     sky130_fd_sc_hd__o211ai_2     123
+     sky130_fd_sc_hd__o21a_2        56
+     sky130_fd_sc_hd__o21ai_2      162
+     sky130_fd_sc_hd__o21ai_4        3
+     sky130_fd_sc_hd__o21ba_2       36
+     sky130_fd_sc_hd__o21bai_2      16
+     sky130_fd_sc_hd__o221a_2       81
+     sky130_fd_sc_hd__o221ai_2      63
+     sky130_fd_sc_hd__o221ai_4       1
+     sky130_fd_sc_hd__o22a_2        62
+     sky130_fd_sc_hd__o22ai_2       17
+     sky130_fd_sc_hd__o2bb2a_2      34
+     sky130_fd_sc_hd__o2bb2ai_2     18
+     sky130_fd_sc_hd__o311a_2       29
+     sky130_fd_sc_hd__o311ai_2       5
+     sky130_fd_sc_hd__o31a_2        47
+     sky130_fd_sc_hd__o31ai_2        9
+     sky130_fd_sc_hd__o32a_2        14
+     sky130_fd_sc_hd__o32ai_2        3
+     sky130_fd_sc_hd__o41a_2         2
+     sky130_fd_sc_hd__o41ai_2        6
+     sky130_fd_sc_hd__or2_2         72
+     sky130_fd_sc_hd__or3_2         59
+     sky130_fd_sc_hd__or3b_2        43
+     sky130_fd_sc_hd__or4_2         28
+     sky130_fd_sc_hd__or4b_2        13
+     sky130_fd_sc_hd__or4bb_2        3
+     sky130_fd_sc_hd__xnor2_2       10
+     sky130_fd_sc_hd__xor2_2        17
+     sky130_sram_1kbyte_1rw1r_32x256_8      2
+
+   Area for cell type \sky130_sram_1kbyte_1rw1r_32x256_8 is unknown!
+
+   Chip area for module '\soc_top': 93240.675200
+     of which used for sequential elements: 34783.360000 (37.30%)
+

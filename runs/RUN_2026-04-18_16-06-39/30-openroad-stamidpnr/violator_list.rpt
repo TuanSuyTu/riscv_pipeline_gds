@@ -1,0 +1,81 @@
+
+===========================================================================
+Violator List
+============================================================================
+[setup reg-reg] _12312_/Q -> _11829_/D : -0.350903
+[setup reg-reg] _12312_/Q -> _11819_/D : -0.347546
+[setup reg-reg] _12312_/Q -> _11779_/D : -0.334273
+[setup reg-reg] _12312_/Q -> _11813_/D : -0.329166
+[setup reg-reg] _12312_/Q -> _11815_/D : -0.328983
+[setup reg-reg] _12312_/Q -> _11824_/D : -0.321217
+[setup reg-reg] _12312_/Q -> _11789_/D : -0.320952
+[setup reg-reg] _12312_/Q -> _11773_/D : -0.317193
+[setup reg-reg] _12312_/Q -> _11832_/D : -0.315588
+[setup reg-reg] _12312_/Q -> _11816_/D : -0.281425
+[setup reg-reg] _12312_/Q -> _11840_/D : -0.277121
+[setup reg-reg] _12312_/Q -> _11795_/D : -0.276247
+[setup reg-reg] _12312_/Q -> _11776_/D : -0.274097
+[setup reg-reg] _12312_/Q -> _11812_/D : -0.269356
+[setup reg-reg] _12312_/Q -> _11800_/D : -0.267452
+[setup reg-reg] _12312_/Q -> _11784_/D : -0.266684
+[setup reg-reg] _12312_/Q -> _11786_/D : -0.266351
+[setup reg-reg] _12312_/Q -> _11826_/D : -0.266056
+[setup reg-reg] _12312_/Q -> _11775_/D : -0.265652
+[setup reg-reg] _12312_/Q -> _11793_/D : -0.260945
+[setup reg-reg] _12312_/Q -> _11765_/D : -0.211074
+[setup reg-reg] _12312_/Q -> _11690_/D : -0.201862
+[setup reg-reg] _12312_/Q -> _11034_/D : -0.171619
+[setup reg-reg] _12312_/Q -> _11780_/D : -0.165242
+[setup reg-reg] _12312_/Q -> _11820_/D : -0.163263
+[setup reg-reg] _12312_/Q -> _11032_/D : -0.162244
+[setup reg-reg] _12312_/Q -> _11774_/D : -0.161592
+[setup reg-reg] _12312_/Q -> _11778_/D : -0.158586
+[setup reg-reg] _12312_/Q -> _11796_/D : -0.156440
+[setup reg-reg] _12312_/Q -> _11742_/D : -0.139675
+[setup reg-reg] _12312_/Q -> _11777_/D : -0.138488
+[setup reg-reg] _12312_/Q -> _11833_/D : -0.138296
+[setup reg-reg] _12312_/Q -> _11818_/D : -0.136771
+[setup reg-reg] _12312_/Q -> _11834_/D : -0.135600
+[setup reg-reg] _12312_/Q -> _11783_/D : -0.133177
+[setup reg-reg] _12312_/Q -> _11788_/D : -0.129118
+[setup reg-reg] _12312_/Q -> _11814_/D : -0.125581
+[setup reg-reg] _12312_/Q -> _11785_/D : -0.124645
+[setup reg-reg] _12312_/Q -> _11823_/D : -0.120499
+[setup reg-reg] _12312_/Q -> _11817_/D : -0.119094
+[setup reg-reg] _12312_/Q -> _11782_/D : -0.117133
+[setup reg-reg] _12312_/Q -> _11821_/D : -0.117021
+[setup reg-reg] _12312_/Q -> _11781_/D : -0.115037
+[setup reg-reg] _12312_/Q -> _11741_/D : -0.114287
+[setup reg-reg] _12312_/Q -> _11787_/D : -0.113005
+[setup reg-reg] _12312_/Q -> _11801_/D : -0.108960
+[setup reg-reg] _12312_/Q -> _11803_/D : -0.108029
+[setup reg-reg] _12312_/Q -> _11837_/D : -0.107789
+[setup reg-reg] _12312_/Q -> _11843_/D : -0.107059
+[setup reg-reg] _12312_/Q -> _11033_/D : -0.106542
+[setup reg-reg] _12312_/Q -> _11831_/D : -0.104004
+[setup reg-reg] _12312_/Q -> _11822_/D : -0.103265
+[setup reg-reg] _12312_/Q -> _11798_/D : -0.101416
+[setup reg-reg] _12312_/Q -> _11797_/D : -0.099222
+[setup reg-reg] _12312_/Q -> _11839_/D : -0.083565
+[setup reg-reg] _12312_/Q -> _11836_/D : -0.083471
+[setup reg-reg] _12312_/Q -> _11757_/D : -0.078771
+[setup reg-reg] _12312_/Q -> _11733_/D : -0.077520
+[setup reg-reg] _12312_/Q -> _11842_/D : -0.076913
+[setup reg-reg] _12312_/Q -> _11734_/D : -0.074548
+[setup reg-reg] _12312_/Q -> _11743_/D : -0.070603
+[setup reg-reg] _12312_/Q -> _11745_/D : -0.069383
+[setup reg-reg] _12312_/Q -> _11802_/D : -0.069331
+[setup reg-reg] _12312_/Q -> _11736_/D : -0.059798
+[setup reg-reg] _12312_/Q -> _11735_/D : -0.058851
+[setup reg-reg] _12312_/Q -> _11731_/D : -0.056657
+[setup reg-reg] _12312_/Q -> _11827_/D : -0.055929
+[setup reg-reg] _12312_/Q -> _11744_/D : -0.055435
+[setup reg-reg] _12312_/Q -> _11732_/D : -0.052443
+[setup reg-reg] _12312_/Q -> _11828_/D : -0.047782
+[setup reg-reg] _12312_/Q -> _11825_/D : -0.041128
+Writing metric timing__hold_vio__count__corner:nom_tt_025C_1v80: 0
+Writing metric timing__hold_r2r__ws__corner:nom_tt_025C_1v80: 0.451621
+Writing metric timing__hold_r2r_vio__count__corner:nom_tt_025C_1v80: 0
+Writing metric timing__setup_vio__count__corner:nom_tt_025C_1v80: 71
+Writing metric timing__setup_r2r__ws__corner:nom_tt_025C_1v80: -0.350903
+Writing metric timing__setup_r2r_vio__count__corner:nom_tt_025C_1v80: 71

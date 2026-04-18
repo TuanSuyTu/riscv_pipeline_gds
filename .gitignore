@@ -1,0 +1,3 @@
+# OpenLane runs massive intermediate files
+runs/*/tmp/
+runs/**/*.odb
