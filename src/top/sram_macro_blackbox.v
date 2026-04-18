@@ -1,9 +1,11 @@
-// =============================================================================
-// Project:      RISC-V 5-Stage Pipelined SoC
-// Module:       sky130_sram_1kbyte_1rw1r_32x256_8 (Blackbox)
-// Description:  Blackbox declaration to satisfy linter (Verilator) without 
-//               introducing behavioral timing delays that cause synthesis errors.
-// =============================================================================
+/*
+ * Module:  sky130_sram_1kbyte_1rw1r_32x256_8 (Blackbox)
+ *
+ * Description:
+ *   Blackbox declaration for Sky130 SRAM macro.
+ *   Satisfies linter (Verilator) semantics without Behavioral timing delays
+ *   that would disrupt Yosys synthesis logic optimization.
+ */
 
 (* blackbox *)
 module sky130_sram_1kbyte_1rw1r_32x256_8 (

@@ -1,9 +1,12 @@
-// =============================================================================
-// Project: RISC-V 6-Stage Pipelined Processor
-// Module: alu
-// Description: Arithmetic Logic Unit for RV32I.
-//              Optimized with Adder Sharing and Zero-flag bypass.
-// =============================================================================
+/*
+ * Module:  alu
+ *
+ * Description:
+ *   Arithmetic Logic Unit for RV32I.
+ *   Implements adder sharing for ADD/SUB/SLT/SLTU to reduce area.
+ *   Logical shifts are processed efficiently using generic operators.
+ *   Zero flag is explicitly bypassed for faster branch evaluation.
+ */
 
 `timescale 1ns / 1ps
 
@@ -14,7 +17,9 @@ module alu (
     output reg [31:0] result,
     output zero
 );
-    // Operation encodings
+    // ==========================================================
+    // ALU Opcodes
+    // ==========================================================
     localparam ADD    = 4'b0000;
     localparam SUB    = 4'b0001;
     localparam AND    = 4'b0010;
@@ -27,18 +32,32 @@ module alu (
     localparam SLTU   = 4'b1001;
     localparam PASS_B = 4'b1010;
 
-    // --- Adder Sharing for ADD, SUB, SLT, SLTU ---
+    // ==========================================================
+    // Hardware Optimization: Shared Adder Datapath
+    //
+    // Purpose:
+    //   Instead of instantiating separate adders and comparators, 
+    //   ADD, SUB, SLT, and SLTU operations share a single 33-bit adder.
+    //
+    // Method:
+    //   - Invert operand B for subtraction/comparison
+    //   - Append a 0-bit at MSB for unsigned 33-bit carry evaluation
+    // ==========================================================
     wire is_sub = (alu_ctrl == SUB) || (alu_ctrl == SLT) || (alu_ctrl == SLTU);
     wire [31:0] b_inv = is_sub ? ~b : b;
-    // 33-bit addition for carry out (used for unsigned comparison)
     wire [32:0] sum_ext = {1'b0, a} + {1'b0, b_inv} + {32'd0, is_sub};
     wire [31:0] sum = sum_ext[31:0];
 
-    // --- Bypass Zero and Comparison outputs ---
+    // ==========================================================
+    // Zero & Comparison Logic
+    //
+    // Assumptions:
+    //   - BEQ/BNE logic relies directly on the `zero` flag asynchronously
+    //   - SLTU relies on the carry-out (sum_ext[32])
+    // ==========================================================
     wire slt_res  = (a[31] != b[31]) ? a[31] : sum[31];
-    wire sltu_res = ~sum_ext[32]; // Carry out indicates a >= b, so ~carry means a < b
+    wire sltu_res = ~sum_ext[32];
     
-    // Zero flag bypass (specifically for BEQ/BNE branch checking which uses SUB)
     assign zero = (sum == 32'd0);
 
     always @(*) begin

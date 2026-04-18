@@ -1,8 +1,10 @@
-// =============================================================================
-// RISC-V 5-Stage Pipeline — Comprehensive Testbench
-// Covers: All RV32I ALU ops, LUI, AUIPC, LW/SW, BEQ/BNE, JAL, JALR,
-//         EX/MEM forwarding, MEM/WB forwarding, Load-Use hazard
-// =============================================================================
+/*
+ * Module:  tb_top
+ *
+ * Description:
+ *   Comprehensive Testbench for RISC-V 5-Stage Pipeline purely RTL Core.
+ *   Covers RV32I ALU ops, Memory Loads/Stores, Control Flow, and Forwarding.
+ */
 `timescale 1ns / 1ps
 
 module tb_top;
@@ -13,7 +15,7 @@ module tb_top;
     wire [2:0]  dmem_funct3;
     wire [31:0] dmem_addr, dmem_wdata, dmem_rdata;
 
-    // === DUT: CPU Core ===
+    // DUT: CPU Core
     top dut (
         .clk(clk), .rst(rst),
         .imem_addr(imem_addr), .imem_data(imem_data),
@@ -23,15 +25,14 @@ module tb_top;
         .dmem_rdata(dmem_rdata)
     );
 
-    // === Instruction Memory (Synchronous Read — matches Sky130 SRAM 1-cycle latency) ===
-    // top.v now sends imem_addr = next_pc, so data arrives aligned with pc_if next cycle.
+    // Instruction Memory (Synchronous Read — matches Sky130 SRAM 1-cycle latency)
     reg [31:0] imem [0:255];
     reg [31:0] imem_data_reg;
     always @(posedge clk)
         imem_data_reg <= imem[imem_addr[9:2]];
     assign imem_data = imem_data_reg;
 
-    // === Data Memory (Synchronous Read — 1-cycle latency for BRAM stall combined with byte alignment packing/unpacking) ===
+    // Data Memory (Synchronous Read)
     reg [31:0] dmem_array [0:255];
     reg [31:0] dmem_rdata_reg;
     
@@ -113,16 +114,16 @@ module tb_top;
     
     assign dmem_rdata = dmem_rdata_comb;
 
-    // === Clock Generation (100 MHz, 10ns period) ===
+    // Clock Generation (100 MHz)
     always #5 clk = ~clk;
 
-    // === VCD Dump ===
+    // VCD Dump
     initial begin
         $dumpfile("tb_top.vcd");
         $dumpvars(0, tb_top);
     end
 
-    // === Load Test Program ===
+    // Initialize Memories
     integer i;
     initial begin
         for (i = 0; i < 256; i = i + 1) begin
@@ -148,9 +149,9 @@ module tb_top;
         end
     endtask
 
-    // =========================================================================
+    // ==========================================================
     // Self-Checking Logic
-    // =========================================================================
+    // ==========================================================
     integer pass_count, fail_count;
 
     task check_reg;
@@ -169,9 +170,9 @@ module tb_top;
         end
     endtask
 
-    // =========================================================================
+    // ==========================================================
     // Main Test Sequence
-    // =========================================================================
+    // ==========================================================
     initial begin
         clk = 0; rst = 1;
         pass_count = 0; fail_count = 0;

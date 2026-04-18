@@ -1,15 +1,17 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: forward
-// Description: Data Forwarding Unit (Bypass) to resolve RAW hazards.
-//
-// Classic 5-stage forwarding:
-//   - EX/MEM → EX forwarding (priority, 1-cycle-old result)
-//   - MEM/WB → EX forwarding (2-cycle-old result)
-//
-// This resolves ALL arithmetic RAW dependencies with ZERO stall cycles.
-// Only Load-Use hazards require a 1-cycle stall (handled by hazard unit).
-// =============================================================================
+/*
+ * Module:  forward
+ *
+ * Description:
+ *   Data Forwarding Unit (Bypass) to resolve RAW hazards.
+ *
+ * Method:
+ *   - EX/MEM -> EX forwarding (Priority 1: 1-cycle-old result)
+ *   - MEM/WB -> EX forwarding (Priority 2: 2-cycle-old result)
+ *
+ * Constraints:
+ *   - Does not forward from R0 (hardwired zero).
+ *   - Load-Use hazards are NOT handled here (delegated to hazard unit).
+ */
 
 module forward (
     // Source registers of instruction currently in EX stage (from ID/EX reg)
@@ -29,20 +31,15 @@ module forward (
     output reg [1:0] forward_b   // 00=regfile, 10=EX/MEM, 01=MEM/WB
 );
 
-    // Forward A (rs1 source)
     always @(*) begin
-        // Priority 1: EX/MEM forwarding (most recent result)
         if (ex_mem_reg_write && (ex_mem_rd != 5'd0) && (ex_mem_rd == id_ex_rs1))
             forward_a = 2'b10;
-        // Priority 2: MEM/WB forwarding (older result, only if no EX/MEM match)
         else if (mem_wb_reg_write && (mem_wb_rd != 5'd0) && (mem_wb_rd == id_ex_rs1))
             forward_a = 2'b01;
-        // No hazard: use register file value
         else
             forward_a = 2'b00;
     end
 
-    // Forward B (rs2 source)
     always @(*) begin
         if (ex_mem_reg_write && (ex_mem_rd != 5'd0) && (ex_mem_rd == id_ex_rs2))
             forward_b = 2'b10;

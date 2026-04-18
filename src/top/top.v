@@ -1,20 +1,15 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module:  top
-// Description: CPU Core top-level. Interfaces with external memory via standard bus.
-//              Contains pure CPU logic without internal SRAM macros.
-//
-// Pipeline Stages (Classic 5-stage):
-//   IF -> IF/ID Reg -> ID -> ID/EX Reg -> EX -> EX/MEM Reg -> MEM -> MEM/WB Reg -> WB
-//
-// Optimizations applied:
-//   OPT-1: SRAM-as-pipeline-register — DMEM bus driven combinationally from EX
-//           → bram_ctrl eliminated, no LOAD stall
-//   OPT-2: PC+4 pipe-through from IF stage (32-bit adder removed from EX)
-//   OPT-3: Forwarding MUX 2-level tree (in ex_stage.v)
-//   OPT-4: WB MUX parallel AND-OR selection
-//
-// =============================================================================
+/*
+ * Module:  top
+ *
+ * Description:
+ *   RISC-V 5-Stage Pipelined Processor Core.
+ *   Integrates all pipeline stages, hazard unit, and forwarding logic.
+ *
+ * Architecture:
+ *   - Classic 5-stage pipeline: IF -> ID -> EX -> MEM -> WB
+ *   - SRAM interface: Address and write data driven combinationally from EX
+ *     stage directly to SRAM to achieve 1-cycle access without stall buffers.
+ */
 
 `timescale 1ns / 1ps
 
@@ -35,9 +30,9 @@ module top (
     input  [31:0] dmem_rdata       // Read data from memory
 );
 
-    // =========================================================================
+    // ==========================================================
     // Global Control Signals
-    // =========================================================================
+    // ==========================================================
     wire stall_loaduse;  // From hazard unit: stall on Load-Use dependency
 
     wire pc_sel;         // From ex_stage:    redirect PC on branch/jump
@@ -52,9 +47,9 @@ module top (
     wire flush_if_id = pc_sel;
     wire flush_id_ex = stall_loaduse | pc_sel;
 
-    // =========================================================================
+    // ==========================================================
     // IF Stage: Instruction Fetch
-    // =========================================================================
+    // ==========================================================
     wire [31:0] jump_tgt;
     wire [31:0] pc_if;
 
@@ -85,9 +80,9 @@ module top (
     // OPT-2: PC+4 calculated ONCE here in IF, then piped through everything
     wire [31:0] pc_plus4_if = pc_if + 32'd4;
 
-    // =========================================================================
+    // ==========================================================
     // IF/ID Pipeline Register
-    // =========================================================================
+    // ==========================================================
     wire [31:0] pc_id, instr_id, pc_plus4_id;
     if_id_reg if_id_reg_inst (
         .clk(clk), .rst(rst),
@@ -97,9 +92,9 @@ module top (
         .pc_plus4_in(pc_plus4_if), .pc_plus4_out(pc_plus4_id)
     );
 
-    // =========================================================================
+    // ==========================================================
     // ID Stage: Instruction Decode & Register Read
-    // =========================================================================
+    // ==========================================================
     wire [6:0] opcode      = instr_id[6:0];
     wire [4:0] rs1_addr_id = instr_id[19:15];
     wire [4:0] rs2_addr_id = instr_id[24:20];
@@ -138,9 +133,9 @@ module top (
         .rs1_data(rs1_data_id), .rs2_data(rs2_data_id)
     );
 
-    // =========================================================================
+    // ==========================================================
     // ID/EX Pipeline Register
-    // =========================================================================
+    // ==========================================================
     wire        reg_write_ex, mem_read_ex, mem_write_ex, mem_to_reg_ex;
     wire        alu_src_ex, branch_ex, jump_ex, lui_ex, auipc_ex, is_jalr_ex;
     wire [1:0]  alu_op_ex;
@@ -176,9 +171,9 @@ module top (
         .funct7_5_in(funct7_5_id),     .funct7_5_out(funct7_5_ex)
     );
 
-    // =========================================================================
-    // EX Stage: Execute (ALU, Branch, Forwarding — all in one stage)
-    // =========================================================================
+    // ==========================================================
+    // EX Stage: Execute
+    // ==========================================================
     wire [31:0] alu_result_ex;
     wire [31:0] forwarded_b_ex;
     wire [31:0] alu_result_mem; // fed back from EX/MEM register
@@ -211,22 +206,23 @@ module top (
         .jump_tgt(jump_tgt)
     );
 
-    // =========================================================================
-    // OPT-1: Data Memory Bus — COMBINATIONAL from EX Stage
-    //        SRAM internal latch replaces EX/MEM pipeline register for address.
-    //        Gate writes with ~pc_sel to prevent spurious STORE on branch taken.
-    // =========================================================================
+    // ==========================================================
+    // Data Memory Bus - Combinational Output
+    //
+    // DMEM is driven directly from EX. Internal SRAM macro latches
+    // act as the EX/MEM boundary for the data path.
+    // ==========================================================
     assign dmem_we     = mem_write_ex & ~pc_sel;
     assign dmem_re     = mem_read_ex  & ~pc_sel;
     assign dmem_funct3 = funct3_ex;
     assign dmem_addr   = alu_result_ex;
     assign dmem_wdata  = forwarded_b_ex;
 
-    // =========================================================================
-    // EX/MEM Pipeline Register (OPT-1: Simplified — no SRAM signals)
-    //   Only carries: control (reg_write, mem_to_reg, jump) + alu_result
-    //                 + pc_plus4 + rd_addr for forwarding and WB path.
-    // =========================================================================
+    // ==========================================================
+    // EX/MEM Pipeline Register
+    //
+    // Carries control signals and bypassed data for MEM/WB path.
+    // ==========================================================
     wire        reg_write_mem, mem_to_reg_mem, jump_mem;
     wire [31:0] pc_plus4_mem;
     wire [4:0]  rd_addr_mem;
@@ -242,16 +238,14 @@ module top (
         .rd_addr_in(rd_addr_ex),        .rd_addr_out(rd_addr_mem)
     );
 
-    // =========================================================================
-    // MEM Stage: SRAM reads data (soc_top handles unpack)
-    //            dmem_rdata comes from soc_top's unpack logic (1 cycle after
-    //            SRAM latched the address we sent combinationally from EX).
-    // =========================================================================
+    // ==========================================================
+    // MEM Stage: Read SRAM Data
+    // ==========================================================
     wire [31:0] read_data_mem = dmem_rdata;
 
-    // =========================================================================
+    // ==========================================================
     // MEM/WB Pipeline Register
-    // =========================================================================
+    // ==========================================================
     wire        mem_to_reg_wb, jump_wb;
     wire [31:0] read_data_wb, alu_result_wb, pc_plus4_wb;
 
@@ -266,21 +260,18 @@ module top (
         .rd_addr_in(rd_addr_mem),       .rd_addr_out(rd_addr_wb)
     );
 
-    // =========================================================================
-    // WB Stage: Write-Back MUX (OPT-4: Parallel AND-OR Selection)
-    //   wb_sel encoding (one-hot, mutually exclusive):
-    //     jump_wb=1       → PC+4 (link address for JAL/JALR)
-    //     mem_to_reg_wb=1 → Memory read data (LOAD)
-    //     neither         → ALU result
-    // =========================================================================
+    // ==========================================================
+    // WB Stage: Write-Back Selection
+    //
+    // Priority: JAL/JALR (PC+4) > LOAD (read_data) > ALU (alu_result)
+    // ==========================================================
     assign wd_data_wb = ({32{jump_wb}}                     & pc_plus4_wb)  |
                         ({32{mem_to_reg_wb & ~jump_wb}}    & read_data_wb) |
                         ({32{~mem_to_reg_wb & ~jump_wb}}   & alu_result_wb);
 
-    // =========================================================================
-    // Support Units: Hazard Detection, Data Forwarding
-    //   (bram_ctrl REMOVED — OPT-1: SRAM-as-pipeline-reg eliminates stall)
-    // =========================================================================
+    // ==========================================================
+    // Hazard Detection and Forwarding Units
+    // ==========================================================
     hazard hazard_inst (
         .id_ex_mem_read(mem_read_ex),
         .id_ex_rd      (rd_addr_ex),

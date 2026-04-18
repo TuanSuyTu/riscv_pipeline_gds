@@ -1,5 +1,12 @@
 `timescale 1ns/1ps
 
+/*
+ * Module:  tb_frontdoor
+ *
+ * Description:
+ *   Testbench for validating the SRAM frontdoor programming interface.
+ *   Simulates a firmware loader writing to IMEM while the CPU is held in reset.
+ */
 module tb_frontdoor;
     reg clk;
     reg rst;

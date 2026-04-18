@@ -1,15 +1,14 @@
-// =============================================================================
-// Project:      RISC-V 5-Stage Pipelined SoC
-// Module:       soc_top
-// Description:  Top-level SoC wrapper integrating the CPU core with physical 
-//               Sky130 SRAM macros for Instruction (IMEM) and Data Memory (DMEM).
-// Features:
-//   - IMEM: Dual-port SRAM. Port 0 acts as a firmware programming frontdoor.
-//           Port 1 serves as the instruction fetch interface.
-//   - DMEM: Combinational read/write signals originating from the EX stage 
-//           to achieve 1-cycle access latency, leveraging internal SRAM latches.
-//           Data unpacking logic resides here to synchronize with SRAM timing.
-// =============================================================================
+/*
+ * Module:  soc_top
+ *
+ * Description:
+ *   Top-level SoC wrapper integrating the CPU core (top.v) with Sky130 SRAM macros.
+ *
+ * Method:
+ *   - IMEM: Dual-port (Port 0 for firmware loading, Port 1 for CPU fetch).
+ *   - DMEM: Combinational interface to achieve 1-cycle latency.
+ *           Wait/unpacking logic aligns SRAM read data with CPU stages.
+ */
 
 `timescale 1ns / 1ps
 
@@ -21,16 +20,14 @@ module soc_top (
     input clk,
     input rst,
 
-    // =========================================================================
-    // 1. External Programming Interface (Frontdoor Loader)
-    // =========================================================================
+    // ==========================================================
+    // External Programming Interface (Firmware Loader)
+    // ==========================================================
     input         prog_we,          // Active-high Write Enable for IMEM
     input  [7:0]  prog_addr,        // Word address (0-255)
     input  [31:0] prog_data,        // 32-bit Instruction Payload
 
-    // =========================================================================
-    // 2. Debug Observation Ports
-    // =========================================================================
+    // Debug Observation Ports
     output [31:0] dbg_imem_addr,
     output [31:0] dbg_imem_data,
     output [31:0] dbg_dmem_addr,
@@ -39,9 +36,9 @@ module soc_top (
     output        dbg_dmem_we
 );
 
-    // =========================================================================
-    // 3. CPU Core Instantiation
-    // =========================================================================
+    // ==========================================================
+    // CPU Core Instantiation
+    // ==========================================================
     wire [31:0] imem_addr;
     wire [31:0] imem_data;
     
@@ -65,11 +62,12 @@ module soc_top (
         .dmem_rdata(dmem_rdata)
     );
 
-    // =========================================================================
-    // 4. Instruction Memory (Sky130 SRAM Macro)
-    //    - Port 0 (RW): Firmware loading via frontend programmer (prog_ pins).
-    //    - Port 1 (R):  CPU Instruction Fetch (always enabled).
-    // =========================================================================
+    // ==========================================================
+    // Instruction Memory (IMEM)
+    //
+    // Port 0 (RW): Firmware loading via frontend programmer
+    // Port 1 (R):  CPU Instruction Fetch (always enabled)
+    // ==========================================================
     wire [31:0] imem_dout;
 
     sky130_sram_1kbyte_1rw1r_32x256_8 imem_sram (
@@ -93,10 +91,12 @@ module soc_top (
 
     assign imem_data = imem_dout;
 
-    // =========================================================================
-    // 5. Data Memory System + Write Masking / Read Unpacking
-    //    - Uses Port 0 exclusively for bidirectional data memory access.
-    // =========================================================================
+    // ==========================================================
+    // Data Memory (DMEM)
+    //
+    // Uses Port 0 exclusively for bidirectional CPU memory access.
+    // Combinational write masking and byte lane duplicating.
+    // ==========================================================
     wire [31:0] dmem_dout;
     wire [3:0]  dmem_wmask;
     wire [1:0]  byte_offset = dmem_addr[1:0];
@@ -138,10 +138,14 @@ module soc_top (
         /* verilator lint_on PINCONNECTEMPTY */
     );
 
-    // =========================================================================
-    // Read Data Unpacking (Sign/Zero extension based on Funct3)
-    // Latches the access type variables by 1 cycle to synchronize with SRAM
-    // =========================================================================
+    // ==========================================================
+    // Read Data Unpacking
+    //
+    // Method:
+    //   Latches access type variables (funct3, byte_offset) by 1 cycle
+    //   to match the 1-cycle read latency of the SRAM macro,
+    //   ensuring correct sign/zero extension of the returned payload.
+    // ==========================================================
     reg [2:0] funct3_r;
     reg [1:0] byte_offset_r;
     reg       mem_read_r;

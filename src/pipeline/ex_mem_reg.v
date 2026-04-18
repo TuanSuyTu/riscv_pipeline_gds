@@ -1,12 +1,15 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: ex_mem_reg
-// Description: Pipeline stage register between Execute (EX) and Memory (MEM).
-//              OPT-1: Simplified — SRAM now receives combinational signals
-//              from EX stage directly, so mem_read/mem_write/funct3/rs2_data
-//              are no longer piped through here for SRAM use.
-//              Remaining signals are for forwarding + write-back path only.
-// =============================================================================
+/*
+ * Module:  ex_mem_reg
+ *
+ * Description:
+ *   Pipeline register between Execute (EX) and Memory (MEM).
+ *   Carries only the signals needed for forwarding and write-back.
+ *   Note: DMEM address and write signals are driven combinationally 
+ *   from EX directly to SRAM (no register overhead).
+ *
+ * Notes:
+ *   flush=1 : inject NOP bubble on branch taken
+ */
 
 module ex_mem_reg (
     input clk, rst,

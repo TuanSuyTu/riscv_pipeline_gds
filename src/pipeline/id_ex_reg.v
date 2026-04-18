@@ -1,9 +1,15 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: id_ex_reg
-// Description: Pipeline stage register between Decode (ID) and Execute (EX).
-//              Now also carries PC+4 pipe-through (OPT-2).
-// =============================================================================
+/*
+ * Module:  id_ex_reg
+ *
+ * Description:
+ *   Pipeline register between Decode (ID) and Execute (EX).
+ *   Carries the full control word and all data required by ex_stage, including
+ *   PC+4 for link-address pass-through and rs1/rs2 addresses for forwarding.
+ *
+ * Notes:
+ *   flush=1 : zero all outputs, injecting a NOP bubble (on branch or load-use stall)
+ *   stall=1 : hold state
+ */
 
 module id_ex_reg (
     input        clk, rst,

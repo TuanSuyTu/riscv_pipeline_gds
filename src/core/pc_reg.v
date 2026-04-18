@@ -1,8 +1,10 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: pc_reg
-// Description: Program Counter (PC) storage register.
-// =============================================================================
+/*
+ * Module:  pc_reg
+ *
+ * Description:
+ *   Program Counter (PC) storage register.
+ *   Synchronously updates PC with either PC+4 or Branch/Jump target.
+ */
 
 `timescale 1ns / 1ps
 

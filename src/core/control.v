@@ -1,9 +1,11 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: control
-// Description: Instruction Decoder / Main Control Unit.
-//              Generates control signals for the datapath based on Opcode.
-// =============================================================================
+/*
+ * Module:  control
+ *
+ * Description:
+ *   Instruction Decoder / Main Control Unit for RV32I.
+ *   Generates datapath control signals purely combinationally based on Opcode.
+ *   Supports standard R/I/S/B/U/J subsets.
+ */
 
 module control (
     input  [6:0] opcode,
@@ -81,22 +83,24 @@ module control (
                 alu_op    = 0;
             end
 
-            // JAL: Jump target = PC + imm (computed directly in ex_stage).
-            //      Write-back value = PC + 4 (link address).
-            //      ALU is not used for target calculation.
+            // ==========================================================
+            // Control Flow Instructions
+            //
+            // Method:
+            //   - JAL target is PC + imm (computed in EX). Stores PC+4.
+            //   - JALR target adds rs1 + imm in ALU. Stores PC+4.
+            // ==========================================================
             J_JAL: begin
                 reg_write = 1;
                 jump      = 1;
             end
 
-            // JALR: Jump target = (rs1 + imm) & ~1 (ALU computes rs1 + imm).
-            //       Write-back value = PC + 4 (link address).
             J_JALR: begin
                 reg_write = 1;
                 jump      = 1;
-                alu_src   = 1;     // ALU input B = immediate
+                alu_src   = 1;
                 is_jalr   = 1;
-                alu_op    = 0;     // ADD for rs1 + imm
+                alu_op    = 0;
             end
         endcase
     end

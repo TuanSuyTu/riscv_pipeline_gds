@@ -1,9 +1,10 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: mem_wb_reg
-// Description: Pipeline stage register between Memory (MEM) and Write-Back (WB).
-//              OPT-1: No more flush from bram_ctrl (bram stall eliminated).
-// =============================================================================
+/*
+ * Module:  mem_wb_reg
+ *
+ * Description:
+ *   Pipeline stage register between Memory (MEM) and Write-Back (WB).
+ *   Holds memory read data and bypassed ALU results for final register commit.
+ */
 
 module mem_wb_reg (
     input clk, rst,

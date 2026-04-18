@@ -1,14 +1,18 @@
-// =============================================================================
-// Project: RISC-V 5-Stage Pipelined Processor
-// Module: hazard
-// Description: Hazard Detection Unit responsible for pipeline stalls.
-//
-// Classic 5-stage only needs ONE hazard case:
-//   Load-Use: LOAD instruction in EX has rd matching next instruction's rs1/rs2 in ID.
-//   Action:   Stall PC + IF/ID for 1 cycle, inject NOP bubble into ID/EX.
-//
-// All other RAW hazards are resolved by the Forwarding Unit with ZERO stalls.
-// =============================================================================
+/*
+ * Module:  hazard
+ *
+ * Description:
+ *   Hazard Detection Unit responsible for pipeline stalls.
+ *
+ * Method:
+ *   - Only ONE condition requires stall: Load-Use hazard.
+ *   - Detects if EX stage is executing a LOAD whose target (rd) is
+ *     needed by current ID stage (rs1/rs2).
+ *   - Action: Stall PC and IF/ID for 1 cycle; inject NOP to ID/EX.
+ *
+ * Constraints:
+ *   - All other arithmetic RAW hazards are assumed resolved by 'forward'.
+ */
 
 module hazard (
     // Inputs from ID/EX pipeline register (instruction in EX stage)
@@ -23,13 +27,14 @@ module hazard (
     output       stall_loaduse     // Stall signal for Load-Use hazard
 );
 
-    // Load-Use Hazard Detection:
-    // If the instruction in EX is a LOAD, and its destination register
-    // matches either source register of the instruction in ID,
-    // we must stall for 1 cycle to wait for the load data.
+    // ==========================================================
+    // Load-Use Detection Logic
     //
-    // After the stall, the LOAD advances to MEM, and the forwarding unit
-    // can bypass the loaded data from MEM/WB to EX in the next cycle.
+    // Trigger condition:
+    //   - EX stage instruction is a LOAD (id_ex_mem_read = 1)
+    //   - Target is not x0 (id_ex_rd != 0)
+    //   - Target matches an ID stage source operand (id_ex_rd == rs1|rs2)
+    // ==========================================================
     assign stall_loaduse = id_ex_mem_read &&
                            (id_ex_rd != 5'd0) &&
                            ((id_ex_rd == if_id_rs1) || (id_ex_rd == if_id_rs2));
