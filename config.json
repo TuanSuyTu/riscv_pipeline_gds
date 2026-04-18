@@ -2,6 +2,10 @@
     "DESIGN_NAME": "soc_top",
     "CLOCK_PORT": "clk",
     "CLOCK_PERIOD": 20.0,
+    "SYNTH_STRATEGY": "DELAY 0",
+    "SYNTH_SIZING": 1,
+    "PL_TIME_DRIVEN": true,
+    "PL_RESIZER_MAX_WIRE_LENGTH": 250,
     "VERILOG_FILES": [
         "dir::src/core/control.v",
         "dir::src/core/forward.v",
@@ -20,11 +24,23 @@
         "dir::src/pipeline/mem_wb_reg.v",
         "dir::src/pipeline/id_ex_reg.v"
     ],
-    "DIE_AREA": [0, 0, 1100, 1100],
+    "DIE_AREA": [
+        0,
+        0,
+        1100,
+        800
+    ],
     "FP_SIZING": "absolute",
-    "PL_TARGET_DENSITY": 0.30,
+    "PL_TARGET_DENSITY": 0.5,
     "PL_ROUTABILITY_DRIVEN": true,
-    "PL_MACRO_HALO": [30, 30],
+    "GRT_ANTENNA_ITERS": 25,
+    "DIODE_ON_PORTS": "in",
+    "GPL_CELL_PADDING": 2,
+    "DPL_CELL_PADDING": 2,
+    "PL_MACRO_HALO": [
+        30,
+        30
+    ],
     "MAX_TRANSITION_CONSTRAINT": 1.5,
     "MACROS": {
         "sky130_sram_1kbyte_1rw1r_32x256_8": {
@@ -45,11 +61,17 @@
             ],
             "instances": {
                 "dmem_sram": {
-                    "location": [50, 50],
+                    "location": [
+                        50,
+                        50
+                    ],
                     "orientation": "N"
                 },
                 "imem_sram": {
-                    "location": [550, 50],
+                    "location": [
+                        550,
+                        50
+                    ],
                     "orientation": "N"
                 }
             }
@@ -59,7 +81,8 @@
         "dmem_sram VPWR VGND vccd1 vssd1",
         "imem_sram VPWR VGND vccd1 vssd1"
     ],
-    "EXTRA_SDC_FILE": "dir::src/top/sdc_constraints.sdc",
+    "PNR_SDC_FILE": "dir::src/top/sdc_constraints.sdc",
+    "SIGNOFF_SDC_FILE": "dir::src/top/sdc_constraints.sdc",
     "MAGIC_CAPTURE_ERRORS": false,
     "RUN_MAGIC_DRC": false,
     "QUIT_ON_MAGIC_DRC": false,

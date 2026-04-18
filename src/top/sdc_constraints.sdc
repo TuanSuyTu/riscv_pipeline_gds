@@ -1,5 +1,10 @@
 ## Supplementary SDC constraints for RISC-V SoC
-## Last updated: 2026-04-16
+
+# =============================================================================
+# CORE CLOCK DEFINITION
+# (Required because custom SDC file overwrites OpenLane's auto-generated clock)
+# =============================================================================
+create_clock -name clk -period 20.0000 -waveform {0.0000 10.0000} [get_ports {clk}]
 
 # =============================================================================
 # DEBUG PORT RELAXATION
@@ -39,5 +44,4 @@ set_output_delay -clock clk -min -1.0 [get_ports dbg_*]
 # the Sky130 SRAM macro .lib file, which causes false RSZ-0090 violations.
 # =============================================================================
 set_max_transition 1.50 [current_design]
-catch { set_max_transition 1.50 [get_pins -of_objects [get_cells -hierarchical *dmem_sram*]] }
-catch { set_max_transition 1.50 [get_pins -of_objects [get_cells -hierarchical *imem_sram*]] }
+# The specific pin overrides are removed because set_max_transition doesn't support Pin objects in OpenROAD

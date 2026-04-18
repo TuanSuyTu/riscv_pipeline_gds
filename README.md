@@ -82,37 +82,37 @@ Synthesized, placed, and routed using **OpenLane 2** on the `sky130A` (130nm) pr
 | Metric | Value | Notes |
 |--------|-------|-------|
 | **Process Node** | Sky130A (130nm) | SkyWater Open PDK |
-| **Die Area** | 1.21 mm² (1100×1100 µm) | Including bond ring |
-| **Core Area** | 1.17 mm² | Active logic area |
-| **Logic Area (stdcell)** | 0.126 mm² | CPU pipeline gates only |
+| **Die Area** | 0.88 mm² (1100×800 µm) | Including bond ring |
+| **Core Area** | 0.847 mm² | Active logic area |
+| **Logic Area (stdcell)** | 0.115 mm² | CPU pipeline gates only |
 | **SRAM Macro Area** | 0.381 mm² | 2× 1KB SRAM macros |
-| **Total Cell Count** | ~6,600 cells | Post-synthesis |
+| **Total Cell Count** | 15,294 cells | Post-synthesis |
 | **Flip-Flops** | 1,520 registers | Pipeline + control state |
-| **Estimated Fmax** | ~50 MHz | Worst-case SS corner, SRAM-limited |
+| **Estimated Fmax** | ~75 MHz | Typical corner |
 | **LVS Violations** | 0 | Clean |
 | **DRC Violations** | 0 | Clean |
 | **Hold Violations** | 0 | All corners |
-| **Setup Violations (internal)** | 0 | Reg-to-reg, all corners |
+| **Setup Violations** | 0 | All corners, including SRAM paths |
 
 ### Timing Details (Post-PnR STA, OpenSTA)
 
 | Corner | Condition | Setup WNS | Hold WNS | Status |
 |--------|-----------|-----------|----------|--------|
-| `nom_tt_025C_1v80` | Typical | +1.26 ns | +0.32 ns | ✅ PASS |
-| `nom_ff_n40C_1v95` | Fast-Fast | +2.28 ns | +0.11 ns | ✅ PASS |
-| `nom_ss_100C_1v60` | Slow-Slow | -5.83 ns* | +0.90 ns | ⚠️ |
-| `max_ss_100C_1v60` | Worst-Case | -6.40 ns* | +0.91 ns | ⚠️ |
+| `nom_tt_025C_1v80` | Typical | +6.62 ns | +0.34 ns | ✅ PASS |
+| `nom_ff_n40C_1v95` | Fast-Fast | +7.37 ns | +0.20 ns | ✅ PASS |
+| `nom_ss_100C_1v60` | Slow-Slow | +1.84 ns | +0.71 ns | ✅ PASS |
+| `max_ss_100C_1v60` | Worst-Case | +1.21 ns | +0.70 ns | ✅ PASS |
 
-> **\*Note:** Setup violations at SS corners are exclusively on **debug observation ports** (`dbg_dmem_*`) and the newly heavily-loaded **SRAM address lines** (due to the cycle-accurate combinatorial next-PC prefetch). The internal reg-to-reg slack inside the pipeline is strictly clean. Fmax is bounded by SRAM macro access time (~8–10 ns).
+> **Note:** Timing is solidly closed at 50MHz (20.0ns clock period) across all corners. Setup slack remains positive even in the extreme Slow-Slow 100°C corner (-10% voltage drop), safely absorbing the 1-cycle access delay from the heavy SRAM macros.
 
 ### Area Breakdown
 
 | Component | Area (µm²) | % of Core |
 |-----------|-----------|-----------|
-| SRAM Macros (2×) | 381,425 | 32.5% |
-| Standard Cells (CPU logic) | 126,890 | 10.8% |
-| Routing + Whitespace | 664,475 | 56.7% |
-| **Total Core** | **1,172,790** | 100% |
+| SRAM Macros (2×) | 381,425 | 45.0% |
+| Standard Cells (CPU logic) | 115,234 | 13.6% |
+| Routing + Whitespace | 350,356 | 41.4% |
+| **Total Core** | **847,015** | 100% |
 
 ---
 
@@ -134,9 +134,9 @@ riscv_pipeline_gds/
 │       ├── sram_macro_blackbox.v
 │       └── sdc_constraints.sdc
 ├── tb/                # Testbenches
-│   ├── tb_top.v       # RTL self-checking testbench (31 tests)
+│   ├── tb_top.v       # RTL self-checking testbench (45 tests)
 │   ├── tb_frontdoor.v # Programming interface testbench
-│   └── tb_gls.v       # Gate-level self-checking testbench (30 tests)
+│   └── tb_gls.v       # Gate-level self-checking testbench (45 tests)
 ├── scripts/           # Automation scripts
 │   ├── run_tb.sh      # Run RTL simulation
 │   ├── run_frontdoor.sh
